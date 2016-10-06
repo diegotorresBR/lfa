@@ -33,6 +33,7 @@ public class Assunto extends Fragment {
         zoom = new PhotoViewAttacher(imagem_conteudo);
 
         return rootView;
+//        dijon
     }
 }
 
