@@ -54,6 +54,7 @@ public class MainActivity extends ActionBarActivity {
     FragmentTransaction fragmentTransaction;
     Bundle args;
     Assunto assunto_frag;
+    Pergunta_quiz pergunta_quiz;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -144,7 +145,6 @@ public class MainActivity extends ActionBarActivity {
                     //assunto e preenche o fragment com a imagem do assunto
                     switch (selected) {
                         case "1.1.Introdução":
-
                             break;
                     }
                 }
@@ -304,8 +304,26 @@ public class MainActivity extends ActionBarActivity {
                         default:
                             break;
                     }
-
                 }
+
+                if(grup_pos == 4) {}
+                //grupo QUIZ
+                if(grup_pos == 5) {
+                    switch (subgrupo_pos) {
+                        case 0:
+                            args.putInt("id", R.drawable.u2_1);//passa para o fragment o id do assunto
+                            pergunta_quiz = new Pergunta_quiz();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
+                            pergunta_quiz.setArguments(args);
+                            fragmentTransaction = fragmentManager.beginTransaction();
+                            fragmentTransaction.replace(R.id.frame_container, pergunta_quiz).commit();
+                            mDrawerTitle = "Quiz";
+                            mTitle = "Quiz Geral - Dijon";
+                            break;
+                    }
+                }
+
+
+
                 mDrawerLayout.closeDrawer(mDrawerExpandableList);
                 return false;
             }
@@ -324,8 +342,8 @@ public class MainActivity extends ActionBarActivity {
         grupos.add("Unidade 3 - Gramática");
         grupos.add("Unidade 4 - Linguagens Livre do Contexto");
         grupos.add("Unidade 5 - Máquina de Turing");
-
-
+        //dijon
+        grupos.add("Quiz");
 
         List<String> filhos_grupo1 = new ArrayList<String>();
         filhos_grupo1.add("1.1.Introdução");
@@ -375,13 +393,19 @@ public class MainActivity extends ActionBarActivity {
         filhos_grupo5.add("5.4.Processamento");
         filhos_grupo5.add("5.5.Decidibilidade");
 
-
+//        dijon
+        List<String> filhos_grupo6 = new ArrayList<String>();
+        filhos_grupo6.add("Quiz Geral");
+        //
         dadosGrupos.put(grupos.get(0), filhos_grupo1);
         dadosGrupos.put(grupos.get(1), filhos_grupo2);
         dadosGrupos.put(grupos.get(2), filhos_grupo3);
         dadosGrupos.put(grupos.get(3), filhos_grupo4);
         dadosGrupos.put(grupos.get(4), filhos_grupo5);
 
+//        dijon
+        dadosGrupos.put(grupos.get(5), filhos_grupo6);
+        //
         adapter = new MyAdapter(this, grupos, dadosGrupos);
         mDrawerExpandableList.setAdapter(adapter);
     }
