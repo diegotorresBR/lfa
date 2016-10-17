@@ -312,18 +312,16 @@ public class MainActivity extends ActionBarActivity {
                     switch (subgrupo_pos) {
                         case 0:
                             args.putInt("id", R.drawable.u2_1);//passa para o fragment o id do assunto
-                            pergunta_quiz = new Pergunta_quiz();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
+                            pergunta_quiz = new Pergunta_quiz();//é necesário instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                             pergunta_quiz.setArguments(args);
                             fragmentTransaction = fragmentManager.beginTransaction();
                             fragmentTransaction.replace(R.id.frame_container, pergunta_quiz).commit();
-                            mDrawerTitle = "Quiz";
-                            mTitle = "Quiz Geral - Dijon";
+                            mDrawerTitle = getString(R.string.quiz);
+                            mTitle = getString(R.string.quiz_geral);
                             break;
                     }
                 }
-
-
-
+                //
                 mDrawerLayout.closeDrawer(mDrawerExpandableList);
                 return false;
             }

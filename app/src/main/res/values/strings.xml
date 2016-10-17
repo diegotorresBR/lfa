@@ -15,4 +15,11 @@
     <string name="proximo">Próximo</string>
     <string name="resposta_correta">Resposta Correta.</string>
     <string name="resposta_errada">Resposta Errada</string>
+    <string name="quiz_geral">Quiz Geral</string>
+    <string name="quiz">Quiz</string>
+    <string name="resultado_quiz">Resultado do Quiz</string>
+    <string name="pergunta_do_quiz">Pergunta do Quiz</string>
+    <string name="inicio">Início</string>
+    <string name="refazer">Refazer</string>
+    <string name="cancelar">Cancelar</string>
 </resources>

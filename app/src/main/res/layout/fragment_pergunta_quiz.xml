@@ -1,61 +1,86 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_width="match_parent">
 
-    <TextView
-        android:id="@+id/textViewPergunta"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="@string/hello_blank_fragment"
-        android:textStyle="bold"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:checkedButton="@+id/letraA">
+        <TextView
+            android:id="@+id/textViewPergunta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="15dp"
+            android:text="@string/pergunta_do_quiz"
+            android:textStyle="bold"/>
 
-        <RadioButton
-            android:id="@+id/letraA"
+        <RadioGroup
+            android:id="@+id/radioGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/letraA"
-            android:layout_marginBottom="10dp"/>
+            android:padding="15dp"
+            android:checkedButton="@+id/letraA">
 
-        <RadioButton
-            android:id="@+id/letraB"
-            android:layout_width="wrap_content"
+            <RadioButton
+                android:id="@+id/letraA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="@string/letraA"
+                android:layout_marginBottom="10dp"/>
+
+            <RadioButton
+                android:id="@+id/letraB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="@string/letraB"
+                android:layout_marginBottom="10dp"/>
+
+
+            <RadioButton
+                android:id="@+id/letraC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="@string/letraC"
+                android:layout_marginBottom="10dp"/>
+
+
+            <RadioButton
+                android:id="@+id/letraD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="@string/letraD"
+                android:layout_marginBottom="10dp"/>
+
+
+        </RadioGroup>
+
+        <Button
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/letraB"
-            android:layout_marginBottom="10dp"/>
+            android:id="@+id/buttonProximo"
+            android:layout_margin="15dp"
+            android:paddingTop="15dp"
+            android:layout_gravity="bottom"
+            android:text="@string/proximo"
+            />
 
-
-        <RadioButton
-            android:id="@+id/letraC"
-            android:layout_width="wrap_content"
+        <Button
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/letraC"
-            android:layout_marginBottom="10dp"/>
+            android:id="@+id/buttonCancelar"
+            android:paddingTop="15dp"
+            android:layout_margin="15dp"
+            android:layout_gravity="bottom"
+            android:text="@string/cancelar"
+            />
 
 
-        <RadioButton
-            android:id="@+id/letraD"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/letraD"
-            android:layout_marginBottom="10dp"/>
-
-
-    </RadioGroup>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/buttonProximo"
-        android:layout_margin="15dp"
-        android:text="@string/proximo"/>
-
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>

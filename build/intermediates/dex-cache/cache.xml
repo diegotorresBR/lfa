@@ -1,3 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        is-multidex="true"
+        jar="C:\Projetos\lfa\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\jars\libs\internal_impl-24.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="21.1.2"
+        sha1="f78c2f395cb096f9dc1dc07e729922b8fcd3c4f5">
+        <dex dex="C:\Projetos\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.1.1_f79b31f00d4ca00703925f0cb1f309b0f2df6f80\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Projetos\lfa\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="21.1.2"
+        sha1="6d7d803871e3203465f71a163e7af104f807b446">
+        <dex dex="C:\Projetos\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.1.1_4a495b1823e4560da98742c0f7235487c8be981e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Android\sdk1\extras\android\m2repository\com\android\support\support-annotations\24.1.1\support-annotations-24.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="21.1.2"
+        sha1="3af19f153122737b372622fa6c81dd11a1c6b999">
+        <dex dex="C:\Projetos\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.1.1_b2c65fe9881be99b64157b6b8c51161191c45c61\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Projetos\lfa\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="21.1.2"
+        sha1="99e397ff5ee36b9a33b0146768cd34fef6c7323c">
+        <dex dex="C:\Projetos\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_5c175df346deac125c3a9eec5c6c3a139786aa65\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Projetos\lfa\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="21.1.2"
+        sha1="ed25d4dffe6be9242101f27343552aa1771fff5a">
+        <dex dex="C:\Projetos\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_d1ab0043b80045fa935c7a9dcae1cc41f77a3719\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Projetos\lfa\app\build\intermediates\exploded-aar\com.github.chrisbanes\PhotoView\1.3.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="21.1.2"
+        sha1="81d41e53c215976ce172b9f61ef1e8fc2d67cf79">
+        <dex dex="C:\Projetos\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.github.chrisbanes-PhotoView-1.3.0_cd54aa7e048a89a5842f99ba440dffe7c1393885\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Projetos\lfa\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="C:\Projetos\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-21.0.3_10db4a9e7205879bd1736430387f913ca5778aed\classes.dex" />
+    </item>
+
+</items>
