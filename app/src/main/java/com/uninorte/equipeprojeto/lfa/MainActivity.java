@@ -1,31 +1,43 @@
 package com.uninorte.equipeprojeto.lfa;
 
-import android.app.ExpandableListActivity;
-import android.app.Fragment;
+import android.accounts.Account;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.content.Intent;
+import android.app.SearchManager;
 import android.content.res.Configuration;
-import android.os.Build;
-import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.SubMenu;
 import android.view.View;
 import android.widget.ExpandableListView;
+
 import android.widget.Toast;
 
-import java.security.acl.Group;
+import com.mikepenz.materialdrawer.AccountHeader;
+import com.mikepenz.materialdrawer.AccountHeaderBuilder;
+import com.mikepenz.materialdrawer.Drawer;
+import com.mikepenz.materialdrawer.DrawerBuilder;
+import com.mikepenz.materialdrawer.model.ExpandableDrawerItem;
+import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
+import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
+import com.mikepenz.materialdrawer.model.SectionDrawerItem;
+import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /*
     Essa classe principal contem os principais elementos da tela
@@ -37,7 +49,7 @@ import java.util.List;
     padrao para a exibiçao de conteudo e outro para a exibicao do quiz.
 
  */
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
 
     private Toolbar toolbar;
     private DrawerLayout mDrawerLayout;//Menu Lateral
@@ -54,264 +66,270 @@ public class MainActivity extends ActionBarActivity {
     FragmentTransaction fragmentTransaction;
     Bundle args;
     Assunto assunto_frag;
+    AccountHeader header;
+    ExpandableDrawerItem unidade1, unidade2, unidade3, unidade4, unidade5;
+    SecondaryDrawerItem unidade_filho;
+    Drawer drawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.novo_main);
 
-        mDrawerTitle = getTitle();
+        //mDrawerTitle = getTitle();
         args = new Bundle();
         fragmentManager = getFragmentManager();
 
 
-
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        mDrawerExpandableList = (ExpandableListView) findViewById(R.id.explist_slidermenu);
-        mDrawerExpandableList.setGroupIndicator(null);
-
-        //
-        View header = getLayoutInflater().inflate(R.layout.cabecera_general, null);
-        mDrawerExpandableList.addHeaderView(header, null, false);
-        //...Fim da Pagina
-
+//
+        toolbar = (Toolbar) findViewById(R.id.toolbar2);
+        header = new AccountHeaderBuilder().withActivity(this).withTranslucentStatusBar(true).withHeaderBackground(R.drawable.side_nav_bar).build();
         carregarDados();
-
-        if (toolbar != null) {
-            toolbar.setTitle(mDrawerTitle);
-            toolbar.setSubtitle(mTitle);
-            toolbar.setLogo(R.mipmap.ic_lfa1);
+        criar_drawer();
+//        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout2);
+//        mDrawerExpandableList = (ExpandableListView) findViewById(R.id.explist_slidermenu3);
+//        //mDrawerExpandableList.setGroupIndicator(null);
+//
+//        //
+//       // View header = getLayoutInflater().inflate(R.layout.cabecera_general, null);
+//       // mDrawerExpandableList.addHeaderView(header, null, false);
+//        //...Fim da Pagina
+//
+//        carregarDados();
+//
+//        if (toolbar != null) {
+//            toolbar.setTitle(mDrawerTitle);
+//            toolbar.setSubtitle(mTitle);
+//            toolbar.setLogo(R.mipmap.ic_lfa1);
             setSupportActionBar(toolbar);
-            getSupportActionBar().setDisplayShowHomeEnabled(true);
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        }
-
-        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close) {
-
-            @Override
-            public void onDrawerClosed(View view) {
-
-                getSupportActionBar().setTitle(mDrawerTitle);
-                getSupportActionBar().setSubtitle(mTitle);
-                invalidateOptionsMenu();
-            }
-
-            @Override
-            public void onDrawerOpened(View drawerView) {
-
-                getSupportActionBar().setTitle("Menu");
-                getSupportActionBar().setSubtitle("Selecione uma opção");
-                invalidateOptionsMenu();
-
-            }
-        };
-
-        mDrawerToggle.setDrawerIndicatorEnabled(true);//Mostrar icono menu animado
-        mDrawerLayout.setDrawerListener(mDrawerToggle);
-        mDrawerExpandableList.setTextFilterEnabled(true);
-        mDrawerExpandableList.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
-            @Override
-            public boolean onGroupClick(ExpandableListView parent, View v, int groupPosition, long id) {
-                return false;
-            }
-        });
-        mDrawerExpandableList.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
-            @Override
-            public void onGroupExpand(int groupPosition) {
-                if (ultimaPosicionExpList != -1 && groupPosition != ultimaPosicionExpList) {
-                    mDrawerExpandableList.collapseGroup(ultimaPosicionExpList);
-                }
-                ultimaPosicionExpList = groupPosition;
-            }
-        });
-        mDrawerExpandableList.setOnGroupCollapseListener(new ExpandableListView.OnGroupCollapseListener() {
-            @Override
-            public void onGroupCollapse(int groupPosition) {
-
-
-            }
-        });
-        mDrawerExpandableList.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
-
-            //Ao clicar em uma opcao no menu lateral, o app mostrara o assunto correspondete no fragment
-            public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-                int grup_pos = (int)adapter.getGroupId(groupPosition);
-                int subgrupo_pos = (int)adapter.getChildId(groupPosition, childPosition);
-                final String selected = (String) adapter.getChild(groupPosition, childPosition);
-
-                {//e aqui eh onde a magia acontece. Ao escolher o assunto, o app mostra a imagem relacionada ao
-                    //assunto e preenche o fragment com a imagem do assunto
-                    switch (selected) {
-                        case "1.1.Introdução":
-
-                            break;
-                    }
-                }
-                if(grup_pos == 1) {
-                    switch (subgrupo_pos) {
-                        case 0:
-
-                            args.putInt("id", R.drawable.u2_1);//passa para o fragment o id do assunto
-                            assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
-                            assunto_frag.setArguments(args);
-                            fragmentTransaction = fragmentManager.beginTransaction();
-                            fragmentTransaction.replace(R.id.frame_container, assunto_frag).commit();
-                            mDrawerTitle = "2.1.Introdução";
-                            mTitle = "Unidade 2";
-                            break;
-                        case 1:
-                            args.putInt("id", R.drawable.u2_2);//passa para o fragment o id do assunto
-                            assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
-                            assunto_frag.setArguments(args);
-                            fragmentTransaction = fragmentManager.beginTransaction();
-                            fragmentTransaction.replace(R.id.frame_container, assunto_frag).commit();
-                            mDrawerTitle = "2.2.Sistemas de Estados Finitos";
-                            mTitle = "Unidade 2";
-                            break;
-                        case 2:
-                            args.putInt("id", R.drawable.u2_3);//passa para o fragment o id do assunto
-                            assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
-                            assunto_frag.setArguments(args);
-                            fragmentTransaction = fragmentManager.beginTransaction();
-                            fragmentTransaction.replace(R.id.frame_container, assunto_frag).commit();
-                            mDrawerTitle = "2.3.Composição Sequencia | Corrente não Deterministica";
-                            mTitle = "Unidade 2";
-                            break;
-                        case 3:
-                            args.putInt("id", R.drawable.u2_4);//passa para o fragment o id do assunto
-                            assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
-                            assunto_frag.setArguments(args);
-                            fragmentTransaction = fragmentManager.beginTransaction();
-                            fragmentTransaction.replace(R.id.frame_container, assunto_frag).commit();
-                            mDrawerTitle = "2.4.Automato Finito";
-                            mTitle = "Unidade 2";
-                            break;
-                        case 4:
-                            args.putInt("id", R.drawable.u2_5);//passa para o fragment o id do assunto
-                            assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
-                            assunto_frag.setArguments(args);
-                            fragmentTransaction = fragmentManager.beginTransaction();
-                            fragmentTransaction.replace(R.id.frame_container, assunto_frag).commit();
-                            mDrawerTitle = "2.5.Automato Finito Deterministico";
-                            mTitle = "Unidade 2";
-                            break;
-                        case 5:
-                            args.putInt("id", R.drawable.u2_6);//passa para o fragment o id do assunto
-                            assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
-                            assunto_frag.setArguments(args);
-                            fragmentTransaction = fragmentManager.beginTransaction();
-                            fragmentTransaction.replace(R.id.frame_container, assunto_frag).commit();
-                            mDrawerTitle = "2.6 Definição da Função Programa Estendida";
-                            mTitle = "Unidade 2";
-                            break;
-                        case 6:
-                            args.putInt("id", R.drawable.u2_7);//passa para o fragment o id do assunto
-                            assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
-                            assunto_frag.setArguments(args);
-                            fragmentTransaction = fragmentManager.beginTransaction();
-                            fragmentTransaction.replace(R.id.frame_container, assunto_frag).commit();
-                            mDrawerTitle = "2.7.Linguagem aceita e linguagem rejeitada";
-                            mTitle = "Unidade 2";
-                            break;
-                        case 7:
-                            args.putInt("id", R.drawable.u2_8);//passa para o fragment o id do assunto
-                            assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
-                            assunto_frag.setArguments(args);
-                            fragmentTransaction = fragmentManager.beginTransaction();
-                            fragmentTransaction.replace(R.id.frame_container, assunto_frag).commit();
-                            mDrawerTitle = "2.8.Automatos finitos equivalentes";
-                            mTitle = "Unidade 2";
-                            break;
-                        case 8:
-                            args.putInt("id", R.drawable.u2_9);//passa para o fragment o id do assunto
-                            assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
-                            assunto_frag.setArguments(args);
-                            fragmentTransaction = fragmentManager.beginTransaction();
-                            fragmentTransaction.replace(R.id.frame_container, assunto_frag).commit();
-                            mDrawerTitle = "2.9.Automatos finitos Não-deterministico";
-                            mTitle = "Unidade 2";
-                            break;
-                        case 9:
-                            Toast.makeText(getApplicationContext(), "2.10.Automatos com Movimentos Vazios", Toast.LENGTH_SHORT).show();
-                            mDrawerTitle = "2.10.Automatos com Movimentos Vazios";
-                            mTitle = "Unidade 2";
-                            break;
-                        case 10:
-                            Toast.makeText(getApplicationContext(), "2.11.Linguagem regular", Toast.LENGTH_SHORT).show();
-                            mDrawerTitle = "2.11.Linguagem regular";
-                            mTitle = "Unidade 2";
-                            break;
-
-                        default:
-                            break;
-                    }
-
-                }
-                if(grup_pos == 2) {
-                    switch (subgrupo_pos) {
-                        case 0:
-                            args.putInt("id", R.drawable.u3_1);//passa para o fragment o id do assunto
-                            assunto_frag = new Assunto();
-                            assunto_frag.setArguments(args);
-                            fragmentTransaction = fragmentManager.beginTransaction();
-                            fragmentTransaction.replace(R.id.frame_container, assunto_frag).commit();
-                            mDrawerTitle = "Gramatica Formal";
-                            mTitle = "Unidade 3";
-                            break;
-                        case 1:
-                            Toast.makeText(getApplicationContext(), "Rubro Negra", Toast.LENGTH_SHORT).show();
-                            mDrawerTitle = "Arvores";
-                            mTitle = "Rubro Negra";
-                            break;
-
-                        case 2:
-                            Toast.makeText(getApplicationContext(), "Arvore B", Toast.LENGTH_SHORT).show();
-                            mDrawerTitle = "Arvores";
-                            mTitle = "Arvore B";
-                            break;
-
-                        default:
-                            break;
-                    }
-
-                }
-                if(grup_pos == 3) {
-
-                    switch (subgrupo_pos) {
-                        case 0:
-                            Toast.makeText(getApplicationContext(), "Busca em Largura", Toast.LENGTH_SHORT).show();
-                            mDrawerTitle = "Grafos";
-                            mTitle = "Busca em Largura";
-                            break;
-                        case 1:
-                            Toast.makeText(getApplicationContext(), "Busca em Profundidade", Toast.LENGTH_SHORT).show();
-                            mDrawerTitle = "Grafos";
-                            mTitle = "Busca em Profundidade";
-                            break;
-
-                        case 2:
-                            Toast.makeText(getApplicationContext(), "Dijkstra", Toast.LENGTH_SHORT).show();
-                            mDrawerTitle = "Grafos";
-                            mTitle = "Dijkstra";
-                            break;
-
-                        case 3:
-                            Toast.makeText(getApplicationContext(), "Prim", Toast.LENGTH_SHORT).show();
-                            mDrawerTitle = "Grafos";
-                            mTitle = "Prim";
-                            break;
-                        default:
-                            break;
-                    }
-
-                }
-                mDrawerLayout.closeDrawer(mDrawerExpandableList);
-                return false;
-            }
-        });
-
-
+//            getSupportActionBar().setDisplayShowHomeEnabled(true);
+//            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        }
+//
+//        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close) {
+//
+//            @Override
+//            public void onDrawerClosed(View view) {
+//
+//                getSupportActionBar().setTitle(mDrawerTitle);
+//                getSupportActionBar().setSubtitle(mTitle);
+//                invalidateOptionsMenu();
+//            }
+//
+//            @Override
+//            public void onDrawerOpened(View drawerView) {
+//
+//                getSupportActionBar().setTitle("Menu");
+//                getSupportActionBar().setSubtitle("Selecione uma opção");
+//                invalidateOptionsMenu();
+//
+//            }
+//        };
+//
+//        mDrawerToggle.setDrawerIndicatorEnabled(true);//Mostrar icono menu animado
+//        mDrawerLayout.setDrawerListener(mDrawerToggle);
+//        mDrawerExpandableList.setTextFilterEnabled(true);
+//        mDrawerExpandableList.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
+//            @Override
+//            public boolean onGroupClick(ExpandableListView parent, View v, int groupPosition, long id) {
+//                return false;
+//            }
+//        });
+//        mDrawerExpandableList.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
+//            @Override
+//            public void onGroupExpand(int groupPosition) {
+//                if (ultimaPosicionExpList != -1 && groupPosition != ultimaPosicionExpList) {
+//                    mDrawerExpandableList.collapseGroup(ultimaPosicionExpList);
+//                }
+//                ultimaPosicionExpList = groupPosition;
+//            }
+//        });
+//        mDrawerExpandableList.setOnGroupCollapseListener(new ExpandableListView.OnGroupCollapseListener() {
+//            @Override
+//            public void onGroupCollapse(int groupPosition) {
+//
+//
+//            }
+//        });
+//        mDrawerExpandableList.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+//
+//            //Ao clicar em uma opcao no menu lateral, o app mostrara o assunto correspondete no fragment
+//            public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
+//                int grup_pos = (int)adapter.getGroupId(groupPosition);
+//                int subgrupo_pos = (int)adapter.getChildId(groupPosition, childPosition);
+//                String selected = (String) adapter.getChild(groupPosition, childPosition);
+//
+//                {//e aqui eh onde a magia acontece. Ao escolher o assunto, o app mostra a imagem relacionada ao
+//                    //assunto e preenche o fragment com a imagem do assunto
+//                    switch (selected) {
+//                        case "1.1.Introdução":
+//
+//                            break;
+//                    }
+//                }if(grup_pos == 1) {
+//                    switch (subgrupo_pos) {
+//                        case 0:
+//
+//                            args.putInt("id", R.drawable.u2_1);//passa para o fragment o id do assunto
+//                            assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
+//                            assunto_frag.setArguments(args);
+//                            fragmentTransaction = fragmentManager.beginTransaction();
+//                            fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
+//                            mDrawerTitle = "2.1.Introdução";
+//                            mTitle = "Unidade 2";
+//                            break;
+//                        case 1:
+//                            args.putInt("id", R.drawable.u2_2);//passa para o fragment o id do assunto
+//                            assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
+//                            assunto_frag.setArguments(args);
+//                            fragmentTransaction = fragmentManager.beginTransaction();
+//                            fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
+//                            mDrawerTitle = "2.2.Sistemas de Estados Finitos";
+//                            mTitle = "Unidade 2";
+//                            break;
+//                        case 2:
+//                            args.putInt("id", R.drawable.u2_3);//passa para o fragment o id do assunto
+//                            assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
+//                            assunto_frag.setArguments(args);
+//                            fragmentTransaction = fragmentManager.beginTransaction();
+//                            fragmentTransaction.replace(R.id.frame_container, assunto_frag).commit();
+//                            mDrawerTitle = "2.3.Composição Sequencia | Corrente não Deterministica";
+//                            mTitle = "Unidade 2";
+//                            break;
+//                        case 3:
+//                            args.putInt("id", R.drawable.u2_4);//passa para o fragment o id do assunto
+//                            assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
+//                            assunto_frag.setArguments(args);
+//                            fragmentTransaction = fragmentManager.beginTransaction();
+//                            fragmentTransaction.replace(R.id.frame_container, assunto_frag).commit();
+//                            mDrawerTitle = "2.4.Automato Finito";
+//                            mTitle = "Unidade 2";
+//                            break;
+//                        case 4:
+//                            args.putInt("id", R.drawable.u2_5);//passa para o fragment o id do assunto
+//                            assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
+//                            assunto_frag.setArguments(args);
+//                            fragmentTransaction = fragmentManager.beginTransaction();
+//                            fragmentTransaction.replace(R.id.frame_container, assunto_frag).commit();
+//                            mDrawerTitle = "2.5.Automato Finito Deterministico";
+//                            mTitle = "Unidade 2";
+//                            break;
+//                        case 5:
+//                            args.putInt("id", R.drawable.u2_6);//passa para o fragment o id do assunto
+//                            assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
+//                            assunto_frag.setArguments(args);
+//                            fragmentTransaction = fragmentManager.beginTransaction();
+//                            fragmentTransaction.replace(R.id.frame_container, assunto_frag).commit();
+//                            mDrawerTitle = "2.6 Definição da Função Programa Estendida";
+//                            mTitle = "Unidade 2";
+//                            break;
+//                        case 6:
+//                            args.putInt("id", R.drawable.u2_7);//passa para o fragment o id do assunto
+//                            assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
+//                            assunto_frag.setArguments(args);
+//                            fragmentTransaction = fragmentManager.beginTransaction();
+//                            fragmentTransaction.replace(R.id.frame_container, assunto_frag).commit();
+//                            mDrawerTitle = "2.7.Linguagem aceita e linguagem rejeitada";
+//                            mTitle = "Unidade 2";
+//                            break;
+//                        case 7:
+//                            args.putInt("id", R.drawable.u2_8);//passa para o fragment o id do assunto
+//                            assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
+//                            assunto_frag.setArguments(args);
+//                            fragmentTransaction = fragmentManager.beginTransaction();
+//                            fragmentTransaction.replace(R.id.frame_container, assunto_frag).commit();
+//                            mDrawerTitle = "2.8.Automatos finitos equivalentes";
+//                            mTitle = "Unidade 2";
+//                            break;
+//                        case 8:
+//                            args.putInt("id", R.drawable.u2_9);//passa para o fragment o id do assunto
+//                            assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
+//                            assunto_frag.setArguments(args);
+//                            fragmentTransaction = fragmentManager.beginTransaction();
+//                            fragmentTransaction.replace(R.id.frame_container, assunto_frag).commit();
+//                            mDrawerTitle = "2.9.Automatos finitos Não-deterministico";
+//                            mTitle = "Unidade 2";
+//                            break;
+//                        case 9:
+//                            Toast.makeText(getApplicationContext(), "2.10.Automatos com Movimentos Vazios", Toast.LENGTH_SHORT).show();
+//                            mDrawerTitle = "2.10.Automatos com Movimentos Vazios";
+//                            mTitle = "Unidade 2";
+//                            break;
+//                        case 10:
+//                            Toast.makeText(getApplicationContext(), "2.11.Linguagem regular", Toast.LENGTH_SHORT).show();
+//                            mDrawerTitle = "2.11.Linguagem regular";
+//                            mTitle = "Unidade 2";
+//                            break;
+//
+//                        default:
+//                            break;
+//                    }
+//
+//                }
+//                if(grup_pos == 2) {
+//                    switch (subgrupo_pos) {
+//                        case 0:
+//                            args.putInt("id", R.drawable.u3_1);//passa para o fragment o id do assunto
+//                            assunto_frag = new Assunto();
+//                            assunto_frag.setArguments(args);
+//                            fragmentTransaction = fragmentManager.beginTransaction();
+//                            fragmentTransaction.replace(R.id.frame_container, assunto_frag).commit();
+//                            mDrawerTitle = "Gramatica Formal";
+//                            mTitle = "Unidade 3";
+//                            break;
+//                        case 1:
+//                            Toast.makeText(getApplicationContext(), "Rubro Negra", Toast.LENGTH_SHORT).show();
+//                            mDrawerTitle = "Arvores";
+//                            mTitle = "Rubro Negra";
+//                            break;
+//
+//                        case 2:
+//                            Toast.makeText(getApplicationContext(), "Arvore B", Toast.LENGTH_SHORT).show();
+//                            mDrawerTitle = "Arvores";
+//                            mTitle = "Arvore B";
+//                            break;
+//
+//                        default:
+//                            break;
+//                    }
+//
+//                }
+//                if(grup_pos == 3) {
+//
+//                    switch (subgrupo_pos) {
+//                        case 0:
+//                            Toast.makeText(getApplicationContext(), "Busca em Largura", Toast.LENGTH_SHORT).show();
+//                            mDrawerTitle = "Grafos";
+//                            mTitle = "Busca em Largura";
+//                            break;
+//                        case 1:
+//                            Toast.makeText(getApplicationContext(), "Busca em Profundidade", Toast.LENGTH_SHORT).show();
+//                            mDrawerTitle = "Grafos";
+//                            mTitle = "Busca em Profundidade";
+//                            break;
+//
+//                        case 2:
+//                            Toast.makeText(getApplicationContext(), "Dijkstra", Toast.LENGTH_SHORT).show();
+//                            mDrawerTitle = "Grafos";
+//                            mTitle = "Dijkstra";
+//                            break;
+//
+//                        case 3:
+//                            Toast.makeText(getApplicationContext(), "Prim", Toast.LENGTH_SHORT).show();
+//                            mDrawerTitle = "Grafos";
+//                            mTitle = "Prim";
+//                            break;
+//                        default:
+//                            break;
+//                    }
+//
+//                }
+////                mDrawerLayout.closeDrawer(mDrawerExpandableList);
+//                return false;
+//            }
+//        });
+//
+//
     }
 
     private void carregarDados() {
@@ -383,13 +401,19 @@ public class MainActivity extends ActionBarActivity {
         dadosGrupos.put(grupos.get(4), filhos_grupo5);
 
         adapter = new MyAdapter(this, grupos, dadosGrupos);
-        mDrawerExpandableList.setAdapter(adapter);
+        //mDrawerExpandableList.setAdapter(adapter);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        final SearchView searchView = (SearchView) MenuItemCompat.getActionView(menu.findItem(R.id.action_search));
+        SearchManager searchManager = (SearchManager) getSystemService(SEARCH_SERVICE);
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        searchView.setOnQueryTextListener(this);
+
+
         return true;
 
     }
@@ -406,39 +430,138 @@ public class MainActivity extends ActionBarActivity {
         return true;
     }
 
-    @Override
-    protected void onPostCreate(Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
-        mDrawerToggle.syncState();
-    }
+//    @Override
+//    protected void onPostCreate(Bundle savedInstanceState) {
+//        super.onPostCreate(savedInstanceState);
+//        mDrawerToggle.syncState();
+//    }
+//
+//    @Override
+//    public void onConfigurationChanged(Configuration newConfig) {
+//        super.onConfigurationChanged(newConfig);
+//        mDrawerToggle.onConfigurationChanged(newConfig);
+//    }
+//
+//    public boolean onKeyDown (int keycode, KeyEvent event){
+//        if (keycode == KeyEvent.KEYCODE_MENU) {
+//
+//            if (mDrawerLayout.isDrawerOpen(Gravity.LEFT)) {
+//                mDrawerLayout.closeDrawer(Gravity.LEFT);
+//            } else {
+//                mDrawerLayout.openDrawer(Gravity.LEFT);
+//            }
+//            return true;
+//        }else{
+//            return super.onKeyDown(keycode, event);
+//        }
+//    }
+//
+//    @Override
+//    public void onBackPressed() {
+//
+//        if(mDrawerLayout.isDrawerOpen(Gravity.LEFT)){
+//            mDrawerLayout.closeDrawer(Gravity.LEFT);
+//        }else{
+//            super.onBackPressed();
+//        }
+//    }
 
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-        mDrawerToggle.onConfigurationChanged(newConfig);
-    }
+    public void criar_drawer(){
+        unidade1 = new ExpandableDrawerItem().withName("Conceitos Basicos");
+        unidade2 = new ExpandableDrawerItem().withName("Linguagens Regulares");
+        unidade3 = new ExpandableDrawerItem().withName("Gramatica");
+        unidade4 = new ExpandableDrawerItem().withName("Linguagens Livre do Contexto");
+        unidade5 = new ExpandableDrawerItem().withName("Maquina de Turing");
 
-    public boolean onKeyDown (int keycode, KeyEvent event){
-        if (keycode == KeyEvent.KEYCODE_MENU) {
 
-            if (mDrawerLayout.isDrawerOpen(Gravity.LEFT)) {
-                mDrawerLayout.closeDrawer(Gravity.LEFT);
-            } else {
-                mDrawerLayout.openDrawer(Gravity.LEFT);
+//
+//        SecondaryDrawerItem uni1_1 = new SecondaryDrawerItem().withName("Introducao").withLevel(2).withIdentifier(101);
+//        SecondaryDrawerItem uni1_2 = new SecondaryDrawerItem().withName("Formalismo").withLevel(2).withIdentifier(102);
+//        SecondaryDrawerItem uni1_3 = new SecondaryDrawerItem().withName("Conceitos de Alfabeto e Gramatica").withLevel(2).withIdentifier(103);
+//        SecondaryDrawerItem uni1_4 = new SecondaryDrawerItem().withName("Liguagem Formal").withLevel(2).withIdentifier(104);
+
+        //unidade1.withSubItems(uni1_1, uni1_2, uni1_3, uni1_4);
+
+popular_menu_assuntos();
+
+        drawer = new DrawerBuilder().withActivity(this).withToolbar(toolbar).
+                withAccountHeader(header).
+                addDrawerItems(
+                        new PrimaryDrawerItem().withName("Inicio").withDescription("Comece Aqui").withIdentifier(1).withSelectable(true),
+                        new SectionDrawerItem().withName("Aprender"),
+                        unidade1, unidade2, unidade3, unidade4, unidade5
+                ).withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener(){
+
+
+            @Override
+            public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
+
+                if(drawerItem != null){
+                    if(drawerItem.getIdentifier() == 201){
+                        args.putInt("id", R.drawable.u2_1);//passa para o fragment o id do assunto
+                            assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
+                            assunto_frag.setArguments(args);
+                            fragmentTransaction = fragmentManager.beginTransaction();
+                            fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
+                    }
+                    if(drawerItem.getIdentifier() == 202){
+                        args.putInt("id", R.drawable.u2_2);//passa para o fragment o id do assunto
+                        assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
+                        assunto_frag.setArguments(args);
+                        fragmentTransaction = fragmentManager.beginTransaction();
+                        fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
+                    }
+                }
+
+                return false;
             }
-            return true;
-        }else{
-            return super.onKeyDown(keycode, event);
+        }).
+                build();
+
+    }
+
+    public void popular_menu_assuntos(){
+        int u1, u2, u3, u4, u5;
+        u1 = 100;
+        u2 = 200;
+        u3 = 300;
+        u4 = 400;
+        u5 = 500;
+        for(Map.Entry<String, List<String>> key : dadosGrupos.entrySet()){
+            String a = key.getKey();
+            Log.i("Top", a);
+            for(String c : key.getValue()) {
+                if (a.equals("Unidade 1 - Conceitos Básicos")) {
+                    unidade_filho = new SecondaryDrawerItem().withName(c).withLevel(2).withIdentifier(++u1);
+                    unidade1.withSubItems(unidade_filho);
+                } else if (a.equals("Unidade 2 - Linguagens Regulares")) {
+                    unidade_filho = new SecondaryDrawerItem().withName(c).withLevel(2).withIdentifier(++u2);
+                    unidade2.withSubItems(unidade_filho);
+                } else if (a.equals("Unidade 3 - Gramática")) {
+                    unidade_filho = new SecondaryDrawerItem().withName(c).withLevel(2).withIdentifier(++u3);
+                    unidade3.withSubItems(unidade_filho);
+                } else if (a.equals("Unidade 4 - Linguagens Livre do Contexto")) {
+                    unidade_filho = new SecondaryDrawerItem().withName(c).withLevel(2).withIdentifier(++u4);
+                    unidade4.withSubItems(unidade_filho);
+                } else if (a.equals("Unidade 5 - Máquina de Turing")) {
+                    unidade_filho = new SecondaryDrawerItem().withName(c).withLevel(2).withIdentifier(++u5);
+                    unidade5.withSubItems(unidade_filho);
+                }
+            }
         }
     }
 
     @Override
-    public void onBackPressed() {
+    public boolean onQueryTextSubmit(String query) {
+        //drawer.getOnDrawerItemClickListener().onItemClick(this, 0, dra);
+        Log.i("b", query);
+        adapter.buscar(query);
+        return false;
+    }
 
-        if(mDrawerLayout.isDrawerOpen(Gravity.LEFT)){
-            mDrawerLayout.closeDrawer(Gravity.LEFT);
-        }else{
-            super.onBackPressed();
-        }
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        Log.i("b2", newText);
+        return false;
     }
 }

@@ -2,6 +2,7 @@ package com.uninorte.equipeprojeto.lfa;
 
 import android.content.Context;
 import android.graphics.Typeface;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,9 @@ import android.widget.TextView;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.ArrayList;
+
 
 /**
  * LFA - Educ@.
@@ -120,12 +124,12 @@ public class MyAdapter extends BaseExpandableListAdapter{
         /*if (childPosition == 0) {
             ((ImageView) convertView.findViewById(R.id.img_hijo)).setImageResource(R.mipmap.ic_launcher);
         }*/
-        int valor = 0;
-        valor = this._datosGrupos.get(this._grupos.get(groupPosition)).size();
-        //Asignamos a todos la misma imagen
-        for(int x = 0; x < valor; x++){
-            ((ImageView) convertView.findViewById(R.id.img_hijo)).setImageResource(R.mipmap.ic_lfa1);
-        }
+//        int valor = 0;
+//        valor = this._datosGrupos.get(this._grupos.get(groupPosition)).size();
+//        //Asignamos a todos la misma imagen
+//        for(int x = 0; x < valor; x++){
+//            ((ImageView) convertView.findViewById(R.id.img_hijo)).setImageResource(R.mipmap.ic_lfa1);
+//        }
 
 
         TextView a = (TextView) convertView.findViewById(R.id.lblListItem);
@@ -137,4 +141,28 @@ public class MyAdapter extends BaseExpandableListAdapter{
     public boolean isChildSelectable(int groupPosition, int childPosition) {
         return true;
     }
+
+    public void buscar(String query){
+        query = query.toLowerCase();
+
+        if(query.isEmpty()){
+            Log.i("msg", "ta vazio");
+        }else{
+            for(Map.Entry<String, List<String>> chave : _datosGrupos.entrySet()){
+                for(String c : chave.getValue()){
+                    if(c.toLowerCase().contains(query)){
+
+                        Log.i("Busca", "encontrou "+ query);
+
+
+                    }
+                }
+            }
+        }
+
+        notifyDataSetChanged();
+
+
+    }
+
 }

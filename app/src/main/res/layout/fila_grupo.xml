@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="left|center"
     android:paddingTop="0dip"
     android:stretchColumns="1"
-    android:background="#ffffff">
+    android:background="#ffffff"
+    tools:backgroundTint="@drawable/abc_btn_borderless_material">
 
-    <TableRow>
+    <TableRow android:background="@drawable/abc_btn_borderless_material"
+        tools:background="@drawable/abc_btn_borderless_material"
+        app:backgroundTint="@drawable/abc_btn_borderless_material"
+        tools:backgroundTintMode="screen"
+        app:backgroundTintMode="screen">
 
         <ImageView
             android:id="@+id/image2"
@@ -36,7 +43,7 @@
             </TableRow>
 
 
-            <TableRow>
+            <TableRow android:background="@drawable/abc_btn_borderless_material">
 
                 <TextView
                     android:id="@+id/text2"
@@ -61,7 +68,7 @@
                 android:layout_marginRight="5dp"
                 android:contentDescription="LFA-Educ@"
                 android:visibility="visible"
-                android:background="#73d6ef"/>
+                />
         </TableLayout>
     </TableRow>
 </TableLayout>
