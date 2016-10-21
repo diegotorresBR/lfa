@@ -281,7 +281,7 @@ public class MainActivity extends ActionBarActivity {
                             mTitle = "Unidade 2";
                             break;
                         case 8:
-                            args.putString("id", "unit29.html");//passa para o fragment o id do assunto
+                            args.putString("id", "unit30.html");//passa para o fragment o id do assunto
                             assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                             assunto_frag.setArguments(args);
                             fragmentTransaction = fragmentManager.beginTransaction();
@@ -290,13 +290,30 @@ public class MainActivity extends ActionBarActivity {
                             mTitle = "Unidade 2";
                             break;
                         case 9:
-                            Toast.makeText(getApplicationContext(), "2.10.Automatos com Movimentos Vazios", Toast.LENGTH_SHORT).show();
+                            args.putString("id", "unit29.html");//passa para o fragment o id do assunto
+                            assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
+                            assunto_frag.setArguments(args);
+                            fragmentTransaction = fragmentManager.beginTransaction();
+                            fragmentTransaction.replace(R.id.frame_container, assunto_frag).commit();
                             mDrawerTitle = "2.10.Automatos com Movimentos Vazios";
                             mTitle = "Unidade 2";
                             break;
                         case 10:
-                            Toast.makeText(getApplicationContext(), "2.11.Linguagem regular", Toast.LENGTH_SHORT).show();
-                            mDrawerTitle = "2.11.Linguagem regular";
+                            args.putString("id", "unit41.html");//passa para o fragment o id do assunto
+                            assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
+                            assunto_frag.setArguments(args);
+                            fragmentTransaction = fragmentManager.beginTransaction();
+                            fragmentTransaction.replace(R.id.frame_container, assunto_frag).commit();
+                            mDrawerTitle = "2.11.Linguagem Regular";
+                            mTitle = "Unidade 2";
+                            break;
+                        case 11:
+                            args.putString("id", "unit42.html");//passa para o fragment o id do assunto
+                            assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
+                            assunto_frag.setArguments(args);
+                            fragmentTransaction = fragmentManager.beginTransaction();
+                            fragmentTransaction.replace(R.id.frame_container, assunto_frag).commit();
+                            mDrawerTitle = "2.12.Expressão Regular";
                             mTitle = "Unidade 2";
                             break;
 
@@ -368,7 +385,39 @@ public class MainActivity extends ActionBarActivity {
                             fragmentTransaction.replace(R.id.frame_container, assunto_frag).commit();
                             mDrawerTitle = "3.7.Gramática linear unitária a esquerda";
                             mTitle = "Unidade 3";
+
                             break;
+                        case 7:
+                            args.putString("id", "unit38.html");//passa para o fragment o id do assunto
+                            assunto_frag = new Assunto();
+                            assunto_frag.setArguments(args);
+                            fragmentTransaction = fragmentManager.beginTransaction();
+                            fragmentTransaction.replace(R.id.frame_container, assunto_frag).commit();
+                            mDrawerTitle = "3.8.Autômato Finito com saída";
+                            mTitle = "Unidade 3";
+
+                            break;
+                        case 8:
+                            args.putString("id", "unit39.html");//passa para o fragment o id do assunto
+                            assunto_frag = new Assunto();
+                            assunto_frag.setArguments(args);
+                            fragmentTransaction = fragmentManager.beginTransaction();
+                            fragmentTransaction.replace(R.id.frame_container, assunto_frag).commit();
+                            mDrawerTitle = "3.9.Máquina de Mealy";
+                            mTitle = "Unidade 3";
+
+                            break;
+                        case 9:
+                            args.putString("id", "unit40.html");//passa para o fragment o id do assunto
+                            assunto_frag = new Assunto();
+                            assunto_frag.setArguments(args);
+                            fragmentTransaction = fragmentManager.beginTransaction();
+                            fragmentTransaction.replace(R.id.frame_container, assunto_frag).commit();
+                            mDrawerTitle = "3.10.Máquina de Moore";
+                            mTitle = "Unidade 3";
+
+                            break;
+
                         default:
                             break;
                     }
@@ -377,41 +426,41 @@ public class MainActivity extends ActionBarActivity {
                 if(grup_pos == 3) {
                     switch (subgrupo_pos) {
                         case 0:
-                            args.putString("id", "unit32.html");//passa para o fragment o id do assunto
+                            args.putString("id", "unit43.html");//passa para o fragment o id do assunto
                             assunto_frag = new Assunto();
                             assunto_frag.setArguments(args);
                             fragmentTransaction = fragmentManager.beginTransaction();
                             fragmentTransaction.replace(R.id.frame_container, assunto_frag).commit();
-                            mDrawerTitle = "Aplicações";
+                            mDrawerTitle = "4.1.Aplicações";
                             mTitle = "Unidade 4";
 
                         case 1:
-                            args.putString("id", "unit32.html");//passa para o fragment o id do assunto
+                            args.putString("id", "unit44.html");//passa para o fragment o id do assunto
                             assunto_frag = new Assunto();
                             assunto_frag.setArguments(args);
                             fragmentTransaction = fragmentManager.beginTransaction();
                             fragmentTransaction.replace(R.id.frame_container, assunto_frag).commit();
-                            mDrawerTitle = "Automato com Pilha";
+                            mDrawerTitle = "4.2.Automato com Pilha";
                             mTitle = "Unidade 4";
                             break;
 
                         case 2:
-                            args.putString("id", "unit32.html");//passa para o fragment o id do assunto
+                            args.putString("id", "unit45.html");//passa para o fragment o id do assunto
                             assunto_frag = new Assunto();
                             assunto_frag.setArguments(args);
                             fragmentTransaction = fragmentManager.beginTransaction();
                             fragmentTransaction.replace(R.id.frame_container, assunto_frag).commit();
-                            mDrawerTitle = "Gramatica Livre do Contexto";
+                            mDrawerTitle = "4.3.Gramática Livre do Contexto";
                             mTitle = "Unidade 4";
                             break;
 
                         case 3:
-                            args.putString("id", "unit32.html");//passa para o fragment o id do assunto
+                            args.putString("id", "unit46.html");//passa para o fragment o id do assunto
                             assunto_frag = new Assunto();
                             assunto_frag.setArguments(args);
                             fragmentTransaction = fragmentManager.beginTransaction();
                             fragmentTransaction.replace(R.id.frame_container, assunto_frag).commit();
-                            mDrawerTitle = "Algoritmos de Reconhecimento";
+                            mDrawerTitle = "4.4.Algoritmos de Reconhecimento";
                             mTitle = "Unidade 4";
                             break;
                         default:
@@ -421,40 +470,51 @@ public class MainActivity extends ActionBarActivity {
                         if(grup_pos == 3) {
                             switch (subgrupo_pos) {
                                 case 0:
-                                    args.putString("id", "unit32.html");//passa para o fragment o id do assunto
+                                    args.putString("id", "unit47.html");//passa para o fragment o id do assunto
                                     assunto_frag = new Assunto();
                                     assunto_frag.setArguments(args);
                                     fragmentTransaction = fragmentManager.beginTransaction();
                                     fragmentTransaction.replace(R.id.frame_container, assunto_frag).commit();
-                                    mDrawerTitle = "Aplicações";
-                                    mTitle = "Unidade 4";
+                                    mDrawerTitle = "5.1.Definição";
+                                    mTitle = "Unidade 5";
                                 case 1:
-                                    args.putString("id", "unit32.html");//passa para o fragment o id do assunto
+                                    args.putString("id", "unit48.html");//passa para o fragment o id do assunto
                                     assunto_frag = new Assunto();
                                     assunto_frag.setArguments(args);
                                     fragmentTransaction = fragmentManager.beginTransaction();
                                     fragmentTransaction.replace(R.id.frame_container, assunto_frag).commit();
-                                    mDrawerTitle = "Modelo";
+                                    mDrawerTitle = "5.2.Modelo";
                                     mTitle = "Unidade 5";
                                     break;
                                 case 2:
-                                    args.putString("id", "unit32.html");//passa para o fragment o id do assunto
+                                    args.putString("id", "unit49.html");//passa para o fragment o id do assunto
                                     assunto_frag = new Assunto();
                                     assunto_frag.setArguments(args);
                                     fragmentTransaction = fragmentManager.beginTransaction();
                                     fragmentTransaction.replace(R.id.frame_container, assunto_frag).commit();
-                                    mDrawerTitle = "Definição Formal";
+                                    mDrawerTitle = "5.3.Definição formal";
                                     mTitle = "Unidade 5";
                                     break;
                                 case 3:
-                                    args.putString("id", "unit32.html");//passa para o fragment o id do assunto
+                                    args.putString("id", "unit50.html");//passa para o fragment o id do assunto
                                     assunto_frag = new Assunto();
                                     assunto_frag.setArguments(args);
                                     fragmentTransaction = fragmentManager.beginTransaction();
                                     fragmentTransaction.replace(R.id.frame_container, assunto_frag).commit();
-                                    mDrawerTitle = "Processamento";
+                                    mDrawerTitle = "5.4.Processamento";
                                     mTitle = "Unidade 5";
                                     break;
+                                case 4:
+                                    args.putString("id", "unit51.html");//passa para o fragment o id do assunto
+                                    assunto_frag = new Assunto();
+                                    assunto_frag.setArguments(args);
+                                    fragmentTransaction = fragmentManager.beginTransaction();
+                                    fragmentTransaction.replace(R.id.frame_container, assunto_frag).commit();
+                                    mDrawerTitle = "5.5.Decidibilidade";
+                                    mTitle = "Unidade 5";
+                                    break;
+
+
 
                                 default:
                                     break;

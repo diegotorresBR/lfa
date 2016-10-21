@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width; user-scalable=0;"/>
+    <h2><p>3.10.Máquina de Moore</p></h2>
+</head>
+<body>
+<h5>
+    <p ALIGN = "justify"> <font face="Arial">Uma Máquina de Moore M é um autômato finito
+        determinístico com saídas associadas aos estados. É representado por uma héptupla:</font> <br /> </p>
+    <p ALIGN = "center">M = (Σ, Q, δ, q0, F, , δS), onde:</p>
+    <ul>
+        <li>Σ é um alfabeto de símbolos de entrada.</li>
+        <li>Q é um conjunto de estados possíveis do autômato, o qual é finito.</li>
+        <li>δ é a função programa ou de transição δ: QxΣ _ Q</li>
+        <li>q0 é o estado inicial do autômato, tal que q0 é elemento de Q</li>
+        <li>F é um conjunto de estados finais tal que F está contido em Q.</li>
+        <li> é um alfabeto de símbolos de saída.</li>
+        <li>δS é a função de saída δS: Q →,* a qual é uma função total.</li>
+    </ul>
+    <p ALIGN = "justify">O processamento de uma Máquina de Moore para uma dada entrada w consiste na sucessiva aplicação
+        da função programa para cada símbolo de w (da esquerda para a direita), até ocorrer uma condição de parada.</p>
+    <p ALIGN = "justify">A palavra vazia como saída da função programa indica que nenhuma gravação é realizada e portanto a cabeça da fita de saída não se move.</p>
+    <p ALIGN = "justify">Se todos os estados geram saída vazia, então a Máquina de Moore se comporta como se fosse um autômato finito.</p>
+    <p ALIGN = "justify">Um exemplo comum da aplicação de Máquinas de Moore são analisadores léxicos de compiladores ou tradutores de linguagens em geral.</p>
+    <p ALIGN = "justify">Basicamente um analisador léxico é um autômato finito (em geral determinístico) que identifica os componentes básicos da linguagem, tais como identificadores, números, separadores, etc. Máquina de Moore como Analisador Léxico</p>
+    <p ALIGN = "justify">A máquina de Moore encontra aplicação na área de compiladores, especificamente em analisadores léxicos.</p>
+    <p align="justify">Equivalência das Máquinas de Moore e de Mealy As máquinas de Mealy e de Moore são equivalentes.</p>
+</h5>
+</body>
+</html>

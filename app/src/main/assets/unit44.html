@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width; user-scalable=0;"/>
+    <h2><p>4.2.Automato com Pilha</p></h2>
+    <style rel="stylesheet">
+        ul.none{
+        list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+<h5>]
+    <p align="justify"> <font face="Arial">É similar ao Autômato Finito, incluindo uma pilha como memória auxiliar e a facilidade de não-determinístico. A pilha é independente da fita de entrada e não possui limite máximo de tamanho. Estruturalmente sua principal característica é que o ultimo símbolo gravado é o primeiro a ser lido, como ilustrado na figura abaixo.</font></p>
+    <p><img src="4.2AutComPilha.jpg" align="center"></p>
+    <p align="justify"> <font face="Arial">A base de uma pilha é fixa e define o seu início. O topo é variável e define a posição do último símbolo gravado.</font></p>
+    <p align="justify"> <font face="Arial">A facilidade de não-determinístico é importante e necessária, pois aumenta o poder computacional dos Autômatos com Pilha, permitindo reconhecer exatamente a Classe das Linguagens Livres do Contexto. Por exemplo, o reconhecimento da linguagem:</font></p>
+    <p align="center">{WW^r | w é a palavra sobre {a, b }}</p>
+    <p align="justify">só é possível por um Autômato com Pilha Não-Determinístico.</p>
+    <p align="justify"><h6>Definição do Autômato com Pilha</h6></p>
+    <p align="justify">O modelo Autômato com Pilha possui duas definições universalmente aceitas que diferem no critério de parada do autômato, como segue:</p>
+    <ul>
+        <li>O valor inicial da pilha é vazio e o autômato para e aceita ao atingir um estado final.</li>
+        <li>A pilha contém, inicialmente, um símbolo especial denominado símbolo inicial da pilha. Não existem estados finais e o autômato pára aceitando quando a pilha estiver vazia.</li>
+    </ul>
+    <p align="justify"> <font face="Arial">Um Autômato com Pilha ou Autômato com Pilha Não-Determinístico é composto, basicamente, por quatro partes, como segue:</font></p>
+    <ul>
+        <li><b>Pilha:</b> memoria auxiliar que pode ser usada livremente para leitura e gravação;</li>
+        <li><b>Unidade de Controle:</b> reflete o estado corrente da máquina. Possui uma cabeça de fita e uma cabeça de pilha.</li>
+        <li><b>Programa ou Função de Transição:</b> comanda a leitura da fita, leitura e gravação da pilha e define o estado da máquina.</li>
+    </ul>
+    <p align="justify"> <font face="Arial">A unidade de controle possui um número finito e predefinidos de estados. Possui uma cabeça fita e uma cabeça de pilha, como segue:</font></p>
+    <ul>
+        <li><b>Cabeça da Fita:</b> unidade de leitura a qual acessa a célula da fita de cada vez e movimenta-se exclusivamente para a direita.</li>
+        <li><b>Cabeça da Pilha:</b> unidade de leitura e gravação a qual move para a esquerda (ou para cima) ao gravar e para a direita (ou para baixo) ao ler um símbolo. Acessa um símbolo de cada vez, estando sempre posicionado no topo. A leitura exclui símbolo lido.</li>
+    </ul>
+    <p align="justify">Um Autômato com Pilha Não-Determinístico (APN) ou simplesmente Autômato com Pilha (AP) é uma 6-upla:</p>
+    <p align="center">M = ( ∑, Q, δ, q_0, F, V)</p>
+    <p align="justify">Onde:</p>
+    <ul class="none">
+        <li>∑   alfabeto de símbolo de entrada;</li>
+        <li>Q   conjunto de estados possíveis do autômato o qual é finito;</li>
+        <li>δ   função programa ou de função de transição;</li>
+    </ul>
+    <p align="center">δ: Q x (∑ Ս {ε, ?}) x (V Ս {ε, ?}) → 2^(Q×v^* )</p>
+    <p align="justify">a qual é uma função parcial;</p>
+    <p><img src="4.2.1AutComPilha.jpg" align="center"></p>
+    <ul class="none">
+        <li>q_0 estado inicial do autômato tal que q_0  é o elemento de Q;</li>
+        <li>F conjunto de estados finais tal que F está contido em Q;</li>
+        <li>V alfabeto auxiliar ou alfabeto pilha.</li>
+    </ul>
+    <p align="justfy"><h6>Autômato com Pilha e Linguagens Livres do Contexto</h6></p>
+    <p align="justify"> <font face="Arial">A classe das linguagens reconhecidas pelos Autômatos com pilha é igual à Classes das Linguagens Livres do Contexto. A demonstração apresentada a seguir é dividida em dois teoremas. O primeiro teorema apresenta a construção de um AP a partir de uma GLC qualquer, permitindo estabelecer as seguintes conclusões.</font></p>
+    <ul>
+        <li>A construção de reconhecedor para uma Linguagem Livre do Contexto a partir de sua gramatica é simples e imediata;</li>
+        <li>Qualquer Linguagem Livres do Contexto pode ser reconhecida por um Autômato com Pilha com somente um estado de controle logico, o que significa que a facilidade de memorização de informação através de estados não aumenta o poder computacional dos AP.</li>
+    </ul>
+
+</h5>
+</body>
+</html>
