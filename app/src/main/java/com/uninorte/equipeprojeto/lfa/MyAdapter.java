@@ -2,6 +2,7 @@ package com.uninorte.equipeprojeto.lfa;
 
 import android.content.Context;
 import android.graphics.Typeface;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -20,12 +22,16 @@ public class MyAdapter extends BaseExpandableListAdapter{
     private final Context _context;
     private List<String> _grupos, temp_hijos;
     private HashMap<String, List<String>> _datosGrupos;
+    private ArrayList<String> grupotList;
+    private ArrayList<String> originalList;
 
     public MyAdapter(Context _context, List<String> _grupos, HashMap<String, List<String>> _datosGrupos) {
         this._context = _context;
         this._grupos = _grupos;
         this._datosGrupos = _datosGrupos;
     }
+
+
 
 
     @Override

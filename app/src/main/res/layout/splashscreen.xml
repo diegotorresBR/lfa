@@ -6,14 +6,11 @@
 
     <ImageView
         android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
+        android:layout_width="750dp"
+        android:layout_height="900dp"
+        android:src="@drawable/ic_launcher2"
         android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:src="@drawable/ic_launcher"
-        />
+        android:layout_alignParentEnd="true" />
 
 
 
