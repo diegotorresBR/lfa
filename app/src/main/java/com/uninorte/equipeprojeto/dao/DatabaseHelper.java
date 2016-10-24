@@ -43,20 +43,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("insert into unidade(_id, txt_titulo, txt_descricao) values (4, 'Unidade 4', 'Unidade 4 é referente a Gramática Livre do Contexto')");
         db.execSQL("insert into unidade(_id, txt_titulo, txt_descricao) values (5, 'Unidade 5', 'Unidade 5 é referente a Máquina de Turing')");
 //        insert da tabela perguntas
-        db.execSQL("insert into perguntas(_id, id_unidade, txt_pergunta) values (1, '1', 'Quem roeu a rede do rei de roma?')");
-        db.execSQL("insert into perguntas(_id, id_unidade, txt_pergunta) values (2, '1', 'E o pintinho?')");
+//        db.execSQL("insert into perguntas(_id, id_unidade, txt_pergunta) values (1, '1', 'Quem roeu a rede do rei de roma?')");
+//        db.execSQL("insert into perguntas(_id, id_unidade, txt_pergunta) values (2, '1', 'E o pintinho?')");
         db.execSQL("insert into perguntas(_id, id_unidade, txt_pergunta) values (3, '1', 'O que significa LFA?')");
 
 //        inserts da tabela resposta
-        db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Rato'    , 'true' , '1')");
-        db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Gato'    , 'false', '1')");
-        db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Cachorro', 'false', '1')");
-        db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Leão'    , 'false', '1')");
-
-        db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Piu'  , 'true' , '2')");
-        db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Au Au', 'false', '2')");
-        db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Beeh' , 'false', '2')");
-        db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Miau' , 'false', '2')");
+//        db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Rato'    , 'true' , '1')");
+//        db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Gato'    , 'false', '1')");
+//        db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Cachorro', 'false', '1')");
+//        db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Leão'    , 'false', '1')");
+//
+//        db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Piu'  , 'true' , '2')");
+//        db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Au Au', 'false', '2')");
+//        db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Beeh' , 'false', '2')");
+//        db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Miau' , 'false', '2')");
 
         db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Linguagens Formais e Autômatos', 'true' , '3')");
         db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Inteligência Artificial'       , 'false', '3')");
