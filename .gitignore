@@ -1,0 +1,10 @@
+*.lock
+
+*.bin
+dir_to_ignore/
+build/
+bin/
+gradle/
+idea/
+.gradle
+build

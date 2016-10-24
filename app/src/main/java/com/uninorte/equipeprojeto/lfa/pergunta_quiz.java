@@ -21,7 +21,10 @@ import com.uninorte.equipeprojeto.dao.RespostaDAO;
 import com.uninorte.equipeprojeto.model.Pergunta;
 import com.uninorte.equipeprojeto.model.Resposta;
 import com.uninorte.equipeprojeto.util.Mensagem;
+
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Pergunta_quiz extends Fragment {
     //
@@ -75,14 +78,16 @@ public class Pergunta_quiz extends Fragment {
         radioButtonletraD = (RadioButton) view.findViewById(R.id.letraD);
         radioGroup        = (RadioGroup)  view.findViewById(R.id.radioGroup);
         //
-        buttonProximo = (Button) view.findViewById(R.id.buttonProximo);
-        buttonCancelar =(Button) view.findViewById(R.id.buttonCancelar);
+        buttonProximo =  (Button) view.findViewById(R.id.buttonProximo);
+        buttonCancelar = (Button) view.findViewById(R.id.buttonCancelar);
         //inicializa a variavel perguntaDAO com toda a instancia do banco de dados da tabela Pergunta.
         perguntaDAO  = new PerguntaDAO(getActivity());
         //carrega a variavel perguntaList com todas as perguntas.a
         perguntaList = perguntaDAO.ListarPergunta();
         // perguntaAdapter =  new PerguntaAdapter(getActivity(), perguntaList);
         //
+
+        carregarPerguntasAleatorias(perguntaList, 0);// teste para random passando 0 como quiz geral
 
         for (Pergunta perg : perguntaList) {
 
@@ -283,6 +288,29 @@ public class Pergunta_quiz extends Fragment {
                 }
                 contadorPosicaoAtual++;//incrementa a posicao atual da pergunta.
             }
+        }
+    }
+
+    private void carregarPerguntasAleatorias(List<Pergunta> listaPerguntas, int idUnidade)
+    {
+        //define o tamanho da lista
+        int sizeLista = listaPerguntas.size();
+        //a listaAux  é uma nova instancia de arrayList de pergunta. Porque a linguagem java proporciona este tipo de herança. Caso eu desejasse implementar new List<> teria que implementar todos os metodos desta extensao
+        List<Pergunta> listaAux = new ArrayList<Pergunta>();
+
+        Random random = new Random();
+
+
+        for (Pergunta pergunta : listaPerguntas)
+        {
+            if (listaPerguntas.size() > 0) {
+                int teste = random.nextInt(listaPerguntas.size() - 1) + 1;
+            }
+            //so vai entrar nesta condição caso
+            if (!listaAux.contains(pergunta))
+
+            //vai rodar x vezes. Enquanto rodar add na lista auxiliar
+            listaAux.add(pergunta);
         }
     }
 }

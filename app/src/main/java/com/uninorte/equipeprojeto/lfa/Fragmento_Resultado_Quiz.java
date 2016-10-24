@@ -37,6 +37,7 @@ public class Fragmento_Resultado_Quiz extends Fragment {
     //
     private Button buttonRefazer;
     private Button buttonInicio;
+    private Button buttonCompartilhar;
     //
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,14 +47,13 @@ public class Fragmento_Resultado_Quiz extends Fragment {
         textViewResultadoQuiz = (TextView)view.findViewById(R.id.textViewResultadoQuiz);
         buttonRefazer = (Button)view.findViewById(R.id.buttonRefazer);
         buttonInicio = (Button) view.findViewById(R.id.buttonInicio);
-        //
-
+        buttonCompartilhar = (Button) view.findViewById(R.id.buttonCompartilhar);
         //
         args = new Bundle();
         fragmentManager = getFragmentManager();
         mDrawerTitle = getActivity().getTitle();
         //
-        Bundle a = getArguments();
+        final Bundle a = getArguments();
         int res = a.getInt("id");//obtem o id da imagem do assunto selecionado
         quantidade_questoes_certas = a.getInt("quantidade_questoes_certas");
         total_de_questoes_padrao   = a.getInt("total_de_questoes_padrao");
@@ -93,6 +93,17 @@ public class Fragmento_Resultado_Quiz extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), MainActivity.class);
                 startActivity(intent);
+            }
+        });
+        //
+        buttonCompartilhar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent sharingIntent = new Intent(Intent.ACTION_SEND);
+                sharingIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.quiz_geral));
+                sharingIntent.putExtra(Intent.EXTRA_TEXT, textViewResultadoQuiz.getText() );
+                sharingIntent.setType("text/plain");
+                startActivity(Intent.createChooser(sharingIntent, getString(R.string.compartilhar)));
             }
         });
         //

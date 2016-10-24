@@ -23,17 +23,28 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:padding="20dp"
-        android:layout_marginBottom="70dp"
+        android:layout_marginBottom="100dp"
         android:text="@string/refazer"
         />
+
     <Button
         android:id="@+id/buttonInicio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:padding="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="50dp"
         android:text="@string/inicio"
+        />
+
+<Button
+    android:id="@+id/buttonCompartilhar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:padding="20dp"
+        android:layout_marginBottom="1dp"
+    android:text="@string/compartilhar"
         />
 
 
