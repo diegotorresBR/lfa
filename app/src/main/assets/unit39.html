@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width; user-scalable=0;"/>
+    <h2><p>3.9.Máquina de Mealy</p></h2>
+</head>
+<body>
+<h5>
+    <p ALIGN = "justify"> <font face="Arial">Uma máquina de Mealy M é um autômato finito determinístico com saídas associadas às transições. É representada por uma sêxtupla:</font> <br /> </p>
+    <p ALIGN = "center">M = (Σ, Q, δ, q0, F, _), onde:</p>
+    <ul>
+        <li>Σ é um alfabeto de símbolos de entrada.</li>
+        <li>Q é um conjunto de estados possíveis do autômato, o qual é finito.</li>
+        <li>δ é a função programa ou de transição δ: QxΣ → Qx*</li>
+        <li>q0 é o estado inicial do autômato, tal que q0 é elemento de Q</li>
+        <li>F é um conjunto de estados finais tal que F está contido em Q.</li>
+        <li> é um alfabeto de símbolos de saída.</li>
+    </ul>
+    <p ALIGN = "justify">O processamento de uma Máquina de Mealy para uma dada entrada w consiste na sucessiva
+        aplicação da função programa para cada símbolo de w (da esquerda para a direita), até ocorrer uma condição de parada.</p>
+    <p ALIGN = "justify">A palavra vazia como saída da função programa indica que nenhuma gravação é realizada e portanto a cabeça da fita de saída não se move.</p>
+    <p ALIGN = "justify">Se todas as transições geram saída vazia, então a Máquina de Mealy se comporta como se fosse um autômato finito.</p>
+    <p ALIGN = "justify">Exemplo: Máquina de Mealy </p>
+    <p ALIGN = "justify">Representação de um diálogo entre o computador e seu usuário tratando algumas situações típicas que cria e atualiza arquivos.</p>
+    <p ALIGN = "justify">Adotou-se a seguinte simbologia:</p>
+    <ul>
+        <li>< ... > Entrada fornecida pelo usuário ( em um teclado por exemplo ).</li>
+        <li>" ... " Saída gerada pelo programa ( em um vídeo, por exemplo ).</li>
+        <li>[ ... ] Ação interna ao programa, sem comunicação com o usuário.</li>
+        <li>( ... ) Resultado de uma ação interna ao programa - usado como entrada no grafo.</li>
+    </ul>
+    <p align="justify">A máquina de Mealy M = (Σ, {q0, q1, ..., q8, qf}, δ, q0, {qf}, ) ilustrada na figura a seguir
+        , onde Σ =  e representam o conjunto de símbolos (palavras do português) válidos no diálogo.</p>
+    <p><img src="3.9Maqmealy.jpg" align="center"></p>
+</h5>
+</body>
+</html>

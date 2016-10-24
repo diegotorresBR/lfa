@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width; user-scalable=0;"/>
+    <h2><p>2.12.Expressão Regular</p></h2>
+</head>
+<body>
+<h5>]
+    <p ALIGN = "justify"> <font face="Arial">As linguagens regulares podem ser representadas usando uma notação denominada expressão regular. Uma expressão regular utiliza apenas símbolos terminais e alguns caracteres especiais (metacaracteres), sendo que estes têm a função de especificar a quantidade de vezes que um termina ou grupo de símbolos terminais se repetem dentro da formação de uma palavra pertencente à linguagem.</font></p>
+    <p align="justify"><b>Definição.</b> A definição formal de uma expressão regular pode ser feita recursivamente da seguinte maneira:</p>
+    <ul>
+        <li>Se <b>x</b> é um terminal, x é expressão regular.</li>
+        <li>Se <b>r</b> e <b>s</b> são expressões regulares, então r+s é expressão regular. O sinal + indica que tanto r ou s formam palavras válidas</li>
+        <li>Se <b>r</b> e <b>s</b> são expressões regulares, então rs é expressão regular, onde as palavras são formadas pela concatenação de <b>r</b> e <b>s</b>.</li>
+        <li>Se <b>r</b> é expressão regular, <b>r*</b> denota a expressão regular onde <b>r</b> é repetida zero ou mais veze</li>
+        <li>Se <b>r</b> é expressão regular, <b>r+</b> denota a expressão regular onde <b>r</b> é repetida uma ou mais vezes. Portanto <b>r+ = rr*</b></li>
+        <li>Utilizam-se parêntesis para agrupar símbolos que se repetem conjuntamente.</li>
+    </ul>
+    <p align="justify">Exemplos:</p>
+    <ul>
+        <li>ab*a denota L = {aa, aba, abba, abbba, ...}, isto é, L = { w | w inicia com um a seguido de zero ou mais <b>b</b>’s e termina com um <b>a</b>}</li>
+        <li>a(bc)*a denota L = {aa, abca, abcbca, abcbcbca, ...}, isto é, L = { w | w inicia-se com um <b>a</b> seguido de zero ou mais seqüências de <b>bc</b> e termina com <b>a</b>}</li>
+    </ul>
+
+</h5>
+</body>
+</html>
