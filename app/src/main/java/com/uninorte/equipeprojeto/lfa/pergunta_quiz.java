@@ -51,7 +51,13 @@ public class Pergunta_quiz extends Fragment {
     //É setado o valor 0 para identificar que é a primeira vez em que é realizada a pergunta.
     int contadorPergunta             = 0;
     int contadorDeQuestoesCertas     = 0;//indica a quantidade de perguntas acertadas pelo usuário
-    int total_de_questoes_padrao     = 12;
+    public static final int total_de_questoes_padrao     = 7;
+    public static final int unidadeQuizGeral = 0;
+    public static final int unidade1 = 1;
+    public static final int unidade2 = 2;
+    public static final int unidade3 = 3;
+    public static final int unidade4 = 4;
+    public static final int unidade5 = 5;
     //
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
@@ -59,8 +65,6 @@ public class Pergunta_quiz extends Fragment {
     Fragmento_Resultado_Quiz fragmento_resultado_quiz;
     private CharSequence mDrawerTitle;//Preciso falar?
     private CharSequence mTitle;
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -86,53 +90,53 @@ public class Pergunta_quiz extends Fragment {
         perguntaList = perguntaDAO.ListarPergunta();
         // perguntaAdapter =  new PerguntaAdapter(getActivity(), perguntaList);
         //
+//        teste dijon
+        carregarPerguntasAleatorias(unidadeQuizGeral);// teste para random passando 0 como quiz geral
 
-        carregarPerguntasAleatorias(perguntaList, 0);// teste para random passando 0 como quiz geral
-
-        for (Pergunta perg : perguntaList) {
-
-            //aqui é realizado o teste
-            if (contadorPergunta == 0) {
-                textViewPergunta.setText(perg.getTxt_pergunta());
-                respostaDAO = new RespostaDAO(getActivity());
-                respostaList = respostaDAO.ListarRespostaPorId(perg.get_id());
-                int contador = 0;
-
-                for (Resposta resp : respostaList) {
-                    switch (contador) {
-                        case 0:
-                            radioButtonletraA.setText(resp.getTxt_resposta());
-                            contador++;
-                            contadorPergunta++;
-                            if (resp.getFlag_verdadeiro().toString().equals("true")) {
-                                marcarRespostaCerta(true, false, false, false);
-                            }
-                            continue;
-                        case 1:
-                            radioButtonletraB.setText(resp.getTxt_resposta());
-                            contador++;
-                            if (resp.getFlag_verdadeiro().toString().equals("true")) {
-                                marcarRespostaCerta(false, true, false, false);
-                            }
-                            continue;
-                        case 2:
-                            radioButtonletraC.setText(resp.getTxt_resposta());
-                            contador++;
-                            if (resp.getFlag_verdadeiro().toString().equals("true")) {
-                                marcarRespostaCerta(false, false, true, false);
-                            }
-                            continue;
-                        case 3:
-                            radioButtonletraD.setText(resp.getTxt_resposta());
-                            contador++;
-                            if (resp.getFlag_verdadeiro().toString().equals("true")) {
-                                marcarRespostaCerta(false, false, false, true);
-                            }
-                            continue;
-                    }
-                }
-            }
-        }
+//        for (Pergunta perg : perguntaList) {
+//
+//            //aqui é realizado o teste
+//            if (contadorPergunta == 0) {
+//                textViewPergunta.setText(perg.getTxt_pergunta());
+//                respostaDAO = new RespostaDAO(getActivity());
+//                respostaList = respostaDAO.ListarRespostaPorId(perg.get_id());
+//                int contador = 0;
+//
+//                for (Resposta resp : respostaList) {
+//                    switch (contador) {
+//                        case 0:
+//                            radioButtonletraA.setText(resp.getTxt_resposta());
+//                            contador++;
+//                            contadorPergunta++;
+//                            if (resp.getFlag_verdadeiro().toString().equals("true")) {
+//                                marcarRespostaCerta(true, false, false, false);
+//                            }
+//                            continue;
+//                        case 1:
+//                            radioButtonletraB.setText(resp.getTxt_resposta());
+//                            contador++;
+//                            if (resp.getFlag_verdadeiro().toString().equals("true")) {
+//                                marcarRespostaCerta(false, true, false, false);
+//                            }
+//                            continue;
+//                        case 2:
+//                            radioButtonletraC.setText(resp.getTxt_resposta());
+//                            contador++;
+//                            if (resp.getFlag_verdadeiro().toString().equals("true")) {
+//                                marcarRespostaCerta(false, false, true, false);
+//                            }
+//                            continue;
+//                        case 3:
+//                            radioButtonletraD.setText(resp.getTxt_resposta());
+//                            contador++;
+//                            if (resp.getFlag_verdadeiro().toString().equals("true")) {
+//                                marcarRespostaCerta(false, false, false, true);
+//                            }
+//                            continue;
+//                    }
+//                }
+//            }
+//        }
 
         //
 //        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -291,26 +295,87 @@ public class Pergunta_quiz extends Fragment {
         }
     }
 
-    private void carregarPerguntasAleatorias(List<Pergunta> listaPerguntas, int idUnidade)
+    private void carregarPerguntasAleatorias(int idUnidade)
     {
-        //define o tamanho da lista
-        int sizeLista = listaPerguntas.size();
         //a listaAux  é uma nova instancia de arrayList de pergunta. Porque a linguagem java proporciona este tipo de herança. Caso eu desejasse implementar new List<> teria que implementar todos os metodos desta extensao
         List<Pergunta> listaAux = new ArrayList<Pergunta>();
-
-        Random random = new Random();
-
-
-        for (Pergunta pergunta : listaPerguntas)
+        Pergunta perguntaAleatoria = new Pergunta();
+        Random numeroAleatorio = new Random();
+        //inicializa a variavel perguntaDAO com toda a instancia do banco de dados da tabela Pergunta.
+        perguntaDAO  = new PerguntaDAO(getActivity());
+        //carrega a variavel perguntaList com todas as perguntas.a
+        perguntaList = perguntaDAO.ListarPergunta();
+        //
+        while (contadorPergunta <= total_de_questoes_padrao)
         {
-            if (listaPerguntas.size() > 0) {
-                int teste = random.nextInt(listaPerguntas.size() - 1) + 1;
-            }
-            //so vai entrar nesta condição caso
-            if (!listaAux.contains(pergunta))
+            if (perguntaList.size() > 0)
+            {
+                int idAleatorio = numeroAleatorio.nextInt(perguntaList.size() - 1) + 1;
 
-            //vai rodar x vezes. Enquanto rodar add na lista auxiliar
-            listaAux.add(pergunta);
+                perguntaAleatoria = perguntaDAO.buscarPerguntaPorId(idAleatorio);
+                if (perguntaAleatoria.get_id() == null)
+                {
+                    perguntaAleatoria = perguntaDAO.buscarPerguntaPorId(idAleatorio+1);
+                }
+                //aqui é realizado o teste
+                if (contadorPergunta == 0) {
+                    textViewPergunta.setText(perguntaAleatoria.getTxt_pergunta());
+                    respostaDAO  = new RespostaDAO(getActivity());
+                    respostaList = respostaDAO.ListarRespostaPorId(perguntaAleatoria.get_id());
+                    int contador = 0;
+
+                    for (Resposta resp : respostaList) {
+                        switch (contador) {
+                            case 0:
+                                radioButtonletraA.setText(resp.getTxt_resposta());
+                                contador++;
+                                contadorPergunta++;
+                                if (resp.getFlag_verdadeiro().toString().equals("true")) {
+                                    marcarRespostaCerta(true, false, false, false);
+                                }
+                                continue;
+                            case 1:
+                                radioButtonletraB.setText(resp.getTxt_resposta());
+                                contador++;
+                                if (resp.getFlag_verdadeiro().toString().equals("true")) {
+                                    marcarRespostaCerta(false, true, false, false);
+                                }
+                                continue;
+                            case 2:
+                                radioButtonletraC.setText(resp.getTxt_resposta());
+                                contador++;
+                                if (resp.getFlag_verdadeiro().toString().equals("true")) {
+                                    marcarRespostaCerta(false, false, true, false);
+                                }
+                                continue;
+                            case 3:
+                                radioButtonletraD.setText(resp.getTxt_resposta());
+                                contador++;
+                                if (resp.getFlag_verdadeiro().toString().equals("true")) {
+                                    marcarRespostaCerta(false, false, false, true);
+                                }
+                                continue;
+                        }
+                    }
+                    return;
+                }
+            }
         }
+//------------------------------------------------------------------------
+//        for (Pergunta pergunta : listaPerguntas)
+//        {
+//            if (listaPerguntas.size() > 0) {
+//                int idAleatorio = numeroAleatorio.nextInt(listaPerguntas.size() - 1) + 1;
+//                perguntaAleatoria.set_id(idAleatorio);
+//
+//            }
+//
+//
+//            //so vai entrar nesta condição caso
+//            if (!listaAux.contains(pergunta))
+//
+//            //vai rodar x vezes. Enquanto rodar add na lista auxiliar
+//            listaAux.add(pergunta);
+//        }
     }
 }
