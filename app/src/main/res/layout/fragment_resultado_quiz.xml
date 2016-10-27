@@ -1,0 +1,51 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#077751"
+    tools:context="com.uninorte.equipeprojeto.lfa.Fragmento_Resultado_Quiz">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/textViewResultadoQuiz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="15dp"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:text="@string/quiz" />
+
+    <Button
+        android:id="@+id/buttonRefazer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:padding="20dp"
+        android:layout_marginBottom="100dp"
+        android:text="@string/refazer"
+        />
+
+    <Button
+        android:id="@+id/buttonInicio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:padding="20dp"
+        android:layout_marginBottom="50dp"
+        android:text="@string/inicio"
+        />
+
+<Button
+    android:id="@+id/buttonCompartilhar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:padding="20dp"
+        android:layout_marginBottom="1dp"
+    android:text="@string/compartilhar"
+        />
+
+
+</FrameLayout>
