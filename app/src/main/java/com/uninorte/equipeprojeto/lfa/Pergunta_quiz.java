@@ -242,7 +242,7 @@ public class Pergunta_quiz extends Fragment {
                 fragmento_resultado_quiz = new Fragmento_Resultado_Quiz();//é necesário instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                 fragmento_resultado_quiz.setArguments(args);
                 fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.frame_container, fragmento_resultado_quiz).commit();
+                fragmentTransaction.replace(R.id.frame_container2, fragmento_resultado_quiz).commit();
                 mDrawerTitle = getString(R.string.quiz);
                // mTitle = getString(R.string.resultado_quiz);
                 return;

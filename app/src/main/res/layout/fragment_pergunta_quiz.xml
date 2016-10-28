@@ -14,6 +14,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:padding="15dp"
+            android:textColor="@color/md_black_1000"
             android:text="@string/pergunta_do_quiz"
             android:textStyle="bold"/>
 
@@ -30,6 +31,7 @@
                 android:layout_height="wrap_content"
                 android:padding="15dp"
                 android:text="@string/letraA"
+                android:textColor="@color/md_black_1000"
                 android:layout_marginBottom="10dp"/>
 
             <RadioButton
@@ -38,6 +40,7 @@
                 android:layout_height="wrap_content"
                 android:padding="15dp"
                 android:text="@string/letraB"
+                android:textColor="@color/md_black_1000"
                 android:layout_marginBottom="10dp"/>
 
 
@@ -47,6 +50,7 @@
                 android:layout_height="wrap_content"
                 android:padding="15dp"
                 android:text="@string/letraC"
+                android:textColor="@color/md_black_1000"
                 android:layout_marginBottom="10dp"/>
 
 
@@ -56,6 +60,7 @@
                 android:layout_height="wrap_content"
                 android:padding="15dp"
                 android:text="@string/letraD"
+                android:textColor="@color/md_black_1000"
                 android:layout_marginBottom="10dp"/>
 
 

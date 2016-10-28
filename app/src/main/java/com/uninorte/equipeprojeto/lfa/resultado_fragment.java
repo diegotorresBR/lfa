@@ -1,12 +1,18 @@
 package com.uninorte.equipeprojeto.lfa;
 
+import android.app.Fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
+
+import com.uninorte.equipeprojeto.model.Conteudo;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -24,8 +30,9 @@ public class resultado_fragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
 
     // TODO: Rename and change types of parameters
-    private String mParam1;
+    private List<Conteudo> mParam1;
     private String mParam2;
+    private ListView lv;
 
     private OnFragmentInteractionListener mListener;
 
@@ -55,7 +62,7 @@ public class resultado_fragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
+
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
@@ -64,7 +71,19 @@ public class resultado_fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_resultado_fragment, container, false);
+        View rootview = inflater.inflate(R.layout.search_resultado, container, false);
+        lv = (ListView) rootview.findViewById(R.id.listView);
+
+        mParam1 = new ArrayList<Conteudo>();
+        mParam1 = (ArrayList<Conteudo>) getArguments().getSerializable("lista");
+
+        SerachAdapter serachAdapter = new SerachAdapter(getActivity(), (ArrayList<Conteudo>) mParam1, getFragmentManager());
+        lv.setAdapter(serachAdapter);
+
+
+
+
+        return rootview;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

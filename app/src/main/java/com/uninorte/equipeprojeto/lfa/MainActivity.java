@@ -35,7 +35,9 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SectionDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
+import com.uninorte.equipeprojeto.model.Conteudo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -67,7 +69,9 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
     Bundle args;
+    List<Conteudo> conteudos, conteudos_resultado;
     Assunto assunto_frag;
+    Pergunta_quiz quizz;
     AccountHeader header;
     ExpandableDrawerItem unidade1, unidade2, unidade3, unidade4, unidade5;
     SecondaryDrawerItem unidade_filho;
@@ -491,7 +495,8 @@ popular_menu_assuntos();
                 addDrawerItems(
                         new PrimaryDrawerItem().withName("Inicio").withDescription("Comece Aqui").withIdentifier(1).withSelectable(true),
                         new SectionDrawerItem().withName("Aprender"),
-                        unidade1, unidade2, unidade3, unidade4, unidade5
+                        unidade1, unidade2, unidade3, unidade4, unidade5,
+                        new PrimaryDrawerItem().withName("Quiz").withIdentifier(2).withSelectable(true)
                 ).withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener(){
 
 
@@ -672,6 +677,12 @@ popular_menu_assuntos();
                         assunto_frag.setArguments(args);
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
+                    }if(drawerItem.getIdentifier() == 2){
+
+                        quizz = new Pergunta_quiz();
+                        fragmentTransaction = fragmentManager.beginTransaction();
+                        fragmentTransaction.replace(R.id.frame_container2, quizz).commit();
+
                     }
                 }
 
@@ -683,12 +694,20 @@ popular_menu_assuntos();
     }
 
     public void popular_menu_assuntos(){
-        int u1, u2, u3, u4, u5;
+        Integer u1, u2, u3, u4, u5;
         u1 = 100;
         u2 = 200;
         u3 = 300;
         u4 = 400;
         u5 = 500;
+
+        conteudos = new ArrayList<Conteudo>();
+        Conteudo assuntos;// = new Conteudo();
+        String s1 = "unit";
+        String s2, temp, sfi;
+        String sfinal = ".html";
+
+
         for(Map.Entry<String, List<String>> key : dadosGrupos.entrySet()){
             String a = key.getKey();
             Log.i("Top", a);
@@ -696,15 +715,52 @@ popular_menu_assuntos();
                 if (a.equals("Unidade 1 - Conceitos Básicos")) {
                     unidade_filho = new SecondaryDrawerItem().withName(c).withLevel(2).withIdentifier(++u1);
                     unidade1.withSubItems(unidade_filho);
+
+                    assuntos = new Conteudo();
+                    assuntos.setConteudo(c);
+                    temp = u1.toString();
+                    s2 = temp.substring(2);
+                    sfi = s1.concat("1") + s2 + sfinal;
+                    Log.i("saida", sfi);
+                    assuntos.setPagina(sfi);
+                    conteudos.add(assuntos);
+
                 } else if (a.equals("Unidade 2 - Linguagens Regulares")) {
                     unidade_filho = new SecondaryDrawerItem().withName(c).withLevel(2).withIdentifier(++u2);
                     unidade2.withSubItems(unidade_filho);
+
+                    assuntos = new Conteudo();
+                    assuntos.setConteudo(c);
+                    temp = u2.toString();
+                    s2 = temp.substring(2);
+                    sfi = s1.concat("2") + s2 + sfinal;
+                    Log.i("saida", sfi);
+                    assuntos.setPagina(sfi);
+                    conteudos.add(assuntos);
                 } else if (a.equals("Unidade 3 - Gramática")) {
                     unidade_filho = new SecondaryDrawerItem().withName(c).withLevel(2).withIdentifier(++u3);
                     unidade3.withSubItems(unidade_filho);
+
+                    assuntos = new Conteudo();
+                    assuntos.setConteudo(c);
+                    temp = u3.toString();
+                    s2 = temp.substring(2);
+                    sfi = s1.concat("3") + s2 + sfinal;
+                    Log.i("saida", sfi);
+                    assuntos.setPagina(sfi);
+                    conteudos.add(assuntos);
                 } else if (a.equals("Unidade 4 - Linguagens Livre do Contexto")) {
                     unidade_filho = new SecondaryDrawerItem().withName(c).withLevel(2).withIdentifier(++u4);
                     unidade4.withSubItems(unidade_filho);
+
+                    assuntos = new Conteudo();
+                    assuntos.setConteudo(c);
+                    temp = u4.toString();
+                    s2 = temp.substring(2);
+                    sfi = s1.concat("4") + s2 + sfinal;
+                    Log.i("saida", sfi);
+                    assuntos.setPagina(sfi);
+                    conteudos.add(assuntos);
                 } else if (a.equals("Unidade 5 - Máquina de Turing")) {
                     unidade_filho = new SecondaryDrawerItem().withName(c).withLevel(2).withIdentifier(++u5);
                     unidade5.withSubItems(unidade_filho);
@@ -717,7 +773,20 @@ popular_menu_assuntos();
     public boolean onQueryTextSubmit(String query) {
         //drawer.getOnDrawerItemClickListener().onItemClick(this, 0, dra);
         Log.i("b", query);
-        adapter.buscar(query);
+        //adapter.buscar(query);
+        conteudos_resultado = new ArrayList<Conteudo>();
+        conteudos_resultado = adapter.popular_assuntos(conteudos, query);
+
+        resultado_fragment resultado = new resultado_fragment();
+        args.putSerializable("lista", (Serializable) conteudos_resultado);
+        resultado.setArguments(args);
+
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frame_container2, resultado);
+        //fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+
+
         return false;
     }
 

@@ -8,7 +8,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import com.uninorte.equipeprojeto.model.Conteudo;
 
 import java.util.HashMap;
 import java.util.List;
@@ -24,11 +27,13 @@ public class MyAdapter extends BaseExpandableListAdapter{
     private final Context _context;
     private List<String> _grupos, temp_hijos;
     private HashMap<String, List<String>> _datosGrupos;
+    private List<Conteudo> conteudos_aux;
 
     public MyAdapter(Context _context, List<String> _grupos, HashMap<String, List<String>> _datosGrupos) {
         this._context = _context;
         this._grupos = _grupos;
         this._datosGrupos = _datosGrupos;
+        conteudos_aux = new ArrayList<Conteudo>();
     }
 
 
@@ -154,7 +159,6 @@ public class MyAdapter extends BaseExpandableListAdapter{
 
                         Log.i("Busca", "encontrou "+ query);
 
-
                     }
                 }
             }
@@ -162,6 +166,41 @@ public class MyAdapter extends BaseExpandableListAdapter{
 
         notifyDataSetChanged();
 
+
+    }
+
+    public List<Conteudo> popular_assuntos(List<Conteudo> conteudo, String query){
+
+        List<Conteudo> c = new ArrayList<Conteudo>();
+        c = conteudo;
+        query = query.toLowerCase();
+        conteudos_aux.clear();
+
+        Conteudo conteudo1 = null;
+
+        if(query.isEmpty()){
+            Log.i("msg", "ta vazio");
+        }else{
+
+            for(int x=0; x<c.size();x++){
+                    if(c.get(x).getConteudo().toLowerCase().contains(query)){
+
+                        conteudo1 = new Conteudo();
+                        conteudo1.setConteudo(c.get(x).getConteudo());
+                        conteudo1.setPagina(c.get(x).getPagina());
+                        conteudos_aux.add(conteudo1);
+
+                        Log.i("Busca", "encontrou "+ c.get(x).getConteudo());
+
+                    }
+
+            }
+
+
+
+        }
+
+        return conteudos_aux;
 
     }
 
