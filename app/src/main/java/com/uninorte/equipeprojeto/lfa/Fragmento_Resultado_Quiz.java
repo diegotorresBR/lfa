@@ -82,7 +82,7 @@ public class Fragmento_Resultado_Quiz extends Fragment {
                 fragmento_pergunta_quiz = new Pergunta_quiz();//é necesário instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                 fragmento_pergunta_quiz.setArguments(args);
                 fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.frame_container, fragmento_pergunta_quiz).commit();
+                fragmentTransaction.replace(R.id.frame_container2, fragmento_pergunta_quiz).commit();
             }
         });
         //
