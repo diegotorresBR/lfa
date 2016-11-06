@@ -71,11 +71,18 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     Bundle args;
     List<Conteudo> conteudos, conteudos_resultado;
     Assunto assunto_frag;
-    Pergunta_quiz quizz;
+    Pergunta_quiz quiz;
     AccountHeader header;
     ExpandableDrawerItem unidade1, unidade2, unidade3, unidade4, unidade5;
     SecondaryDrawerItem unidade_filho;
     Drawer drawer;
+    //referente as chamadas das unidades para o quiz -- novo
+    public static final int quiz_unidade_geral  = 0;
+    public static final int quiz_unidade_1      = 1;
+    public static final int quiz_unidade_2      = 2;
+    public static final int quiz_unidade_3      = 3;
+    public static final int quiz_unidade_4      = 4;
+    public static final int quiz_unidade_5      = 5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -678,11 +685,13 @@ popular_menu_assuntos();
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
                     }if(drawerItem.getIdentifier() == 2){
-
-                        quizz = new Pergunta_quiz();
+                        //args.putInt repetir "unidade" e digitar quiz_unidade e escolher a constante da unidade -- novo
+                        args.putInt("unidade", quiz_unidade_geral);
+                        quiz = new Pergunta_quiz();
+                        //setar o argumento antes -- novo
+                        quiz.setArguments(args);
                         fragmentTransaction = fragmentManager.beginTransaction();
-                        fragmentTransaction.replace(R.id.frame_container2, quizz).commit();
-
+                        fragmentTransaction.replace(R.id.frame_container2, quiz).commit();
                     }
                 }
 

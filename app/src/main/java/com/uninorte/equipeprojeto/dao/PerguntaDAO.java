@@ -38,8 +38,8 @@ public class PerguntaDAO {
 
     public List<Pergunta> ListarPergunta() {
         Cursor cursor = getDatabase().query(DatabaseHelper.Perguntas.TABELA
-                , DatabaseHelper.Perguntas.COLUNAS
-                , null, null, null, null, null);
+                                            , DatabaseHelper.Perguntas.COLUNAS
+                                            , null, null, null, null, null);
         List<Pergunta> perguntas = new ArrayList<Pergunta>();
         while (cursor.moveToNext()) {
             Pergunta model = criarPergunta(cursor);
@@ -48,7 +48,20 @@ public class PerguntaDAO {
         cursor.close();
         return perguntas;
     }
-
+    public List<Pergunta> ListarPerguntaPorUnidade(int idUnidade) {
+        Cursor cursor = getDatabase().query(DatabaseHelper.Respostas.TABELA
+                                            , DatabaseHelper.Respostas.COLUNAS
+                                            , "id_unidade = ?"
+                                            , new String[]{Integer.toString(idUnidade)}
+                                            , null, null, null);
+        List<Pergunta> perguntas = new ArrayList<Pergunta>();
+        while (cursor.moveToNext()){
+            Pergunta model = criarPergunta(cursor);
+            perguntas.add(model);
+        }
+        cursor.close();
+        return perguntas;
+    }
     public long salvarPergunta(Pergunta pergunta) {
         ContentValues valores = new ContentValues();
         valores.put(DatabaseHelper.Perguntas.ID_UNIDADE, pergunta.getId_unidade());//voltar aqui

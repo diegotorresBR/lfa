@@ -50,7 +50,7 @@ public class RespostaDAO {
         return respostas;
     }
 
-    public List<Resposta> ListarRespostaPorId(int id) {
+    public List<Resposta> ListarRespostaPorIDPergunta(int id) {
         Cursor cursor = getDatabase().query(DatabaseHelper.Respostas.TABELA
                                             , DatabaseHelper.Respostas.COLUNAS
                                             , "id_pergunta = ?"

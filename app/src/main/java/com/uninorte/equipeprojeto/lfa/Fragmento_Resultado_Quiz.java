@@ -25,6 +25,7 @@ public class Fragmento_Resultado_Quiz extends Fragment {
     private TextView textViewResultadoQuiz;
     int quantidade_questoes_certas=0;
     int total_de_questoes_padrao=0;
+    int unidadeParametro;
     int media=0;//media para avaliar como foi o desempenho do usuário
     //
     FragmentManager fragmentManager;
@@ -56,6 +57,7 @@ public class Fragmento_Resultado_Quiz extends Fragment {
         int res = a.getInt("id");//obtem o id da imagem do assunto selecionado
         quantidade_questoes_certas = a.getInt("quantidade_questoes_certas");
         total_de_questoes_padrao   = a.getInt("total_de_questoes_padrao");
+        unidadeParametro = a.getInt("unidade");
         String acertos = " Você obteve "+quantidade_questoes_certas+" Acertos.";
 
 
@@ -79,6 +81,7 @@ public class Fragmento_Resultado_Quiz extends Fragment {
             @Override
             public void onClick(View v) {
                 args.putBoolean("refazer", true);
+                args.putInt("unidade", unidadeParametro);
                 fragmento_pergunta_quiz = new Pergunta_quiz();//é necesário instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                 fragmento_pergunta_quiz.setArguments(args);
                 fragmentTransaction = fragmentManager.beginTransaction();
