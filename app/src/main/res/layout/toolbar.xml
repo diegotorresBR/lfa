@@ -8,11 +8,11 @@
     android:layout_height="wrap_content">
 
 
-
         <item
             android:id="@+id/search"
             android:icon="@android:drawable/ic_menu_search"
             android:title="aaa"
             app:showAsAction="collapseActionView|ifRoom"
             />
+
 </android.support.v7.widget.Toolbar>
