@@ -54,8 +54,7 @@ import java.util.Map;
     padrao para a exibiçao de conteudo e outro para a exibicao do quiz.
 
  */
-public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener, resultado_fragment.OnFragmentInteractionListener {
-
+public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener , resultado_fragment.OnFragmentInteractionListener {
     private Toolbar toolbar;
     private DrawerLayout mDrawerLayout;//Menu Lateral
     private ExpandableListView mDrawerExpandableList;//Lista dos Subtopicos
@@ -82,7 +81,6 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.novo_main);
-
         args = new Bundle();
         fragmentManager = getFragmentManager();
         toolbar = (Toolbar) findViewById(R.id.toolbar2);
@@ -100,34 +98,35 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
 //
 //        carregarDados();
 //
-        if (toolbar != null) {
-            toolbar.setTitle(mDrawerTitle);
-            toolbar.setSubtitle(mTitle);
-            toolbar.setLogo(R.mipmap.ic_lfa1);
+//        if (toolbar != null) {
+//            toolbar.setTitle(mDrawerTitle);
+//            toolbar.setSubtitle(mTitle);
+//            toolbar.setLogo(R.mipmap.ic_lfa1);
         setSupportActionBar(toolbar);
-            getSupportActionBar().setDisplayShowHomeEnabled(true);
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        }
-
-       mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close) {
-
-            @Override
-            public void onDrawerClosed(View view) {
-
-                getSupportActionBar().setTitle(mDrawerTitle);
-                getSupportActionBar().setSubtitle(mTitle);
-                invalidateOptionsMenu();
-            }
-
-            @Override
-            public void onDrawerOpened(View drawerView) {
-
-                getSupportActionBar().setTitle("Menu");
-                getSupportActionBar().setSubtitle("Selecione uma opção");
-                invalidateOptionsMenu();
-
-            }
-        };
+//            getSupportActionBar().setDisplayShowHomeEnabled(true);
+//            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        }
+//
+//       mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close) {
+//
+//            @Override
+//            public void onDrawerClosed(View view) {
+//
+//
+//                getSupportActionBar().setTitle(mDrawerTitle);
+//                getSupportActionBar().setSubtitle(mTitle);
+//                invalidateOptionsMenu();
+//            }
+//
+//            @Override
+//            public void onDrawerOpened(View drawerView) {
+//
+//                getSupportActionBar().setTitle("Menu");
+//                getSupportActionBar().setSubtitle("Selecione uma opção");
+//                invalidateOptionsMenu();
+//
+//            }
+//        };
 //
 //        mDrawerToggle.setDrawerIndicatorEnabled(true);//Mostrar icono menu animado
 //        mDrawerLayout.setDrawerListener(mDrawerToggle);
@@ -157,6 +156,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
 //        mDrawerExpandableList.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
 
     }
+
     private void carregarDados() {
 
         grupos = new ArrayList<String>();
@@ -167,7 +167,6 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         grupos.add("Unidade 3 - Gramática");
         grupos.add("Unidade 4 - Linguagens Livre do Contexto");
         grupos.add("Unidade 5 - Máquina de Turing");
-
 
 
         List<String> filhos_grupo1 = new ArrayList<String>();
@@ -230,10 +229,9 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         adapter = new MyAdapter(this, grupos, dadosGrupos);
         //mDrawerExpandableList.setAdapter(adapter);
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // INFLA O MENU E ADICIONA OS ITEMS
+        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         final SearchView searchView = (SearchView) MenuItemCompat.getActionView(menu.findItem(R.id.action_search));
         SearchManager searchManager = (SearchManager) getSystemService(SEARCH_SERVICE);
@@ -264,28 +262,28 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
 //        mDrawerToggle.syncState();
 //    }
 //
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-        mDrawerToggle.onConfigurationChanged(newConfig);
-    }
+//    @Override
+//    public void onConfigurationChanged(Configuration newConfig) {
+//        super.onConfigurationChanged(newConfig);
+//        mDrawerToggle.onConfigurationChanged(newConfig);
+//    }
+//
+//
+//    public boolean onKeyDown (int keycode, KeyEvent event){
+//        if (keycode == KeyEvent.KEYCODE_MENU) {
+//
+//            if (mDrawerLayout.isDrawerOpen(Gravity.LEFT)) {
+//                mDrawerLayout.closeDrawer(Gravity.LEFT);
+//            } else {
+//                mDrawerLayout.openDrawer(Gravity.LEFT);
+//            }
+//            return true;
+//        }else{
+//            return super.onKeyDown(keycode, event);
+//        }
+//    }
 
-
-    public boolean onKeyDown (int keycode, KeyEvent event){
-        if (keycode == KeyEvent.KEYCODE_MENU) {
-
-            if (mDrawerLayout.isDrawerOpen(Gravity.LEFT)) {
-                mDrawerLayout.closeDrawer(Gravity.LEFT);
-            } else {
-                mDrawerLayout.openDrawer(Gravity.LEFT);
-            }
-            return true;
-        }else{
-            return super.onKeyDown(keycode, event);
-        }
-    }
-
-    public void criar_drawer(){
+    public void criar_drawer() {
         unidade1 = new ExpandableDrawerItem().withName("Conceitos Basicos");
         unidade2 = new ExpandableDrawerItem().withName("Linguagens Regulares");
         unidade3 = new ExpandableDrawerItem().withName("Gramatica");
@@ -300,230 +298,265 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
                         new PrimaryDrawerItem().withName("Inicio").withDescription("Comece Aqui").withIdentifier(1).withSelectable(true),
                         new SectionDrawerItem().withName("Aprender"),
                         unidade1, unidade2, unidade3, unidade4, unidade5,
-                        new PrimaryDrawerItem().withName("Quiz").withIdentifier(2).withSelectable(true)
-                ).withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener(){
-
+                        new PrimaryDrawerItem().withName("Quiz").withIdentifier(2).withSelectable(true),
+                        new SectionDrawerItem().withName("Sobre")
+                ).withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
 
 
             @Override
             public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
                 //////////////////////////////////////////////////UNIDADE 01 /////////////////////////////////////////////
-                if(drawerItem != null){
-                    if(drawerItem.getIdentifier() == 101){
+                if (drawerItem != null) {
+                    if (drawerItem.getIdentifier() == 101) {
                         args.putString("id", "unit11.html");//passa para o fragment o id do assunto
                         assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                         assunto_frag.setArguments(args);
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
-                    }if(drawerItem.getIdentifier() == 102){
+                    }
+                    if (drawerItem.getIdentifier() == 102) {
                         args.putString("id", "unit12.html");//passa para o fragment o id do assunto
                         assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                         assunto_frag.setArguments(args);
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
-                    }if(drawerItem.getIdentifier() == 103){
+                    }
+                    if (drawerItem.getIdentifier() == 103) {
                         args.putString("id", "unit13.html");//passa para o fragment o id do assunto
                         assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                         assunto_frag.setArguments(args);
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
-                    }if(drawerItem.getIdentifier() == 104) {
+                    }
+                    if (drawerItem.getIdentifier() == 104) {
                         args.putString("id", "unit14.html");//passa para o fragment o id do assunto
                         assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                         assunto_frag.setArguments(args);
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
                         //////////////////////////////////////////////////UNIDADE 02 /////////////////////////////////////////////
-                    }if(drawerItem.getIdentifier() == 201){
+                    }
+                    if (drawerItem.getIdentifier() == 201) {
                         args.putString("id", "unit21.html");//passa para o fragment o id do assunto
                         assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                         assunto_frag.setArguments(args);
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
-                    }if(drawerItem.getIdentifier() == 202){
+                    }
+                    if (drawerItem.getIdentifier() == 202) {
                         args.putString("id", "unit22.html");//passa para o fragment o id do assunto
                         assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                         assunto_frag.setArguments(args);
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
-                    }if(drawerItem.getIdentifier() == 203){
+                    }
+                    if (drawerItem.getIdentifier() == 203) {
                         args.putString("id", "unit23.html");//passa para o fragment o id do assunto
                         assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                         assunto_frag.setArguments(args);
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
-                    }if(drawerItem.getIdentifier() == 204){
+                    }
+                    if (drawerItem.getIdentifier() == 204) {
                         args.putString("id", "unit24.html");//passa para o fragment o id do assunto
                         assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                         assunto_frag.setArguments(args);
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
-                    }if(drawerItem.getIdentifier() == 205){
+                    }
+                    if (drawerItem.getIdentifier() == 205) {
                         args.putString("id", "unit25.html");//passa para o fragment o id do assunto
                         assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                         assunto_frag.setArguments(args);
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
-                    }if(drawerItem.getIdentifier() == 206){
+                    }
+                    if (drawerItem.getIdentifier() == 206) {
                         args.putString("id", "unit26.html");//passa para o fragment o id do assunto
                         assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                         assunto_frag.setArguments(args);
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
-                    }if(drawerItem.getIdentifier() == 207){
+                    }
+                    if (drawerItem.getIdentifier() == 207) {
                         args.putString("id", "unit27.html");//passa para o fragment o id do assunto
                         assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                         assunto_frag.setArguments(args);
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
-                    }if(drawerItem.getIdentifier() == 208){
+                    }
+                    if (drawerItem.getIdentifier() == 208) {
                         args.putString("id", "unit28.html");//passa para o fragment o id do assunto
                         assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                         assunto_frag.setArguments(args);
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
-                    }if(drawerItem.getIdentifier() == 209){
+                    }
+                    if (drawerItem.getIdentifier() == 209) {
                         args.putString("id", "unit29.html");//passa para o fragment o id do assunto
                         assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                         assunto_frag.setArguments(args);
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
-                    }if(drawerItem.getIdentifier() == 210){
+                    }
+                    if (drawerItem.getIdentifier() == 210) {
                         args.putString("id", "unit210.html");//passa para o fragment o id do assunto
                         assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                         assunto_frag.setArguments(args);
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
-                    }if(drawerItem.getIdentifier() == 211){
+                    }
+                    if (drawerItem.getIdentifier() == 211) {
                         args.putString("id", "unit211.html");//passa para o fragment o id do assunto
                         assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                         assunto_frag.setArguments(args);
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
-                    }if(drawerItem.getIdentifier() == 212){//BANCO DE DADOS
+                    }
+                    if (drawerItem.getIdentifier() == 212) {//BANCO DE DADOS
                         args.putString("id", "unit212.html");//passa para o fragment o id do assunto
                         assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                         assunto_frag.setArguments(args);
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
                         //////////////////////////////////////////////////UNIDADE 03 /////////////////////////////////////////////
-                    }if(drawerItem.getIdentifier() == 301){
+                    }
+                    if (drawerItem.getIdentifier() == 301) {
                         args.putString("id", "unit31.html");//passa para o fragment o id do assunto
                         assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                         assunto_frag.setArguments(args);
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
-                    }if(drawerItem.getIdentifier() == 302){
+                    }
+                    if (drawerItem.getIdentifier() == 302) {
                         args.putString("id", "unit32.html");//passa para o fragment o id do assunto
                         assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                         assunto_frag.setArguments(args);
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
-                    }if(drawerItem.getIdentifier() == 303){
+                    }
+                    if (drawerItem.getIdentifier() == 303) {
                         args.putString("id", "unit33.html");//passa para o fragment o id do assunto
                         assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                         assunto_frag.setArguments(args);
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
-                    }if(drawerItem.getIdentifier() == 304){
+                    }
+                    if (drawerItem.getIdentifier() == 304) {
                         args.putString("id", "unit34.html");//passa para o fragment o id do assunto
                         assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                         assunto_frag.setArguments(args);
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
-                    }if(drawerItem.getIdentifier() == 305){
+                    }
+                    if (drawerItem.getIdentifier() == 305) {
                         args.putString("id", "unit35.html");//passa para o fragment o id do assunto
                         assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                         assunto_frag.setArguments(args);
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
-                    }if(drawerItem.getIdentifier() == 306){
+                    }
+                    if (drawerItem.getIdentifier() == 306) {
                         args.putString("id", "unit36.html");//passa para o fragment o id do assunto
                         assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                         assunto_frag.setArguments(args);
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
-                    }if(drawerItem.getIdentifier() == 307){
+                    }
+                    if (drawerItem.getIdentifier() == 307) {
                         args.putString("id", "unit37.html");//passa para o fragment o id do assunto
                         assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                         assunto_frag.setArguments(args);
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
-                    }if(drawerItem.getIdentifier() == 308){
+                    }
+                    if (drawerItem.getIdentifier() == 308) {
                         args.putString("id", "unit38.html");//passa para o fragment o id do assunto
                         assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                         assunto_frag.setArguments(args);
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
-                    }if(drawerItem.getIdentifier() == 309){
+                    }
+                    if (drawerItem.getIdentifier() == 309) {
                         args.putString("id", "unit39.html");//passa para o fragment o id do assunto
                         assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                         assunto_frag.setArguments(args);
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
-                    }if(drawerItem.getIdentifier() == 310){
+                    }
+                    if (drawerItem.getIdentifier() == 310) {
                         args.putString("id", "unit310.html");//passa para o fragment o id do assunto
                         assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                         assunto_frag.setArguments(args);
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
                         ///////////////////////////////////UNIDADE 04///////////////////////////////////////////////
-                    }if(drawerItem.getIdentifier() == 401){
+                    }
+                    if (drawerItem.getIdentifier() == 401) {
                         args.putString("id", "unit41.html");//passa para o fragment o id do assunto
                         assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                         assunto_frag.setArguments(args);
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
-                    }if(drawerItem.getIdentifier() == 402){
+                    }
+                    if (drawerItem.getIdentifier() == 402) {
                         args.putString("id", "unit42.html");//passa para o fragment o id do assunto
                         assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                         assunto_frag.setArguments(args);
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
-                    }if(drawerItem.getIdentifier() == 403){
+                    }
+                    if (drawerItem.getIdentifier() == 403) {
                         args.putString("id", "unit43.html");//passa para o fragment o id do assunto
                         assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                         assunto_frag.setArguments(args);
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
-                    }if(drawerItem.getIdentifier() == 404){
+                    }
+                    if (drawerItem.getIdentifier() == 404) {
                         args.putString("id", "unit44.html");//passa para o fragment o id do assunto
                         assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                         assunto_frag.setArguments(args);
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
                         /////////////////////////////UNIDADE 05////////////////////
-                    }if(drawerItem.getIdentifier() == 501){
+                    }
+                    if (drawerItem.getIdentifier() == 501) {
                         args.putString("id", "unit51.html");//passa para o fragment o id do assunto
                         assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                         assunto_frag.setArguments(args);
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
-                    }if(drawerItem.getIdentifier() == 502){
+                    }
+                    if (drawerItem.getIdentifier() == 502) {
                         args.putString("id", "unit52.html");//passa para o fragment o id do assunto
                         assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                         assunto_frag.setArguments(args);
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
-                    }if(drawerItem.getIdentifier() == 503){
+                    }
+                    if (drawerItem.getIdentifier() == 503) {
                         args.putString("id", "unit53.html");//passa para o fragment o id do assunto
                         assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                         assunto_frag.setArguments(args);
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
-                    }if(drawerItem.getIdentifier() == 504){
+                    }
+                    if (drawerItem.getIdentifier() == 504) {
                         args.putString("id", "unit54.html");//passa para o fragment o id do assunto
                         assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                         assunto_frag.setArguments(args);
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
-                    }if(drawerItem.getIdentifier() == 505){
+                    }
+                    if (drawerItem.getIdentifier() == 505) {
                         args.putString("id", "unit55.html");//passa para o fragment o id do assunto
                         assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                         assunto_frag.setArguments(args);
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
-                    }if(drawerItem.getIdentifier() == 2){
+                    }
+                    if (drawerItem.getIdentifier() == 2) {
 
                         quizz = new Pergunta_quiz();
                         fragmentTransaction = fragmentManager.beginTransaction();
@@ -539,7 +572,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
 
     }
 
-    public void popular_menu_assuntos(){
+    public void popular_menu_assuntos() {
         Integer u1, u2, u3, u4, u5;
         u1 = 100;
         u2 = 200;
@@ -554,10 +587,10 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         String sfinal = ".html";
 
 
-        for(Map.Entry<String, List<String>> key : dadosGrupos.entrySet()){
+        for (Map.Entry<String, List<String>> key : dadosGrupos.entrySet()) {
             String a = key.getKey();
             Log.i("Top", a);
-            for(String c : key.getValue()) {
+            for (String c : key.getValue()) {
                 if (a.equals("Unidade 1 - Conceitos Básicos")) {
                     unidade_filho = new SecondaryDrawerItem().withName(c).withLevel(2).withIdentifier(++u1);
                     unidade1.withSubItems(unidade_filho);
@@ -642,41 +675,40 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         return false;
     }
 
-    @Override
-    public void onBackPressed() {
 
-        //
-        if(mDrawerLayout.isDrawerOpen(Gravity.LEFT)){
-            mDrawerLayout.closeDrawer(Gravity.LEFT);
-        }else{
-            super.onBackPressed();
+        @Override
+        public void onBackPressed() {
+            //POPUP AO SAIR DA APLICACAO
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Sair?");
+            builder.setMessage("Deseja realmente sair?");
+            builder.setPositiveButton("SIM", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface arg0, int arg1) {
+                    finish();
+                }
+
+            });
+
+            builder.setNegativeButton("NÃO", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface arg0, int arg1) {
+                }
+            });
+
+            AlertDialog alerta = builder.create();
+            alerta.show();
+
+            //
+//        if(mDrawerLayout.isDrawerOpen(Gravity.LEFT)){
+//            mDrawerLayout.closeDrawer(Gravity.LEFT);
+//        }else{
+//            super.onBackPressed();
+//        }
+
         }
-
-
-
-        //POPUP AO SAIR DA APLICACAO
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Sair?");
-        builder.setMessage("Deseja realmente sair?");
-        builder.setPositiveButton("SIM" , new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface arg0 , int arg1){
-                finish();
-            }
-
-        });
-
-        builder.setNegativeButton("NÃO" , new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface arg0 , int arg1) {
-            }
-        });
-
-        AlertDialog alerta = builder.create();
-        alerta.show();
-
-    }
 
     @Override
     public void onFragmentInteraction(Uri uri) {
 
     }
 }
+

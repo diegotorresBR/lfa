@@ -5,8 +5,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebSettings;
+
 
 /**
  * Created by Leandro on 24/09/2016.
@@ -27,9 +28,11 @@ public class Assunto extends Fragment {
         View rootView = inflater.inflate(R.layout.assunto_conteudo, container, false);
         Bundle a = getArguments();
         String res = a.getString("id");//obtem0 o id da imagem do assunto selecionado
-        webView= (WebView)rootView.findViewById(R.id.mybrowser);
+        webView = (WebView)rootView.findViewById(R.id.mybrowser);
+        WebSettings webSetting = webView.getSettings();
+        webView.getSettings().setBuiltInZoomControls(true);
+        webView.getSettings().setDisplayZoomControls(false);
         webView.loadUrl("file:///android_asset/"+res);
-
         return rootView;
 
     }
