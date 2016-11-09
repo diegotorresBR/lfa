@@ -273,10 +273,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('É formada sobre o fecho de Kleene de X e Y.', 'false', '32')       	");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('É formada pela união de X com Y.' 		   , 'false', '32')         ");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('É formada pela intercessão de X com Y.' 	   , 'false', '32')         ");
+
 //		------------------------------------------------------CIN05S1_LFA_Afonso_1CHAM_Prova
 
 //		--01
-
 		db.execSQL("insert into perguntas(_id, id_unidade, txt_pergunta) values (33, '2', 'Assinale a alternativa incorreta.'); 																									"
 				+" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A regra de produção A -> wB denota uma gramática linear à direita.' , 'false'  , '33');												"
 				+" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A regra de produção A -> Bw denota uma gramática linear à esquerda.' , 'false' , '33');                                               "
@@ -316,7 +316,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 				+" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('II e IV.' , 'false' , '37');          "
 		);
 //		--06
-
 		db.execSQL(" insert into perguntas(_id, id_unidade, txt_pergunta) values (38, '2', 'Com relação aos AFD’s é correto afirmar:');							        "
 				+" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A função de transição é uma função parcial de F e ∑.' , 'false'  , '38'); "
 				+" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('F é um conjunto de ∑*.' , 'false' , '38');                                "
@@ -325,7 +324,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 				+" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Podemos ter apenas um estado final.' , 'false' , '38');                   "
 		);
 //		--07
-
 		db.execSQL(" insert into perguntas(_id, id_unidade, txt_pergunta) values (39, '2', 'Assinale a alternativa correta.');																"
 				+" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('O estudo das linguagens formais é aplicado nos bancos de dados relacionais.' , 'false'  , '39');     "
 				+" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Um programa sintaticamente correto não possui erros de semântica.' , 'false' , '39');                "
@@ -334,7 +332,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 				+" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A sintaxe trata dos significados de uma linguagem.' , 'false' , '39');                               "
 		);
 //				--08
-
 		db.execSQL(" insert into perguntas(_id, id_unidade, txt_pergunta) values (40, '2', 'Assinale a alternativa incorreta.');																											"
 				+" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A unidade de controle de um autômato finito possui um número definido de estados.' , 'false'  , '40');                                                "
 				+" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('É possível um autômato finito gravar símbolos de entrada na fita.' , 'true' , '40');                                                                  "
@@ -343,7 +340,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 				+" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Um autômato finito constitui um modelo computacional do tipo seqüencial.' , 'false' , '40');                                                          "
 		);
 //		--09
-
 		db.execSQL(" insert into perguntas(_id, id_unidade, txt_pergunta) values (41, '2', 'Com relação aos autômatos com pilha, assinale a alternativa correta:');																												"
 				+" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A estrutura da pilha é suficiente como única memória, isto é, uma Linguagem Livre do Contexto pode ser reconhecida por um autômato com pilha com somente um estado.' , 'true'  , '41');   "
 				+" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A estrutura da pilha sempre deve ter o mesmo tamanho da fita de entrada.' , 'false' , '41');                                                                                              "
@@ -352,7 +348,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 				+" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('O alfabeto da pilha tem que ser, obrigatoriamente, diferente do alfabeto de entrada.' , 'false' , '41');                                                                                  "
 		);
 //		--10
-
 		db.execSQL(" insert into perguntas(_id, id_unidade, txt_pergunta) values (42, '2', 'Assinale a alternativa incorreta.');																	"
 				+" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Uma cadeia sem símbolos denota uma palavra válida.' , 'false'  , '42');                                       "
 				+" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Um programa sintaticamente correto pode possuir erros de semântica.' , 'false' , '42');                       "
@@ -360,7 +355,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 				+" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('O conjunto de símbolos que formam um alfabeto de uma linguagem possui tamanho limitado.' , 'false' , '42');   "
 				+" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A sintaxe manipula símbolos considerando os seus correspondentes significados.' , 'true' , '42');             "
 		);
-//
 
     }
 
