@@ -63,6 +63,15 @@
                 android:textColor="@color/md_black_1000"
                 android:layout_marginBottom="10dp"/>
 
+            <RadioButton
+                android:id="@+id/letraE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="@string/letraE"
+                android:textColor="@color/md_black_1000"
+                android:layout_marginBottom="10dp"/>
+
 
         </RadioGroup>
 

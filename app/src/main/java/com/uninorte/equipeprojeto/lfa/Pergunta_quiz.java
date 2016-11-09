@@ -32,11 +32,13 @@ public class Pergunta_quiz extends Fragment {
     private RadioButton radioButtonletraA
                         , radioButtonletraB
                         , radioButtonletraC
-                        , radioButtonletraD;
+                        , radioButtonletraD
+                        , radioButtonletraE;
     private boolean respostaCertaA
                         , respostaCertaB
                         , respostaCertaC
-                        , respostaCertaD = false;
+                        , respostaCertaD
+                        , respostaCertaE = false;
     private Button buttonProximo
                         , buttonCancelar;
     private TextView textViewPergunta;
@@ -52,7 +54,7 @@ public class Pergunta_quiz extends Fragment {
     //É setado o valor 0 para identificar que é a primeira vez em que é realizada a pergunta.
     int contadorPergunta             = 0;
     int contadorDeQuestoesCertas     = 0;//indica a quantidade de perguntas acertadas pelo usuário
-    public static final int total_de_questoes_padrao   =   4; //indica a quantidade de questões serão utilizadas no quiz
+    public static final int total_de_questoes_padrao = 10; //indica a quantidade de questões serão utilizadas no quiz
     //
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
@@ -79,6 +81,7 @@ public class Pergunta_quiz extends Fragment {
         radioButtonletraB = (RadioButton) view.findViewById(R.id.letraB);
         radioButtonletraC = (RadioButton) view.findViewById(R.id.letraC);
         radioButtonletraD = (RadioButton) view.findViewById(R.id.letraD);
+        radioButtonletraE = (RadioButton) view.findViewById(R.id.letraE);
         radioGroup        = (RadioGroup)  view.findViewById(R.id.radioGroup);
         buttonProximo     = (Button) view.findViewById(R.id.buttonProximo);
         buttonCancelar    = (Button) view.findViewById(R.id.buttonCancelar);
@@ -111,6 +114,11 @@ public class Pergunta_quiz extends Fragment {
                             contadorDeQuestoesCertas++;
                         }
                         break;
+                    case R.id.letraE:
+                        if (respostaCertaE) {
+                            contadorDeQuestoesCertas++;
+                        }
+                        break;
                 }
                 //
                  carregarPerguntasAleatorias(unidadeParametro);
@@ -130,12 +138,13 @@ public class Pergunta_quiz extends Fragment {
         return view;
     }
 
-    private void marcarRespostaCerta(boolean a, boolean b, boolean c, boolean d)
+    private void marcarRespostaCerta(boolean a, boolean b, boolean c, boolean d, boolean e)
     {
         respostaCertaA = a;
         respostaCertaB = b;
         respostaCertaC = c;
         respostaCertaD = d;
+        respostaCertaE = e;
     }
 
     private void carregarPerguntasAleatorias(int idUnidade)
@@ -181,28 +190,35 @@ public class Pergunta_quiz extends Fragment {
                     radioButtonletraA.setText(resp.getTxt_resposta());
                     contador++;
                     if (resp.getFlag_verdadeiro().toString().equals("true")) {
-                        marcarRespostaCerta(true, false, false, false);
+                        marcarRespostaCerta(true, false, false, false, false);
                     }
                     break;
                 case 1:
                     radioButtonletraB.setText(resp.getTxt_resposta());
                     contador++;
                     if (resp.getFlag_verdadeiro().toString().equals("true")) {
-                        marcarRespostaCerta(false, true, false, false);
+                        marcarRespostaCerta(false, true, false, false, false);
                     }
                     break;
                 case 2:
                     radioButtonletraC.setText(resp.getTxt_resposta());
                     contador++;
                     if (resp.getFlag_verdadeiro().toString().equals("true")) {
-                        marcarRespostaCerta(false, false, true, false);
+                        marcarRespostaCerta(false, false, true, false, false);
                     }
                     break;
                 case 3:
                     radioButtonletraD.setText(resp.getTxt_resposta());
                     contador++;
                     if (resp.getFlag_verdadeiro().toString().equals("true")) {
-                        marcarRespostaCerta(false, false, false, true);
+                        marcarRespostaCerta(false, false, false, true, false);
+                    }
+                    break;
+                case 4:
+                    radioButtonletraE.setText(resp.getTxt_resposta());
+                    contador++;
+                    if (resp.getFlag_verdadeiro().toString().equals("true")) {
+                        marcarRespostaCerta(false, false, false, false, true);
                     }
                     break;
             }
