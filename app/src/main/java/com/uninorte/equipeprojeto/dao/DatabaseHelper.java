@@ -252,14 +252,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Nenhuma das Alternativas Anteriores.' , 'false', '29')                                          ");
 		//10
 		db.execSQL("insert into perguntas(_id, id_unidade, txt_pergunta) values (30, '2', 'Linguagens regulares podem ser definidas por autômatos finitos, expressões regulares e gramáticas regulares. Dada a expressão regular: a(a* | b*), marque a alternativa que indica as regras da gramática que gera a mesma linguagem:')");
-		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('S  aC' , 'true'  , '30')");
-		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('C  A | B "
-				+ " A  aA | ε "
-				+ " B  bB | ε "
-				+ " S  aC     "
-				+ " C  A      "
-				+ " A  aA | bA' , 'false' , '30')");
-		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('S a | b | C "
+		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('S -> aC' , 'true'  , '30')");
+		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('C -> A | B "
+				+ " A -> aA | ε "
+				+ " B -> bB | ε "
+				+ " S -> aC     "
+				+ " C -> A      "
+				+ " A -> aA | bA' , 'false' , '30')");
+		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('S -> a | b | C "
 				+ " C -> a | b'  , 'false', '30')");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('S -> C "
 				+ " C -> AB "
@@ -285,7 +285,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('É formada pela união de X com Y.' 		   , 'false', '32')         ");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('É formada pela intercessão de X com Y.' 	   , 'false', '32')         ");
 
-//		------------------------------------------------------CIN05S1_LFA_Afonso_1CHAM_Prova
+//		------------------------------------------------------CIN05S1_LFA_Afonso_1CHAM_Prova INICIO------------------------------------------------------
 
 //		--01
 		db.execSQL("insert into perguntas(_id, id_unidade, txt_pergunta) values (33, '2', 'Assinale a alternativa incorreta.'); 																									");
@@ -357,8 +357,156 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('O conjunto vazio pode ser considerado um alfabeto.'  , 'false', '42');                                        ");
 		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('O conjunto de símbolos que formam um alfabeto de uma linguagem possui tamanho limitado.' , 'false' , '42');   ");
 		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A sintaxe manipula símbolos considerando os seus correspondentes significados.' , 'true' , '42');             ");
+//		------------------------------------------------------CIN05S1_LFA_Afonso_1CHAM_Prova INICIO------------------------------------------------------
 
+//------------------------------------------------------------CIN05S1-S2_LFA_Afonso_2CHAM.doc INICIO------------------------------------------------------------
+        //01
+        db.execSQL(" insert into perguntas(_id, id_unidade, txt_pergunta) values (43, '2', 'Assinale a alternativa incorreta.'); ");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Um autômato finito possui uma fita de entrada, na qual os símbolos de entrada estão presentes e prontos para serem processados.' , 'false'  ,'43');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('É possível um autômato finito gravar símbolos de entrada na fita.' , 'true' , '43');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Um autômato finito constitui um modelo computacional do tipo sequencial.' , 'false' , '43');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A unidade de controle de um autômato finito possui um número definido de estados.' , 'false' , '43');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Só é permitido ler um símbolo de cada vez da fita de um autômato finito.' , 'false' ,  '43');");
+       //02
+        db.execSQL(" insert into perguntas(_id, id_unidade, txt_pergunta) values (44, '2', 'Assinale a alternativa correta.'); ");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Um autômato finito é um formalismo denotacional, o qual é definido a partir dos conjuntos básicos de operações de concatenação e de união.' , 'false'  ,'44');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Expressão regular é um formalismo gerador que possui restrições na forma das regras de produção.' , 'false' , '44');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('As linguagens regulares não possuem forte limitação de expressividade.' , 'false' , '44');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Um autômato finito é um formalismo axiomático, sendo um sistema de estados finitos.' , 'false' , '44');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Uma gramática regular é um formalismo axiomático.' , 'true' ,  '44');");
+       //03
+        db.execSQL(" insert into perguntas(_id, id_unidade, txt_pergunta) values (45, '2', 'Sobre os AFN é correto afirmar:'); ");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A facilidade do não-determinismo aumenta consideravelmente o poder computacional do autômato.' , 'false'  ,'45');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Para cada AFN não é possível construir um AFD equivalente.' , 'false' , '45');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Assim como os AFD, os AFN possuem memória auxiliar.' , 'false' , '45');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Possui somente um estado inicial e pode ter N ≥ 1 estados finais.' , 'true' , '45');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A partir de um símbolo x do alfabeto de entrada a transição pode ocorrer apenas para um estado N de Q.' , 'false' ,  '45');");
+       //04
+        db.execSQL(" insert into perguntas(_id, id_unidade, txt_pergunta) values (46, '2',     'Sobre as expressões regulares é incorreto afirmar:'); ");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Trata-se de um formalismo denotacional.' , 'false'  ,'46');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A expressão (a+b)*(aa+bb) denota todas as palavras que terminem em bb.' , 'true' , '46');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Se x e y são expressões regulares, então a expressão (x+y) denota a união entre as duas.' , 'false' , '46');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Se x e y são expressões regulares, então a expressão (x+y) denota a concatenação entre as duas.' , 'false' , '46');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('É definida a partir de operações de concatenação e união.' , 'false' ,  '46');");
+       //05
+        db.execSQL(" insert into perguntas(_id, id_unidade, txt_pergunta) values (47, '2',     'Com relação aos AFD é incorreto afirmar:'); ");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A função de transição é uma função parcial de F e ∑.' , 'true'  ,'47');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('q0 é um elemento de Q.' , 'false' , '47');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('q0 além de representar um estado inicial também pode ser um estado final.' , 'false' , '47');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('F é um sub-conjunto de Q.' , 'false' , '47');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Podemos ter vários estados finais.' , 'false' , '47');");
+       //06
+        db.execSQL(" insert into perguntas(_id, id_unidade, txt_pergunta) values (48, '2',     'Assinale a alternativa incorreta.'); ");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('O autômato com pilha é um exemplo de um autômato de saída.' , 'false'  ,'48');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('As saídas de um autômato finito com saída podem ser lidas e serem utilizadas como memória auxiliar.' , 'true' , '48');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A máquina de Mealy gera saída para cada transição da máquina e a de Moore gera saída para cada estado da máquina.' , 'false' , '48');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A regra de produção A -> Bw denota uma gramática linear à esquerda.' , 'false' , '48');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A regra de produção A -> wB denota uma gramática linear à direita.' , 'false' , '48');");
+       //07
+        db.execSQL(" insert into perguntas(_id, id_unidade, txt_pergunta) values (49, '2',     'Julgue os itens a seguir e assinale a alternativa que possui apenas os itens falsos. I.Somente as regras de produção é que definem uma gramática formal. II.O conjunto vazio é diferente do conjunto formado pela palavra vazia. III.O conjunto de palíndromos sobre o alfabeto {a, b}     é um exemplo de linguagem infinita. IV.Duas gramáticas são ditas equivalentes se, e somente se, elas são iguais.'); ");
+        db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('I, II, III e IV.' , 'false'  ,'49');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('I e IV.' , 'true' , '49');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('I e III.' , 'false' , '49');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('II e IV.' , 'false' , '49');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('II e III.' , 'false' , '49');");
+       //08
+        db.execSQL(" insert into perguntas(_id, id_unidade, txt_pergunta) values (50, '2',     'Com relação aos autômatos com pilha, assinale a alternativa correta:'); ");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Possui este nome, pois contém uma estrutura (pilha) que funciona como auxílio à fita de entrada do autômato.' , 'false'  ,'50');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A estrutura da pilha sempre deve ter o mesmo tamanho da fita de entrada.' , 'false' , '50');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A estrutura da pilha é suficiente como única memória, isto é, uma Linguagem Livre do Contexto pode ser reconhecida por um autômato com pilha com somente um estado.' , 'true' , '50');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('O critério de parada do autômato com pilha é idêntico ao do AFD, possuindo apenas este critério.' , 'false' , '50');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('O alfabeto da pilha tem que ser, obrigatoriamente, diferente do alfabeto de entrada.' , 'false' , '50');");
+       //09
+        db.execSQL(" insert into perguntas(_id, id_unidade, txt_pergunta) values (51, '2',     'Com relação aos formalismos é incorreto afirmar:'); ");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('O formalismo denotacional também é conhecido como reconhecedor.' , 'true'  ,'51');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('O formalismo denotacional também é conhecido como funcional.' , 'false' , '51');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('No formalismo denotacional define um conjunto de palavras admissíveis na linguagem.' , 'false' , '51');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('O formalismo operacional denota uma máquina abstrata.' , 'false' , '51');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('No formalismo axiomático associam-se regras às componentes da linguagem.' , 'false' , '51');");
+       //10
+        db.execSQL(" insert into perguntas(_id, id_unidade, txt_pergunta) values (52, '2',     'Assinale a alternativa incorreta.'); ");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('O conjunto de símbolos que formam um alfabeto de uma linguagem possui tamanho limitado.' , 'false'  ,'52');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A sintaxe manipula símbolos considerando os seus correspondentes significados.' , 'true' , '52');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('O conjunto vazio pode ser considerado um alfabeto.' , 'false' , '52');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Uma cadeia sem símbolos denota uma palavra válida.' , 'false' , '52');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Um programa sintaticamente correto pode possuir erros de semântica.' , 'false' , '52');");
+//------------------------------------------------------------CIN05S1-S2_LFA_Afonso_2CHAM.doc FIM------------------------------------------------------------
+          
+//------------------------------------------------------------CIN05S2_LFA_Afonso_1CHAM_Prova.doc INICIO------------------------------------------------------------
+            
+        //01
+        db.execSQL(" insert into perguntas(_id, id_unidade, txt_pergunta) values (53, '2',     'Assinale a alternativa incorreta.'); ");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A regra de produção A -> wB denota uma gramática linear à direita.' , 'false'  ,'53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A regra de produção A -> Bw denota uma gramática linear à esquerda.' , 'false' , '53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A máquina de Mealy gera saída para cada transição da máquina e a de Moore gera saída para cada estado da máquina.' , 'false' , '53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('O autômato com pilha é um exemplo de um autômato de saída.' , 'false' , '53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('As saídas de um autômato finito com saída podem ser lidas e serem utilizadas como memória auxiliar. ' , 'true' , '53');");
+       //02
+        db.execSQL(" insert into perguntas(_id, id_unidade, txt_pergunta) values (53, '2',     'Sobre os AFN é incorreto afirmar:'); ");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Assim como os AFD’s, os AFN’s não possuem memória auxiliar.' , 'false'  ,'53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A facilidade do não-determinismo aumenta consideravelmente o poder computacional do autômato.' , 'true' , '53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A partir de um símbolo x do alfabeto de entrada a transição pode ocorrer para N estados de Q.' , 'false' , '53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Possui somente um estado inicial e pode ter N ≥ 1 estados finais.' , 'false' , '53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Para cada AFN é possível construir um AFD equivalente.' , 'false' , '53');");
+       ////03
+        db.execSQL(" insert into perguntas(_id, id_unidade, txt_pergunta) values (53, '2',     'Com relação aos formalismos é incorreto afirmar:'); ");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('O formalismo denotacional também é conhecido como reconhecedor.' , 'true'  ,'53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('O formalismo operacional denota uma máquina abstrata.' , 'false' , '53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('No formalismo axiomático associam-se regras às componentes da linguagem.' , 'false' , '53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('O formalismo denotacional também é conhecido como funcional.' , 'false' , '53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('No formalismo denotacional define um conjunto de palavras admissíveis na linguagem.' , 'false' , '53');");
+       ////04
+        db.execSQL(" insert into perguntas(_id, id_unidade, txt_pergunta) values (53, '2',     'Sobre as expressões regulares é correto afirmar:'); ");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Se x e y são expressões regulares, então a expressão (x+y) denota a concatenação entre as duas.' , 'false'  ,'53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A expressão (a+b)*(aa+bb) denota todas as palavras que terminem em bb.' , 'false' , '53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('É definida a partir de autômatos básicos e de operações de concatenação e união.' , 'false' , '53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Trata-se de um formalismo operacional.' , 'false' , '53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Se x e y são expressões regulares, então a expressão (x+y) denota a união entre as duas.' , 'true' , '53');");
+       ////05
+        db.execSQL(" insert into perguntas(_id, id_unidade, txt_pergunta) values (53, '2',     'Julgue os itens a seguir e assinale a alternativa que possui apenas os itens verdadeiros. I.Somente as regras de produção é que definem uma gramática formal. II.O conjunto vazio é diferente do conjunto formado pela palavra vazia. III.O conjunto de palíndromos sobre o alfabeto {a, b} é um exemplo de linguagem infinita. IV.Duas gramáticas são ditas equivalentes se, e somente se, elas são iguais.'); ");
+        db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('I, II, III e IV.' , 'false'  ,'53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('I e IV.' , 'false' , '53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('I e III.' , 'false' , '53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('II e III.' , 'true' , '53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('II e IV.' , 'false' , '53');");
+       ////06
+        db.execSQL(" insert into perguntas(_id, id_unidade, txt_pergunta) values (53, '2',     'Com relação aos AFD’s é correto afirmar:'); ");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A função de transição é uma função parcial de F e ∑.' , 'false'  ,'53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('F é um conjunto de ∑*.' , 'false' , '53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('q0 é um elemento de ∑.' , 'false' , '53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('q0 é um elemento de Q.' , 'false' , 'true');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Podemos ter apenas um estado final.' , 'false' , '53');");
+       ////07
+        db.execSQL(" insert into perguntas(_id, id_unidade, txt_pergunta) values (53, '2',     'Assinale a alternativa correta.'); ");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('O estudo das linguagens formais é aplicado nos bancos de dados relacionais.' , 'false'  ,'53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Um programa sintaticamente correto não possui erros de semântica.' , 'false' , '53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A semântica trata das propriedades livres da linguagem.' , 'false' , '53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A sintaxe manipula símbolos sem considerar os seus correspondentes significados.' , 'true' , '53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A sintaxe trata dos significados de uma linguagem.' , 'false' , '53');");
+       ////08
+        db.execSQL(" insert into perguntas(_id, id_unidade, txt_pergunta) values (53, '2',     'Assinale a alternativa incorreta.'); ");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A unidade de controle de um autômato finito possui um número definido de estados.' , 'false'  ,'53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('É possível um autômato finito gravar símbolos de entrada na fita.' , 'true' , '53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Só é permitido ler um símbolo de cada vez da fita de um autômato finito.' , 'false' , '53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Um autômato finito possui uma fita de entrada, na qual os símbolos de entrada estão presentes e prontos para serem processados.' , 'false' , '53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Um autômato finito constitui um modelo computacional do tipo seqüencial.' , 'false' , '53');");
+       ////09
+        db.execSQL(" insert into perguntas(_id, id_unidade, txt_pergunta) values (53, '2',     'Com relação aos autômatos com pilha, assinale a alternativa correta:'); ");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A estrutura da pilha é suficiente como única memória, isto é, uma Linguagem Livre do Contexto pode ser reconhecida por um autômato com pilha com somente um estado.' , 'true'  ,'53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A estrutura da pilha sempre deve ter o mesmo tamanho da fita de entrada.' , 'false' , '53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Possui este nome, pois contém uma estrutura (pilha) que funciona como auxílio à fita de entrada do autômato.' , 'false' , '53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('O critério de parada do autômato com pilha é idêntico ao do AFD, possuindo apenas este critério.' , 'false' , '53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('O alfabeto da pilha tem que ser, obrigatoriamente, diferente do alfabeto de entrada.' , 'false' , '53');");
+       ////10
+        db.execSQL(" insert into perguntas(_id, id_unidade, txt_pergunta) values (53, '2',     'Assinale a alternativa incorreta.'); ");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Uma cadeia sem símbolos denota uma palavra válida.' , 'false'  ,'53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Um programa sintaticamente correto pode possuir erros de semântica.' , 'false' , '53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('O conjunto vazio pode ser considerado um alfabeto.' , 'false' , '53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('O conjunto de símbolos que formam um alfabeto de uma linguagem possui tamanho limitado.' , 'false' , '53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A sintaxe manipula símbolos considerando os seus correspondentes significados.' , 'true' , '53');");
 
+//------------------------------------------------------------CIN05S2_LFA_Afonso_1CHAM_Prova.doc FIM------------------------------------------------------------
+       
 	}
 
     @Override
