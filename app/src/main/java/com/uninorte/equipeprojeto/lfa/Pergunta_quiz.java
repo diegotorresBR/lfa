@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.uninorte.equipeprojeto.adapter.PerguntaAdapter;
@@ -42,6 +43,7 @@ public class Pergunta_quiz extends Fragment {
     private Button buttonProximo
                         , buttonCancelar;
     private TextView textViewPergunta;
+    private ScrollView scrollViewPergunta;
     //
     private ListView lista;
     private List<Pergunta> perguntaList;
@@ -85,6 +87,7 @@ public class Pergunta_quiz extends Fragment {
         radioGroup        = (RadioGroup)  view.findViewById(R.id.radioGroup);
         buttonProximo     = (Button) view.findViewById(R.id.buttonProximo);
         buttonCancelar    = (Button) view.findViewById(R.id.buttonCancelar);
+        scrollViewPergunta = (ScrollView)view.findViewById(R.id.idScrollViewPergunta);
         //carrega as perguntas de acordo com o parametro
         carregarPerguntasAleatorias(unidadeParametro);
         //
@@ -175,6 +178,7 @@ public class Pergunta_quiz extends Fragment {
         textViewPergunta.setText(perguntaList.get(0).getTxt_pergunta());//define a pergunta
         carregarRespostasAleatorias(perguntaList.get(0).get_id());//carrega as respostas para a pergunta de forma aleatoria
         contadorPergunta++;
+        scrollViewPergunta.scrollTo(0, 0);//leva o scrollViewPergunta para o topo
     }
 
     private void carregarRespostasAleatorias(int idPergunta)
