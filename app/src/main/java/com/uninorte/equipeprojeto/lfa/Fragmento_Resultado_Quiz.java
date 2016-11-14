@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 
@@ -35,9 +36,13 @@ public class Fragmento_Resultado_Quiz extends Fragment {
     private CharSequence mDrawerTitle;//Preciso falar?
     private CharSequence mTitle;
     //
-    private Button buttonRefazer;
-    private Button buttonInicio;
-    private Button buttonCompartilhar;
+//    private Button buttonRefazer;
+//    private Button buttonInicio;
+//    private Button buttonCompartilhar;
+    private ImageButton imageButtonRefazer;
+    private ImageButton imageButtonInicio;
+    private ImageButton imageButtonCompartilhar;
+
     //
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -45,9 +50,12 @@ public class Fragmento_Resultado_Quiz extends Fragment {
         // Inflate the layout for this fragment
         final View view = inflater.inflate(R.layout.fragment_resultado_quiz, container, false);
         textViewResultadoQuiz = (TextView)view.findViewById(R.id.textViewResultadoQuiz);
-        buttonRefazer = (Button)view.findViewById(R.id.buttonRefazer);
-        buttonInicio = (Button) view.findViewById(R.id.buttonInicio);
-        buttonCompartilhar = (Button) view.findViewById(R.id.buttonCompartilhar);
+//        buttonRefazer = (Button)view.findViewById(R.id.buttonRefazer);
+//        buttonInicio = (Button) view.findViewById(R.id.buttonInicio);
+//        buttonCompartilhar = (Button) view.findViewById(R.id.buttonCompartilhar);
+        imageButtonRefazer = (ImageButton)view.findViewById(R.id.imageButtonIdRefazer);
+        imageButtonInicio = (ImageButton) view.findViewById(R.id.imageButtonIdInicio);
+        imageButtonCompartilhar = (ImageButton) view.findViewById(R.id.imageButtonIdCompartilhar);
         //
         args = new Bundle();
         fragmentManager = getFragmentManager();
@@ -77,7 +85,38 @@ public class Fragmento_Resultado_Quiz extends Fragment {
             textViewResultadoQuiz.setText("Parabéns, você foi aprovado neste Quiz. " + acertos);
         }
         //
-        buttonRefazer.setOnClickListener(new View.OnClickListener() {
+//        buttonRefazer.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                args.putBoolean("refazer", true);
+//                args.putInt("unidade", unidadeParametro);
+//                fragmento_pergunta_quiz = new Pergunta_quiz();//é necesário instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
+//                fragmento_pergunta_quiz.setArguments(args);
+//                fragmentTransaction = fragmentManager.beginTransaction();
+//                fragmentTransaction.replace(R.id.frame_container2, fragmento_pergunta_quiz).commit();
+//            }
+//        });
+//        //
+//        buttonInicio.setOnClickListener(new View.OnClickListener() {
+//            @Override// este método direciona o usuário para o início da aplicação
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getActivity(), MainActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+//        //
+//        buttonCompartilhar.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent sharingIntent = new Intent(Intent.ACTION_SEND);
+//                sharingIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.quiz_geral));
+//                sharingIntent.putExtra(Intent.EXTRA_TEXT, textViewResultadoQuiz.getText() );
+//                sharingIntent.setType("text/plain");
+//                startActivity(Intent.createChooser(sharingIntent, getString(R.string.compartilhar)));
+//            }
+//        });
+        //
+        imageButtonRefazer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 args.putBoolean("refazer", true);
@@ -89,8 +128,7 @@ public class Fragmento_Resultado_Quiz extends Fragment {
             }
         });
         //
-
-        buttonInicio.setOnClickListener(new View.OnClickListener() {
+        imageButtonInicio.setOnClickListener(new View.OnClickListener() {
             @Override// este método direciona o usuário para o início da aplicação
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), MainActivity.class);
@@ -98,7 +136,7 @@ public class Fragmento_Resultado_Quiz extends Fragment {
             }
         });
         //
-        buttonCompartilhar.setOnClickListener(new View.OnClickListener() {
+        imageButtonCompartilhar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent sharingIntent = new Intent(Intent.ACTION_SEND);
@@ -108,7 +146,6 @@ public class Fragmento_Resultado_Quiz extends Fragment {
                 startActivity(Intent.createChooser(sharingIntent, getString(R.string.compartilhar)));
             }
         });
-        //
         return view;
     }
 
