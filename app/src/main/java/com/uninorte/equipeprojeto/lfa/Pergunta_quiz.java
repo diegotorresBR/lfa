@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -40,8 +41,8 @@ public class Pergunta_quiz extends Fragment {
                         , respostaCertaC
                         , respostaCertaD
                         , respostaCertaE = false;
-    private Button buttonProximo
-                        , buttonCancelar;
+//    private Button buttonProximo, buttonCancelar;
+    private ImageButton imageButtonIdProximo, imageButtonIdCancelar;
     private TextView textViewPergunta;
     private ScrollView scrollViewPergunta;
     //
@@ -85,60 +86,83 @@ public class Pergunta_quiz extends Fragment {
         radioButtonletraD = (RadioButton) view.findViewById(R.id.letraD);
         radioButtonletraE = (RadioButton) view.findViewById(R.id.letraE);
         radioGroup        = (RadioGroup)  view.findViewById(R.id.radioGroup);
-        buttonProximo     = (Button) view.findViewById(R.id.buttonProximo);
-        buttonCancelar    = (Button) view.findViewById(R.id.buttonCancelar);
+//        buttonProximo     = (Button) view.findViewById(R.id.buttonProximo);
+//        buttonCancelar    = (Button) view.findViewById(R.id.buttonCancelar);
+        imageButtonIdCancelar = (ImageButton) view.findViewById(R.id.imageButtonIdCancelar);
+        imageButtonIdProximo = (ImageButton) view.findViewById(R.id.imageButtonIdProximo);
         scrollViewPergunta = (ScrollView)view.findViewById(R.id.idScrollViewPergunta);
         //carrega as perguntas de acordo com o parametro
         carregarPerguntasAleatorias(unidadeParametro);
         //
-        buttonProximo.setOnClickListener(new View.OnClickListener() {
+//        buttonProximo.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                contarQuestoesCertas();
+//                carregarPerguntasAleatorias(unidadeParametro);
+//            }
+//        });
+//        buttonCancelar.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+////                Intent intent = new Intent(getActivity(), MainActivity.class);
+////                startActivity(intent);
+//            }
+//        });
+        imageButtonIdProximo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //neste bloco é validado qual opção foi selecionada pelo usuário
-                int idSelecionado = radioGroup.getCheckedRadioButtonId();
-                switch (idSelecionado) {
-                    case R.id.letraA:
-                        if (respostaCertaA) {
-                            contadorDeQuestoesCertas++;
-                        }
-                        break;
-                    case R.id.letraB:
-                        if (respostaCertaB) {
-                            contadorDeQuestoesCertas++;
-                        }
-                        break;
-                    case R.id.letraC:
-                        if (respostaCertaC) {
-                            contadorDeQuestoesCertas++;
-                        }
-                        break;
-                    case R.id.letraD:
-                        if (respostaCertaD) {
-                            contadorDeQuestoesCertas++;
-                        }
-                        break;
-                    case R.id.letraE:
-                        if (respostaCertaE) {
-                            contadorDeQuestoesCertas++;
-                        }
-                        break;
-                }
-                //
-                 carregarPerguntasAleatorias(unidadeParametro);
-                //
+                contarQuestoesCertas();
+                carregarPerguntasAleatorias(unidadeParametro);
             }
         });
-
-
-        buttonCancelar.setOnClickListener(new View.OnClickListener() {
+        //
+        imageButtonIdCancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), MainActivity.class);
-                startActivity(intent);
+                irParaInicio();
             }
         });
 
         return view;
+    }
+
+    public void irParaInicio()
+    {
+        Intent intent = new Intent(getActivity(), MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void contarQuestoesCertas()
+    {
+        //neste bloco é validado qual opção foi selecionada pelo usuário
+        int idSelecionado = radioGroup.getCheckedRadioButtonId();
+        switch (idSelecionado) {
+            case R.id.letraA:
+                if (respostaCertaA) {
+                    contadorDeQuestoesCertas++;
+                }
+                break;
+            case R.id.letraB:
+                if (respostaCertaB) {
+                    contadorDeQuestoesCertas++;
+                }
+                break;
+            case R.id.letraC:
+                if (respostaCertaC) {
+                    contadorDeQuestoesCertas++;
+                }
+                break;
+            case R.id.letraD:
+                if (respostaCertaD) {
+                    contadorDeQuestoesCertas++;
+                }
+                break;
+            case R.id.letraE:
+                if (respostaCertaE) {
+                    contadorDeQuestoesCertas++;
+                }
+                break;
+        }
     }
 
     private void marcarRespostaCerta(boolean a, boolean b, boolean c, boolean d, boolean e)

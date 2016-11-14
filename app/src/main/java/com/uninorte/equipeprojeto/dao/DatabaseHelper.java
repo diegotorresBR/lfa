@@ -69,21 +69,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Verificar se ele começa num estado final.' , 'false' , '4')");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Nenhuma das Alternativas Anteriores.' , 'false' , '4') ");
 		//
-		db.execSQL("insert into perguntas(_id, id_unidade, txt_pergunta) values (5, '2', 'Descreva qual a linguagem gerada por G, G = (V, T, P, S), onde: V = {S, L, C}; T = {l, n}; P = { 1) S→ LC, 2) L→ l, 3) C→ lC, 4) C→ nC, 5) C→ n, 6) C→ l, 7) C→ λ')");
+		db.execSQL("insert into perguntas(_id, id_unidade, txt_pergunta) values (5, '2', 'Descreva qual a linguagem gerada por G, G = (V, T, P, S), onde: \nV = {S, L, C}; \nT = {l, n}; \nP = { \n1) S→ LC, \n2) L → l, \n3) C→ lC, \n4) C→ nC, \n5) C→ n, \n6) C→ l, \n7) C→ λ')");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('L(G) = {lw | w ϵ {l, n}*}', 'true'  , '5')");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('L(G) = {w | w ϵ {l, n}}'  , 'false' , '5')");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('L(G) = {w | w ϵ {l, n}*}' , 'false' , '5')");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('L(G) = {w | n ϵ {l, w}*}' , 'false' , '5')");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Nenhuma das Alternativas Anteriores.' , 'false' , '5') ");
 		//
-		db.execSQL("insert into perguntas(_id, id_unidade, txt_pergunta) values (6, '2', 'Dados as seguintes gramáticas, G = (V, T, P, S), onde: V = {S}, T = {a, b}, P = {\tS→ aSa, S→ b}.')");
+		db.execSQL("insert into perguntas(_id, id_unidade, txt_pergunta) values (6, '2', 'Dados as seguintes gramáticas, G = (V, T, P, S), onde: \nV = {S}, 	\nT = {a, b}, \nP = {\tS→ aSa, S→ b}.')");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('L(G) = {aⁿbaⁿ | n≥0}' , 'true'  , '6')");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('L(G) = {aⁿbaⁿ | n=0}' , 'false' , '6')");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('L(G) = {aⁿbaⁿ | n≤0}' , 'false' , '6')");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('L(G) = {aⁿbⁿ | n≥0}'  , 'false' , '6')");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Nenhuma das Alternativas Anteriores.' , 'false' , '6') ");
 		//
-		db.execSQL("insert into perguntas(_id, id_unidade, txt_pergunta) values (7, '2', 'Dados as seguintes gramáticas, G = (V, T, P, S), onde: V = {S}, T = {a, b}, P = {\tS→ aSa, S→ b}.')");
+		db.execSQL("insert into perguntas(_id, id_unidade, txt_pergunta) values (7, '2', 'Dados as seguintes gramáticas, G = (V, T, P, S), onde: \nV = {S}, \nT = {a, b}, \nP = {\tS→ aSa, S→ b}.')");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('L(G) = {aⁿbaⁿ | n≥0}' , 'true'  , '7')");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('L(G) = {aⁿbaⁿ | n=0}' , 'false' , '7')");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('L(G) = {aⁿbaⁿ | n≤0}' , 'false' , '7')");
@@ -125,22 +125,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A função de transição é uma função parcial de F e ∑.', 'false', '12')");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('q0 é um elemento específico de F.'                   , 'false', '12')");
 //		//2
-		db.execSQL("insert into perguntas(_id, id_unidade, txt_pergunta) values (13, '2', 'Ainda sobre a definição formal de um Autômato Finito, julgue os itens abaixo:"
-				+ "I. O subconjunto de estados finais de um autômato pode ser vazio."
-				+ "II. A função de transição é uma função parcial aplicada sobre os símbolos do alfabeto e sobre o conjunto de estados finais do autômato."
-				+ "III. A função de transição comanda os estados finais do autômato."
-				+ "IV. A função de transição é uma função parcial aplicada sobre todos os possíveis estados e sobre o conjunto de estados finais do autômato."
-				+ "V. F é um subconjunto unitário de Q, para todo e qualquer autômato.')");
+		db.execSQL("insert into perguntas(_id, id_unidade, txt_pergunta) values (13, '2', 'Ainda sobre a definição formal de um Autômato Finito, julgue os itens abaixo:\nI. O subconjunto de estados finais de um autômato pode ser vazio.\nII. A função de transição é uma função parcial aplicada sobre os símbolos do alfabeto e sobre o conjunto de estados finais do autômato.\nIII. A função de transição comanda os estados finais do autômato.\nIV. A função de transição é uma função parcial aplicada sobre todos os possíveis estados e sobre o conjunto de estados finais do autômato. \nV. F é um subconjunto unitário de Q, para todo e qualquer autômato.')");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Todas as afirmativas são verdadeiras.', 'false', '13')");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Apenas I, III e V são verdadeiras.'   , 'false', '13')");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Apenas II e IV são falsas.'           , 'false', '13')");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Apenas a afirmativa I é verdadeira.'  , 'false', '13')");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Todas as afirmativas são falsas.'     , 'true' , '13')");
 //		//3
-		db.execSQL("insert into perguntas(_id, id_unidade, txt_pergunta) values (14, '2', 'Uma palavra ou sentença sobre um alfabeto é uma sequência finita de símbolos (do alfabeto) justapostos. Em uma palavra nós temos os prefixos, sufixos e subpalavras. Suponha a palavra CASA, os conjuntos dos prefixos e dos sufixos estão mostrados abaixo: "
-				+ "Prefixos = {ε, C, CA, CAS, CASA} "
-				+ "Sufixos = {ε, A, SA, ASA, CASA}  "
-				+ "Sabendo-se disso, assinale a alternativa que contém a equação a qual denota o número de prefixos ou sufixos de uma determinada palavra de tamanho N.')");
+		db.execSQL("insert into perguntas(_id, id_unidade, txt_pergunta) values (14, '2', 'Uma palavra ou sentença sobre um alfabeto é uma sequência finita de símbolos (do alfabeto) justapostos. Em uma palavra nós temos os prefixos, sufixos e subpalavras. Suponha a palavra CASA, os conjuntos dos prefixos e dos sufixos estão mostrados abaixo: \nPrefixos = {ε, C, CA, CAS, CASA}\nSufixos = {ε, A, SA, ASA, CASA}\nSabendo-se disso, assinale a alternativa que contém a equação a qual denota o número de prefixos ou sufixos de uma determinada palavra de tamanho N.')");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('2N + 1', 'false', '14')");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('2N + 2', 'false', '14')");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('N + 1' , 'true' , '14')");
@@ -241,10 +233,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('baaa' , 'false' , '28')  ");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('aabaa' , 'false' , '28') ");
 		//09
-		db.execSQL("insert into perguntas(_id, id_unidade, txt_pergunta) values (29, '2', 'Uma Gramática é um formalismo gerador de linguagem. Dada a gramática G = ({P,S}, {a,b}, R, P), onde R é dado por: "
-				+ " A  aB | B "
-				+ " B  bB | baB | ϵ "
-				+ " Marque a alternativa que descreve a Linguagem Gerada pela gramática G (L(G)).')");
+		db.execSQL("insert into perguntas(_id, id_unidade, txt_pergunta) values (29, '2', 'Uma Gramática é um formalismo gerador de linguagem. Dada a gramática G = ({P,S}, {a,b}, R, P), onde R é dado por: \n A  aB | B \n B  bB | baB | ϵ \n Marque a alternativa que descreve a Linguagem Gerada pela gramática G (L(G)).')");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Conjunto de strings onde cada ocorrência de a é imediatamente seguido por um b.' , 'true' ,'29')");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Conjunto de strings com prefixo a.' , 'false', '29')                                            ");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Conjunto de strings com sufixo ba.' , 'false', '29')                                            ");
@@ -253,25 +242,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		//10
 		db.execSQL("insert into perguntas(_id, id_unidade, txt_pergunta) values (30, '2', 'Linguagens regulares podem ser definidas por autômatos finitos, expressões regulares e gramáticas regulares. Dada a expressão regular: a(a* | b*), marque a alternativa que indica as regras da gramática que gera a mesma linguagem:')");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('S -> aC' , 'true'  , '30')");
-		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('C -> A | B "
-				+ " A -> aA | ε "
-				+ " B -> bB | ε "
-				+ " S -> aC     "
-				+ " C -> A      "
-				+ " A -> aA | bA' , 'false' , '30')");
-		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('S -> a | b | C "
-				+ " C -> a | b'  , 'false', '30')");
-		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('S -> C "
-				+ " C -> AB "
-				+ " A -> aA "
-				+ " B -> bB | ε' , 'false' , '30')																															");
+		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('C -> A | B \nA -> aA | ε \nB -> bB | ε \nS -> aC \nC -> A \n\nA -> aA | bA' , 'false' , '30')");
+		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('S -> a | b | C \nC -> a | b'  , 'false', '30')");
+		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('S -> C \nC -> AB \nA -> aA \nB -> bB | ε' , 'false' , '30')																															");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Nenhuma das Alternativas Anteriores.' , 'false' , '30')				");
 		//11
-		db.execSQL("insert into perguntas(_id, id_unidade, txt_pergunta) values (31, '2', 'No contexto de linguagens formais e autômatos, julgue os itens a seguir: "
-				+ " I – Um autômato finito com transições vazias (AFNε) não pode ser convertido em um autômato finito determinístico (AFD).                                  "
-				+ " II – Um autômato não pode ser considerado uma máquina de estados finito, pois representa linguagens.                                                     "
-				+ " III – Um autômato é um mecanismo reconhecedor de linguagens e gramáticas são geradores.                                                                  "
-				+ " Marque a alternativa correta:')																															");
+		db.execSQL("insert into perguntas(_id, id_unidade, txt_pergunta) values (31, '2', 'No contexto de linguagens formais e autômatos, julgue os itens a seguir: \nI – Um autômato finito com transições vazias (AFNε) não pode ser convertido em um autômato finito determinístico (AFD). \nII – Um autômato não pode ser considerado uma máquina de estados finito, pois representa linguagens. \nIII – Um autômato é um mecanismo reconhecedor de linguagens e gramáticas são geradores.\nMarque a alternativa correta:')																															");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Apenas o item III está correto.' 	, 'true' , '31')				");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Apenas o item II está correto.' 		, 'false', '31')                ");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Apenas o item I está correto.'  		, 'false', '31')                ");
@@ -316,7 +292,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Trata-se de um formalismo operacional.' , 'false' , '36');                                                           ");
 		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Se x e y são expressões regulares, então a expressão (x+y) denota a união entre as duas.' , 'true' , '36');          ");
 		//		--05
-		db.execSQL(" insert into perguntas(_id, id_unidade, txt_pergunta) values (37, '2', '05.	Julgue os itens a seguir e assinale a alternativa que possui apenas os itens verdadeiros.I.	Somente as regras de produção é que definem                uma gramática formal. II.	O conjunto vazio é diferente do conjunto formado pela palavra vazia. III.	O conjunto de palíndromos sobre o alfabeto {a, b} é um exemplo de linguagem infinita. IV.	Duas gramáticas são ditas equivalentes se, e somente se, elas são iguais.'); ");
+		db.execSQL(" insert into perguntas(_id, id_unidade, txt_pergunta) values (37, '2', '05.	Julgue os itens a seguir e assinale a alternativa que possui apenas os itens verdadeiros.\nI.	Somente as regras de produção é que definem                uma gramática formal. \nII.	O conjunto vazio é diferente do conjunto formado pela palavra vazia. \nIII.	O conjunto de palíndromos sobre o alfabeto {a, b} é um exemplo de linguagem infinita. \nIV.	Duas gramáticas são ditas equivalentes se, e somente se, elas são iguais.'); ");
 		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('I, II, III e IV.' , 'false'  , '37'); ");
 		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('I e IV.' , 'false' , '37');           ");
 		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('I e III.'  , 'false', '37');          ");
@@ -463,7 +439,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Trata-se de um formalismo operacional.' , 'false' , '53');");
 		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Se x e y são expressões regulares, então a expressão (x+y) denota a união entre as duas.' , 'true' , '53');");
        ////05
-        db.execSQL(" insert into perguntas(_id, id_unidade, txt_pergunta) values (53, '2',     'Julgue os itens a seguir e assinale a alternativa que possui apenas os itens verdadeiros. I.Somente as regras de produção é que definem uma gramática formal. II.O conjunto vazio é diferente do conjunto formado pela palavra vazia. III.O conjunto de palíndromos sobre o alfabeto {a, b} é um exemplo de linguagem infinita. IV.Duas gramáticas são ditas equivalentes se, e somente se, elas são iguais.'); ");
+        db.execSQL(" insert into perguntas(_id, id_unidade, txt_pergunta) values (53, '2',     'Julgue os itens a seguir e assinale a alternativa que possui apenas os itens verdadeiros. \nI.Somente as regras de produção é que definem uma gramática formal. \nII.O conjunto vazio é diferente do conjunto formado pela palavra vazia. \nIII.O conjunto de palíndromos sobre o alfabeto {a, b} é um exemplo de linguagem infinita. \nIV.Duas gramáticas são ditas equivalentes se, e somente se, elas são iguais.'); ");
         db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('I, II, III e IV.' , 'false'  ,'53');");
 		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('I e IV.' , 'false' , '53');");
 		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('I e III.' , 'false' , '53');");

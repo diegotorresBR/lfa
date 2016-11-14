@@ -17,7 +17,8 @@
             android:padding="15dp"
             android:textColor="@color/md_black_1000"
             android:text="@string/pergunta_do_quiz"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:layout_gravity="center_vertical|right"/>
 
         <RadioGroup
             android:id="@+id/radioGroup"
@@ -76,25 +77,49 @@
 
         </RadioGroup>
 
-        <Button
+        <!--<Button-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/buttonProximo"-->
+            <!--android:layout_margin="15dp"-->
+            <!--android:paddingTop="15dp"-->
+            <!--android:layout_gravity="bottom"-->
+            <!--android:text="@string/proximo"-->
+            <!--/>-->
+
+        <!--<Button-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/buttonCancelar"-->
+            <!--android:paddingTop="15dp"-->
+            <!--android:layout_margin="15dp"-->
+            <!--android:layout_gravity="bottom"-->
+            <!--android:text="@string/cancelar"-->
+            <!--/>-->
+
+        <ImageButton
+            android:id="@+id/imageButtonIdProximo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/buttonProximo"
-            android:layout_margin="15dp"
+            android:contextClickable="true"
+            android:src="@drawable/botao_proximo"
+            android:background="#FFFF"
             android:paddingTop="15dp"
-            android:layout_gravity="bottom"
-            android:text="@string/proximo"
+            android:layout_margin="15dp"
+            android:layout_gravity="center"
             />
 
-        <Button
+            <ImageButton
+            android:id="@+id/imageButtonIdCancelar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/buttonCancelar"
+            android:contextClickable="true"
+            android:src="@drawable/botao_cancelar"
+            android:background="#FFFF"
             android:paddingTop="15dp"
             android:layout_margin="15dp"
-            android:layout_gravity="bottom"
-            android:text="@string/cancelar"
-            />
+            android:layout_gravity="center"
+                />
 
 
 
