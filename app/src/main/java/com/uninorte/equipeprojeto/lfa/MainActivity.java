@@ -336,6 +336,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
 //        });
 //
 //
+        iniciar();
     }
 
     private void carregarDados() {
@@ -506,10 +507,11 @@ popular_menu_assuntos();
                 if(drawerItem != null){
                     if(drawerItem.getIdentifier() == 101){
                         args.putString("id", "unit11.html");//passa para o fragment o id do assunto
-                            assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
-                            assunto_frag.setArguments(args);
+                            //assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
+                            //assunto_frag.setArguments(args);
+                            Tela_Apresentacao tela = new Tela_Apresentacao();
                             fragmentTransaction = fragmentManager.beginTransaction();
-                            fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
+                            fragmentTransaction.replace(R.id.frame_container2, tela).commit();
                     }
                     if(drawerItem.getIdentifier() == 102){
                         args.putString("id", "unit12.html");//passa para o fragment o id do assunto
@@ -823,5 +825,12 @@ popular_menu_assuntos();
 //        }else{
 //            super.onBackPressed();
 //        }
+    }
+
+    public void iniciar(){
+
+        Tela_Apresentacao tela = new Tela_Apresentacao();
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frame_container2, tela).commit();
     }
 }
