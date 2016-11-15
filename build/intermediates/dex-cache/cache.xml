@@ -142,7 +142,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="76c7aa23cdf75f25300b277ecf8ea2491ee506a0">
+        sha1="c244afec1b9ba7301e396269f99d022f63be6096">
         <dex dex="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_3977a9e77c1cb4f528423e2e66289886bb4d8787\classes.dex" />
     </item>
     <item
@@ -187,7 +187,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="683c6f5a929718952ea73082c0e34a8088e4114c">
+        sha1="2f06d50b220d844252145898ead762b40540d314">
         <dex dex="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_3036bdee282bb051570eb5c5e2dbdfbc0aa189a2\classes.dex" />
     </item>
     <item

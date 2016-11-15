@@ -8,6 +8,7 @@ import android.app.SearchManager;
 import android.content.DialogInterface;
 import android.content.res.Configuration;
 import android.net.Uri;
+import android.support.design.widget.NavigationView;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
@@ -87,9 +88,13 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         header = new AccountHeaderBuilder().withActivity(this).withTranslucentStatusBar(true).withHeaderBackground(R.drawable.side_nav_bar).build();
         carregarDados();
         criar_drawer();
-//        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout2);
-//        mDrawerExpandableList = (ExpandableListView) findViewById(R.id.explist_slidermenu3);
-//        //mDrawerExpandableList.setGroupIndicator(null);
+
+//       mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout2);
+//        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+//        mDrawerLayout.setDrawerListener(mDrawerToggle);
+//        mDrawerToggle.syncState();
+//         mDrawerExpandableList = (ExpandableListView) findViewById(R.id.explist_slidermenu4);
+//        mDrawerExpandableList.setGroupIndicator(null);
 //
 //        //
 //       // View header = getLayoutInflater().inflate(R.layout.cabecera_general, null);
@@ -102,9 +107,11 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
 //            toolbar.setTitle(mDrawerTitle);
 //            toolbar.setSubtitle(mTitle);
 //            toolbar.setLogo(R.mipmap.ic_lfa1);
-        setSupportActionBar(toolbar);
+
+         setSupportActionBar(toolbar);
+
 //            getSupportActionBar().setDisplayShowHomeEnabled(true);
-//            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//           getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 //        }
 //
 //       mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close) {
@@ -570,6 +577,8 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         }).
                 build();
 
+       // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+       // getSupportActionBar().setHomeButtonEnabled(false);
     }
 
     public void popular_menu_assuntos() {
@@ -691,6 +700,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
 
             builder.setNegativeButton("NÃO", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface arg0, int arg1) {
+                    chamamain();
                 }
             });
 
@@ -705,6 +715,10 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
 //        }
 
         }
+
+    public void chamamain(){
+        setContentView(R.layout.fila_hijo_grupo);
+    }
 
     @Override
     public void onFragmentInteraction(Uri uri) {

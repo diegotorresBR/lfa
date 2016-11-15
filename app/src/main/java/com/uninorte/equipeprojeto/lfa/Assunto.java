@@ -30,8 +30,8 @@ public class Assunto extends Fragment {
         String res = a.getString("id");//obtem0 o id da imagem do assunto selecionado
         webView = (WebView)rootView.findViewById(R.id.mybrowser);
         WebSettings webSetting = webView.getSettings();
-        webView.getSettings().setBuiltInZoomControls(true);
-        webView.getSettings().setDisplayZoomControls(false);
+        webView.getSettings().setBuiltInZoomControls(true);//FUNCAO ZOOM ATIVADO
+        webView.getSettings().setDisplayZoomControls(false); //FUNCAO PARA DESATIVAR CONTROLE DE ZOOM
         webView.loadUrl("file:///android_asset/"+res);
         return rootView;
 
