@@ -1,6 +1,9 @@
 package com.uninorte.equipeprojeto.lfa;
 
+import android.app.AlertDialog;
 import android.app.Fragment;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,7 +41,14 @@ public class Assunto extends Fragment {
     }
 
 
+//    @Override
+//    public void onBackPressed() {
+//        Intent intent = new Intent(getActivity(), MainActivity.class);
+//        startActivity(intent);
+//    }
+
 
 }
+
 
 
