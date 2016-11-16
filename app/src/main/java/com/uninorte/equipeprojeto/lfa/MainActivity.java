@@ -79,6 +79,15 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
 
     //responsavel por controlar qual é a activity atual
     boolean atividadePrincipal=true;
+
+
+    public static final int quiz_unidade_geral = 0;
+    public static final int quiz_unidade_1 = 1;
+    public static final int quiz_unidade_2 = 2;
+    public static final int quiz_unidade_3 = 3;
+    public static final int quiz_unidade_4 = 4;
+    public static final int quiz_unidade_5 = 5;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -251,8 +260,15 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
                         fragmentTransaction = fragmentManager.beginTransaction();
                         atividadePrincipal = false;
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
-                        //////////////////////////////////////////////////UNIDADE 02 /////////////////////////////////////////////
+
+                    }if (drawerItem.getIdentifier() == 105) {
+                        args.putInt("unidade", quiz_unidade_1);
+                        quizz = new Pergunta_quiz();
+                        atividadePrincipal = false;
+                        fragmentTransaction = fragmentManager.beginTransaction();
+                        fragmentTransaction.replace(R.id.frame_container2, quizz).commit();
                     }
+                        //////////////////////////////////////////////////UNIDADE 02 /////////////////////////////////////////////
                     if (drawerItem.getIdentifier() == 201) {
                         args.putString("id", "unit21.html");//passa para o fragment o id do assunto
                         assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
@@ -348,8 +364,17 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
                         fragmentTransaction = fragmentManager.beginTransaction();
                         atividadePrincipal = false;
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
-                        //////////////////////////////////////////////////UNIDADE 03 /////////////////////////////////////////////
+
+                    }if (drawerItem.getIdentifier() == 213) {
+                        args.putInt("unidade", quiz_unidade_2);
+                        quizz = new Pergunta_quiz();
+                        atividadePrincipal = false;
+                        fragmentTransaction = fragmentManager.beginTransaction();
+                        fragmentTransaction.replace(R.id.frame_container2, quizz).commit();
                     }
+
+                        //////////////////////////////////////////////////UNIDADE 03 /////////////////////////////////////////////
+
                     if (drawerItem.getIdentifier() == 301) {
                         args.putString("id", "unit31.html");//passa para o fragment o id do assunto
                         assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
@@ -429,8 +454,17 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
                         fragmentTransaction = fragmentManager.beginTransaction();
                         atividadePrincipal = false;
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
-                        ///////////////////////////////////UNIDADE 04///////////////////////////////////////////////
+                    }if (drawerItem.getIdentifier() == 311) {
+                        args.putInt("unidade", quiz_unidade_3);
+                        quizz = new Pergunta_quiz();
+                        atividadePrincipal = false;
+                        fragmentTransaction = fragmentManager.beginTransaction();
+                        fragmentTransaction.replace(R.id.frame_container2, quizz).commit();
                     }
+
+
+                        ///////////////////////////////////UNIDADE 04///////////////////////////////////////////////
+
                     if (drawerItem.getIdentifier() == 401) {
                         args.putString("id", "unit41.html");//passa para o fragment o id do assunto
                         assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
@@ -462,9 +496,17 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
                         fragmentTransaction = fragmentManager.beginTransaction();
                         atividadePrincipal = false;
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
+
+                        if (drawerItem.getIdentifier() == 405) {
+                            args.putInt("unidade", quiz_unidade_4);
+                            quizz = new Pergunta_quiz();
+                            atividadePrincipal = false;
+                            fragmentTransaction = fragmentManager.beginTransaction();
+                            fragmentTransaction.replace(R.id.frame_container2, quizz).commit();
+                        }
+
                         /////////////////////////////UNIDADE 05////////////////////
-                    }
-                    if (drawerItem.getIdentifier() == 501) {
+                    } if (drawerItem.getIdentifier() == 501) {
                         args.putString("id", "unit51.html");//passa para o fragment o id do assunto
                         assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                         assunto_frag.setArguments(args);
@@ -503,6 +545,14 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
                         fragmentTransaction = fragmentManager.beginTransaction();
                         atividadePrincipal = false;
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
+
+                    }
+                    if (drawerItem.getIdentifier() == 506) {
+                        args.putInt("unidade", quiz_unidade_5);
+                        quizz = new Pergunta_quiz();
+                        atividadePrincipal = false;
+                        fragmentTransaction = fragmentManager.beginTransaction();
+                        fragmentTransaction.replace(R.id.frame_container2, quizz).commit();
                     }
                     if (drawerItem.getIdentifier() == 2) {
                         //args.putInt repetir "unidade" e digitar quiz_unidade e escolher a constante da unidade -- novo
@@ -510,6 +560,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
                         quiz = new Pergunta_quiz();
                         //setar o argumento antes -- novo
                         quiz.setArguments(args);
+                        atividadePrincipal = false;
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, quiz).commit();
                     }
