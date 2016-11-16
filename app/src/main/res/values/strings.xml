@@ -3,13 +3,15 @@
 
     <string name="action_settings">Settings</string>
     <string name="not_available_text">N/A</string>
-    <string name="drawer_open">Menu aberto</string>
-    <string name="drawer_close">Menu fechado</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-
+    <string name="sim">SIM</string>
+    <string name="nao">NAO</string>
     <string name="letraA">A</string>
     <string name="letraD">D</string>
     <string name="letraC">C</string>

@@ -8,17 +8,13 @@
 
     </group>
 
-    <item android:title="Facilidades">
+    <item android:title="Comunicação">
         <menu>
-            <item android:id="@+id/cupom_menu" android:icon="@android:drawable/ic_menu_day"
-                android:title="Cupons e Promoçoes" />
-            <item android:id="@+id/nav_manage" android:icon="@android:drawable/ic_menu_agenda"
-                android:title="Painel do Consultor Digital" />
-            <item android:id="@+id/nav_share" android:icon="@android:drawable/ic_menu_share"
-                android:title="Avalie o nosso app" />
-            <item android:id="@+id/nav_sobre" android:icon="@android:drawable/ic_dialog_info"
-                android:title="Sobre" />
+
+              <item android:id="@+id/nav_sobre" android:icon="@android:drawable/ic_dialog_info"
+                android:title="Saiba mais " />
         </menu>
+
     </item>
 
 

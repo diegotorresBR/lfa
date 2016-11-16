@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width; user-scalable=0;"/>
     <h2><p>Máquina de Mealy</p></h2>
+	<link rel="stylesheet" href="css\estilos.css">
 </head>
 <body>
 <h5>
-    <p ALIGN = "justify"> <font face="Arial">Uma máquina de Mealy M é um autômato finito determinístico com saídas associadas às transições. É representada por uma sêxtupla:</font> <br /> </p>
-    <p ALIGN = "center">M = (Σ, Q, δ, q0, F, _), onde:</p>
+    <p ALIGN = "justify">Uma máquina de Mealy M é um autômato finito determinístico com saídas associadas às transições. É representada por uma sêxtupla:</p>
+    <p ALIGN = "center">M = (Σ, Q, δ, q0, F,), onde:</p>
     <ul>
         <li>Σ é um alfabeto de símbolos de entrada.</li>
         <li>Q é um conjunto de estados possíveis do autômato, o qual é finito.</li>
@@ -17,8 +18,7 @@
         <li>F é um conjunto de estados finais tal que F está contido em Q.</li>
         <li> é um alfabeto de símbolos de saída.</li>
     </ul>
-    <p ALIGN = "justify">O processamento de uma Máquina de Mealy para uma dada entrada w consiste na sucessiva
-        aplicação da função programa para cada símbolo de w (da esquerda para a direita), até ocorrer uma condição de parada.</p>
+    <p ALIGN = "justify">O processamento de uma Máquina de Mealy para uma dada entrada w consiste na sucessiva aplicação da função programa para cada símbolo de w (da esquerda para a direita), até ocorrer uma condição de parada.</p>
     <p ALIGN = "justify">A palavra vazia como saída da função programa indica que nenhuma gravação é realizada e portanto a cabeça da fita de saída não se move.</p>
     <p ALIGN = "justify">Se todas as transições geram saída vazia, então a Máquina de Mealy se comporta como se fosse um autômato finito.</p>
     <p ALIGN = "justify">Exemplo: Máquina de Mealy </p>
@@ -30,9 +30,10 @@
         <li>[ ... ] Ação interna ao programa, sem comunicação com o usuário.</li>
         <li>( ... ) Resultado de uma ação interna ao programa - usado como entrada no grafo.</li>
     </ul>
-    <p align="justify">A máquina de Mealy M = (Σ, {q0, q1, ..., q8, qf}, δ, q0, {qf}, ) ilustrada na figura a seguir
-        , onde Σ =  e representam o conjunto de símbolos (palavras do português) válidos no diálogo.</p>
+    <p align="justify">A máquina de Mealy M = (Σ, {q0, q1, ..., q8, qf}, δ, q0, {qf}, ) ilustrada na figura a seguir, onde Σ =  e representam o conjunto de símbolos (palavras do português) válidos no diálogo.</p>
     <p><img src="3.9Maqmealy.jpg" align="center"></p>
 </h5>
+<h3><a href="unit310.html"><img border="0"  src="dir.png" style="width:42px;height:42px;border:0"></a></h3> 
+<h3><a href="unit38.html"><img border="0"  src="esq.png" style="width:42px;height:42px;border:0"></a></h3>
 </body>
 </html>
