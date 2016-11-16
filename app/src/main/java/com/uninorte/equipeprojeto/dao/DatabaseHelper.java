@@ -206,11 +206,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('aaabba' , 'false' , '24') ");
 		//05
 		db.execSQL("insert into perguntas(_id, id_unidade, txt_pergunta) values (25, '2', 'Expressão Regular pode ser conceituada como uma expressão concisa que denota uma linguagem regular. Uma expressão regular pode ser convertida para um autômato. Considerando isso, marque a alternativa que corresponde ao autômato que representa a Expressão Regular: {0,1}*{1010}, ∑= {0,1}:')");
-		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('figura25A' , 'true'  , '25')");
-		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('figura25B' , 'false' , '25')");
-		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('figura25C'  , 'false', '25')");
-		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('figura25D' , 'false' , '25')");
-		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('figura25E' , 'false' , '25')");
+		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('figura25a' , 'true'  , '25')");
+		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('figura25b' , 'false' , '25')");
+		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('figura25c'  , 'false', '25')");
+		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('figura25d' , 'false' , '25')");
+		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('figura25e' , 'false' , '25')");
 		//06
 		db.execSQL("insert into perguntas(_id, id_unidade, txt_pergunta) values (26, '2', 'Uma linguagem formal possui uma sintaxe bem definida de forma que dada uma sentença sempre é possível determinar se a mesma pertence ou não à linguagem. Sobre linguagens formais, marque a alternativa incorreta:')");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Nem toda linguagem possui um alfabeto associado à ela, somente as finitas.' , 'true'  , '26')					");

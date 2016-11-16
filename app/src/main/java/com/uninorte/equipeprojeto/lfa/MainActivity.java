@@ -21,6 +21,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ExpandableListView;
+import android.widget.Toast;
+
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
@@ -87,80 +89,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         header = new AccountHeaderBuilder().withActivity(this).withTranslucentStatusBar(true).withHeaderBackground(R.drawable.side_nav_bar).build();
         carregarDados();
         criar_drawer();
-
-//       mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout2);
-//        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-//        mDrawerLayout.setDrawerListener(mDrawerToggle);
-//        mDrawerToggle.syncState();
-//         mDrawerExpandableList = (ExpandableListView) findViewById(R.id.explist_slidermenu4);
-//        mDrawerExpandableList.setGroupIndicator(null);
-//
-//        //
-//       // View header = getLayoutInflater().inflate(R.layout.cabecera_general, null);
-//       // mDrawerExpandableList.addHeaderView(header, null, false);
-//        //...Fim da Pagina
-//
-//        carregarDados();
-//
-//        if (toolbar != null) {
-//            toolbar.setTitle(mDrawerTitle);
-//            toolbar.setSubtitle(mTitle);
-//            toolbar.setLogo(R.mipmap.ic_lfa1);
-
-         setSupportActionBar(toolbar);
-
-//            getSupportActionBar().setDisplayShowHomeEnabled(true);
-//           getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        }
-//
-//       mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close) {
-//
-//            @Override
-//            public void onDrawerClosed(View view) {
-//
-//
-//                getSupportActionBar().setTitle(mDrawerTitle);
-//                getSupportActionBar().setSubtitle(mTitle);
-//                invalidateOptionsMenu();
-//            }
-//
-//            @Override
-//            public void onDrawerOpened(View drawerView) {
-//
-//                getSupportActionBar().setTitle("Menu");
-//                getSupportActionBar().setSubtitle("Selecione uma opção");
-//                invalidateOptionsMenu();
-//
-//            }
-//        };
-//
-//        mDrawerToggle.setDrawerIndicatorEnabled(true);//Mostrar icono menu animado
-//        mDrawerLayout.setDrawerListener(mDrawerToggle);
-//        mDrawerExpandableList.setTextFilterEnabled(true);
-//        mDrawerExpandableList.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
-//            @Override
-//            public boolean onGroupClick(ExpandableListView parent, View v, int groupPosition, long id) {
-//                return false;
-//            }
-//        });
-//        mDrawerExpandableList.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
-//            @Override
-//            public void onGroupExpand(int groupPosition) {
-//                if (ultimaPosicionExpList != -1 && groupPosition != ultimaPosicionExpList) {
-//                    mDrawerExpandableList.collapseGroup(ultimaPosicionExpList);
-//                }
-//                ultimaPosicionExpList = groupPosition;
-//            }
-//        });
-//        mDrawerExpandableList.setOnGroupCollapseListener(new ExpandableListView.OnGroupCollapseListener() {
-//            @Override
-//            public void onGroupCollapse(int groupPosition) {
-//
-//
-//            }
-//        });
-//        mDrawerExpandableList.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
-
+        setSupportActionBar(toolbar);
         iniciar();
     }
 
@@ -244,24 +173,18 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         SearchManager searchManager = (SearchManager) getSystemService(SEARCH_SERVICE);
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         searchView.setOnQueryTextListener(this);
-
-
         return true;
-
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
-
-
         switch (item.getItemId()) {
             case android.R.id.home:
                 Log.i("drawer", "entrou no home");
-                if (drawer.isDrawerOpen()){
+                if (drawer.isDrawerOpen()) {
                     Log.i("drawer", "aberto");
                     drawer.closeDrawer();
-                }else{
+                } else {
                     drawer.openDrawer();
                     Log.i("drawer", "fechado");
                 }
@@ -271,34 +194,6 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         }
         return true;
     }
-
-
-//    @Override
-//    protected void onPostCreate(Bundle savedInstanceState) {
-//        super.onPostCreate(savedInstanceState);
-//        mDrawerToggle.syncState();
-//    }
-//
-//    @Override
-//    public void onConfigurationChanged(Configuration newConfig) {
-//        super.onConfigurationChanged(newConfig);
-//        mDrawerToggle.onConfigurationChanged(newConfig);
-//    }
-//
-//
-//    public boolean onKeyDown (int keycode, KeyEvent event){
-//        if (keycode == KeyEvent.KEYCODE_MENU) {
-//
-//            if (mDrawerLayout.isDrawerOpen(Gravity.LEFT)) {
-//                mDrawerLayout.closeDrawer(Gravity.LEFT);
-//            } else {
-//                mDrawerLayout.openDrawer(Gravity.LEFT);
-//            }
-//            return true;
-//        }else{
-//            return super.onKeyDown(keycode, event);
-//        }
-//    }
 
     public void criar_drawer() {
         unidade1 = new ExpandableDrawerItem().withName("Conceitos Basicos");
@@ -327,11 +222,11 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
                 if (drawerItem != null) {
                     if (drawerItem.getIdentifier() == 101) {
                         args.putString("id", "unit11.html");//passa para o fragment o id do assunto
-                            //assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
-                            //assunto_frag.setArguments(args);
-                            Tela_Apresentacao tela = new Tela_Apresentacao();
-                            fragmentTransaction = fragmentManager.beginTransaction();
-                            fragmentTransaction.replace(R.id.frame_container2, tela).commit();
+                        //assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
+                        //assunto_frag.setArguments(args);
+                        Tela_Apresentacao tela = new Tela_Apresentacao();
+                        fragmentTransaction = fragmentManager.beginTransaction();
+                        fragmentTransaction.replace(R.id.frame_container2, tela).commit();
                     }
                     if (drawerItem.getIdentifier() == 102) {
                         args.putString("id", "unit12.html");//passa para o fragment o id do assunto
@@ -623,10 +518,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
                 return false;
             }
         }).
-                withActionBarDrawerToggleAnimated(true).
-                build();
-       // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-       // getSupportActionBar().setHomeButtonEnabled(false);
+                withActionBarDrawerToggleAnimated(true).build();
     }
 
     public void popular_menu_assuntos() {
@@ -719,10 +611,8 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
 
         fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frame_container2, resultado);
-        //fragmentTransaction.addToBackStack(null);
         atividadePrincipal = false;
         fragmentTransaction.commit();
-
 
         return false;
     }
@@ -738,13 +628,10 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         public void onBackPressed() {
 
             if (!atividadePrincipal) {
-
                 Intent intent = new Intent(this, MainActivity.class);
-                   startActivity(intent);
+                startActivity(intent);
 
             } else {
-
-
                 new AlertDialog.Builder(this)
                         .setTitle("Deseja Sair?")
                         .setMessage("Voce deseja realmente sair?")
@@ -758,36 +645,13 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
                         }).create().show();
             }
         }
-//
-//            //POPUP AO SAIR DA APLICACAO
-//            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//            builder.setTitle("Sair?");
-//            builder.setMessage("Deseja realmente sair?");
-//            builder.setPositiveButton("SIM", new DialogInterface.OnClickListener() {
-//                public void onClick(DialogInterface arg0, int arg1) {
-//                    finish();
-//                }
-//
-//            });
-//            builder.setNegativeButton("NÃO", new DialogInterface.OnClickListener() {
-//                public void onClick(DialogInterface arg0, int arg1) {
-//                    chamamain();
-//                }
-//            });
-//
-//            AlertDialog alerta = builder.create();
-//            alerta.show();
-//
-
-
 
     @Override
     public void onFragmentInteraction(Uri uri) {
 
     }
 
-    public void iniciar(){
-
+    public void iniciar() {
         Tela_Apresentacao tela = new Tela_Apresentacao();
         fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frame_container2, tela).commit();
