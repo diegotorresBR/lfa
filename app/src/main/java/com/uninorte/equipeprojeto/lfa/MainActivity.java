@@ -1,6 +1,5 @@
 package com.uninorte.equipeprojeto.lfa;
 
-import android.accounts.Account;
 import android.app.AlertDialog;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
@@ -12,23 +11,16 @@ import android.net.Uri;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.Gravity;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.SubMenu;
 import android.view.View;
 import android.widget.ExpandableListView;
-
-import android.widget.Toast;
-
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
@@ -58,12 +50,6 @@ import java.util.Map;
  */
 public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener , resultado_fragment.OnFragmentInteractionListener {
     private Toolbar toolbar;
-    private DrawerLayout mDrawerLayout;//Menu Lateral
-    private ExpandableListView mDrawerExpandableList;//Lista dos Subtopicos
-    private ActionBarDrawerToggle mDrawerToggle;//Botao de Retorno do Drawer
-    private CharSequence mDrawerTitle;//Preciso falar?
-    private CharSequence mTitle;
-
     private List<String> grupos;//Conteudos
     private HashMap<String, List<String>> dadosGrupos;
     private int ultimaPosicionExpList = -1;
@@ -266,9 +252,19 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
+
+
         switch (item.getItemId()) {
             case android.R.id.home:
-                finish();
+                Log.i("drawer", "entrou no home");
+                if (drawer.isDrawerOpen()){
+                    Log.i("drawer", "aberto");
+                    drawer.closeDrawer();
+                }else{
+                    drawer.openDrawer();
+                    Log.i("drawer", "fechado");
+                }
                 break;
             default:
                 break;
@@ -315,6 +311,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
 
         drawer = new DrawerBuilder().withActivity(this).withToolbar(toolbar).
                 withAccountHeader(header).
+                withHasStableIds(true).
                 addDrawerItems(
                         new PrimaryDrawerItem().withName("Inicio").withDescription("Comece Aqui").withIdentifier(1).withSelectable(true),
                         new SectionDrawerItem().withName("Aprender"),
@@ -626,8 +623,8 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
                 return false;
             }
         }).
+                withActionBarDrawerToggleAnimated(true).
                 build();
-
        // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
        // getSupportActionBar().setHomeButtonEnabled(false);
     }
