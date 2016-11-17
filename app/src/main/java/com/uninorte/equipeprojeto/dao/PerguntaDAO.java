@@ -49,8 +49,8 @@ public class PerguntaDAO {
         return perguntas;
     }
     public List<Pergunta> ListarPerguntaPorUnidade(int idUnidade) {
-        Cursor cursor = getDatabase().query(DatabaseHelper.Respostas.TABELA
-                                            , DatabaseHelper.Respostas.COLUNAS
+        Cursor cursor = getDatabase().query(DatabaseHelper.Perguntas.TABELA
+                                            , DatabaseHelper.Perguntas.COLUNAS
                                             , "id_unidade = ?"
                                             , new String[]{Integer.toString(idUnidade)}
                                             , null, null, null);

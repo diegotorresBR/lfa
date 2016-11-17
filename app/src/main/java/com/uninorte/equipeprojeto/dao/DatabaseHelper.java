@@ -547,8 +547,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('É definida usando umv “formador de conjuntos” ou Formalismo Descritivo' , 'true'  ,'62');");
 		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Definidas como parte de um componente de um compilador.' , 'false' , '62');");
 		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Pode definir como um conjunto de Strings em uma cadeira.' , 'false' , '62');");
-		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Pode ser abstrada para de finir a linguaem' , 'false' , '62');");
-		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Exerce a função da linguagem moderadora. , 'false' , '62');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Pode ser abstrada para de finir a linguagem' , 'false' , '62');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Exerce a função da linguagem moderadora.' , 'false' , '62');");
 
 		db.execSQL(" insert into perguntas(_id, id_unidade, txt_pergunta) values (63, '1',     'Uma linguagem formal pode ser representada de 3 maneiras.'); ");
 		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Enumeração das cadeias que fazem parte dela ,gramática e Dispositivo reconhecedor (máquina).' , 'true'  ,'63');");
