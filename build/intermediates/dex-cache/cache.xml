@@ -3,6 +3,15 @@
 
     <item
         is-multidex="true"
+        jar="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_4a7c568bb49eb9c33512aef8a2e1d91c6f4dab01\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\exploded-aar\com.github.chrisbanes\PhotoView\1.3.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -18,6 +27,15 @@
         revision="24.0.3"
         sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
         <dex dex="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-24.2.1_d55fcb7cb9f1ac2234f1fa63417528e285e6fd82\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.2.1_f016d19a94ba17b3d1803941b696db037bb39829\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -39,102 +57,21 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\exploded-aar\com.mikepenz\fastadapter\1.8.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="21752cbe99942598e0b554b84e79b7c8d6f172f2">
-        <dex dex="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.mikepenz-fastadapter-1.8.0_6a56077a39285cefd3d39bb44aeacc3d8339fd21\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\exploded-aar\com.mikepenz\materialdrawer\5.6.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="fba538e4a999351c076639c4febdb49c0b1897f0">
-        <dex dex="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.mikepenz-materialdrawer-5.6.0_e309880c8a3e8f877385bfb8eadcafe9a642c435\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
-        <dex dex="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-24.2.1_50031825403f9f0152d1579829e4564c6c74311b\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Leandro\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.2.1\support-annotations-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
-        <dex dex="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.2.1_315fbf4a008298e5fc6d20ca8883efa92e612dae\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
-        <dex dex="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_965b3aa52717df541d26e7f5305ea3e46f0bcefe\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
-        <dex dex="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.2.1_eecc61e268ffa7f5a2c742a843efb1599d8841b6\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.2.1_8bc83b5184f19e75bde6ff0c68082b8aa084b929\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
-        <dex dex="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-24.2.1_e615ba9aae4dd80eccfb088285b3220737d54a11\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
-        <dex dex="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_4a7c568bb49eb9c33512aef8a2e1d91c6f4dab01\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
-        <dex dex="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.2.1_f016d19a94ba17b3d1803941b696db037bb39829\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="867dad63c33388ff8c7644b236579355036d075f">
         <dex dex="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_76a9d78769f1a72d1ae8959aee63863f3e68765d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\exploded-aar\com.mikepenz\fastadapter\1.8.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="21752cbe99942598e0b554b84e79b7c8d6f172f2">
+        <dex dex="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.mikepenz-fastadapter-1.8.0_6a56077a39285cefd3d39bb44aeacc3d8339fd21\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -156,6 +93,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\exploded-aar\com.mikepenz\materialdrawer\5.6.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="fba538e4a999351c076639c4febdb49c0b1897f0">
+        <dex dex="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.mikepenz-materialdrawer-5.6.0_e309880c8a3e8f877385bfb8eadcafe9a642c435\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -174,12 +120,48 @@
     </item>
     <item
         is-multidex="true"
+        jar="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-24.2.1_50031825403f9f0152d1579829e4564c6c74311b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Leandro\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.2.1\support-annotations-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.2.1_315fbf4a008298e5fc6d20ca8883efa92e612dae\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="a152e869fff7a2875da9340d2b7cbea21b683e60">
+        sha1="ebb6d5b84c78c2492af626d79cf8766e53938ec8">
         <dex dex="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_3977a9e77c1cb4f528423e2e66289886bb4d8787\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_965b3aa52717df541d26e7f5305ea3e46f0bcefe\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.2.1_eecc61e268ffa7f5a2c742a843efb1599d8841b6\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -192,12 +174,30 @@
     </item>
     <item
         is-multidex="true"
+        jar="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.2.1_8bc83b5184f19e75bde6ff0c68082b8aa084b929\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="0be33935a999f9d58a32322f311a4757620c790d">
+        sha1="64808806680f44d578042052e5d3633575f1079a">
         <dex dex="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_3036bdee282bb051570eb5c5e2dbdfbc0aa189a2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
+        <dex dex="C:\Users\Leandro\Desktop\LFA\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-24.2.1_e615ba9aae4dd80eccfb088285b3220737d54a11\classes.dex" />
     </item>
     <item
         is-multidex="true"
