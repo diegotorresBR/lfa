@@ -2,9 +2,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#077751"
-    tools:context="com.uninorte.equipeprojeto.lfa.Fragmento_Resultado_Quiz">
 
+    tools:context="com.uninorte.equipeprojeto.lfa.Fragmento_Resultado_Quiz">
+    <!--android:background="#077751"-->
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:id="@+id/textViewResultadoQuiz"
@@ -27,7 +27,6 @@
         android:layout_marginBottom="1dp"
         android:src="@drawable/botao_inicio"
         android:contextClickable="true"
-        android:background="#FFFF"
         android:paddingTop="15dp"
         android:layout_margin="15dp"
         />
@@ -36,17 +35,15 @@
         android:id="@+id/imageButtonIdRefazer"
         android:layout_width="50dp"
         android:layout_height="50dp"
-
         android:layout_gravity="bottom|center"
         android:padding="20dp"
         android:layout_marginBottom="100dp"
         android:text="@string/refazer"
         android:contextClickable="true"
         android:src="@drawable/botao_iniciar"
-        android:background="#FFFF"
         android:paddingTop="15dp"
         android:layout_margin="15dp"        />
-
+    <!--android:background="#FFFF"-->
     <ImageButton
         android:id="@+id/imageButtonIdCompartilhar"
         android:layout_width="50dp"
@@ -57,9 +54,9 @@
         android:layout_marginBottom="1dp"
         android:contextClickable="true"
         android:src="@drawable/botao_compartilhar"
-        android:background="#FFFF"
         android:paddingTop="15dp"
-        android:layout_margin="15dp"        />
+        android:layout_margin="15dp"
+        />
 
 
 

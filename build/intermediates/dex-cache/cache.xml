@@ -124,7 +124,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="f40e60578a3f170097e050cafe6cfd9a6d3c6831">
+        sha1="5e11a946bc27a28e065b0888d3207dbfb06def59">
         <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_25c9f116856a90f97e106d1f6211ab6675cc43e0\classes.dex" />
     </item>
     <item
@@ -151,7 +151,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="a25902e5329ec1265180e01b8c0f39d384bac7fa">
+        sha1="422c8821ec8b70941487ac7ab59a9406bc409498">
         <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_3dbaec51dfd7a1d32658bc79ebd6f93dfef017ba\classes.dex" />
     </item>
     <item
