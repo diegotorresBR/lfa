@@ -4,7 +4,9 @@ import android.app.AlertDialog;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.app.SearchManager;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.os.Bundle;
@@ -61,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     ExpandableDrawerItem unidade1, unidade2, unidade3, unidade4, unidade5;
     SecondaryDrawerItem unidade_filho;
     Drawer drawer;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -196,6 +199,8 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         unidade5 = new ExpandableDrawerItem().withName("Maquina de Turing");
 
 popular_menu_assuntos();
+
+
 
         drawer = new DrawerBuilder().withActivity(this).withToolbar(toolbar).
                 withAccountHeader(header).
@@ -392,6 +397,10 @@ popular_menu_assuntos();
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, quizz).commit();
 
+                    }if(drawerItem.getIdentifier() == 1){
+
+                        iniciar();
+
                     }
                 }
 
@@ -536,4 +545,6 @@ popular_menu_assuntos();
         fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frame_container2, tela).commit();
     }
+
+
 }

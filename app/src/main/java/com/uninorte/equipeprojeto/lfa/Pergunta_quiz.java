@@ -236,7 +236,7 @@ public class Pergunta_quiz extends Fragment {
 
             if (contadorPosicaoAtual > total_de_questoes_padrao)
             {//TODO: Ao entrar nesta condição, o usuário é redirecionado para a tela de Resultado do Quiz.
-                args.putInt("id", R.drawable.u2_1);//passa para o fragment o id do assunto
+                //args.putInt("id", R.drawable.u2_1);//passa para o fragment o id do assunto
                 args.putInt("quantidade_questoes_certas", contadorDeQuestoesCertas);
                 args.putInt("total_de_questoes_padrao", total_de_questoes_padrao);
                 fragmento_resultado_quiz = new Fragmento_Resultado_Quiz();//é necesário instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag

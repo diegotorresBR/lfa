@@ -2,6 +2,24 @@
 <items version="2" >
 
     <item
+        is-multidex="true"
+        jar="/home/diego/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.0.0/support-annotations-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="a22d2cc94da87b254451fa8ed28afc30b4653773">
+        <dex dex="/home/diego/lfa/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.0.0_93aace30604d37cda074c4359fc973eab55b62b4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/diego/lfa/app/build/intermediates/exploded-aar/com.github.chrisbanes/PhotoView/1.3.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="81d41e53c215976ce172b9f61ef1e8fc2d67cf79">
+        <dex dex="/home/diego/lfa/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.github.chrisbanes-PhotoView-1.3.0_13b9ed53948226673499fa4f5262103ae427cb46/classes.dex" />
+    </item>
+    <item
         is-multidex="false"
         jar="/home/diego/lfa/app/build/intermediates/exploded-aar/com.android.support/design/25.0.0/jars/classes.jar"
         jumboMode="false"
@@ -18,6 +36,24 @@
         revision="24.0.3"
         sha1="75b1f366ff0bbc78f8b1f7cf0dc82e7c53afef6a">
         <dex dex="/home/diego/lfa/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-25.0.0_eb3157eb080bd67d4446c837043ca6076b162803.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/diego/lfa/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="76fb65a4b41ea42dab8a1310ed772a2420c96b52">
+        <dex dex="/home/diego/lfa/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.0.0_c572c08605377bdf43bee122e7fd7faf502137f6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/diego/lfa/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
+        <dex dex="/home/diego/lfa/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.0.0_b76c873f126336e0020191163dc51735054d2038/classes.dex" />
     </item>
     <item
         is-multidex="false"
@@ -38,6 +74,33 @@
         <dex dex="/home/diego/lfa/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_39a35baba9d912f2ebb301154d327ad7ff147c94.jar" />
     </item>
     <item
+        is-multidex="true"
+        jar="/home/diego/lfa/app/build/intermediates/exploded-aar/com.mikepenz/iconics-core/2.8.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="dcac7435781db56e25ab17c3f662227c517fc327">
+        <dex dex="/home/diego/lfa/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.mikepenz-iconics-core-2.8.0_f1cd91bb2b5f93ee080807ef0cdb3a23998f5cb4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/diego/lfa/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="5e497d60f0cb6ce87c458ac5420a46d0fed49bd0">
+        <dex dex="/home/diego/lfa/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.0.0_7f9427d46e76d679552caad9e8ebddb18d0ac8c3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/diego/lfa/app/build/intermediates/exploded-aar/com.android.support/transition/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="0c6d948e6cb9ea6f535d175fb61ba2930719c0e9">
+        <dex dex="/home/diego/lfa/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-transition-25.0.0_335def27de0fae1227426a4ea6d4aa589ccf9ff1/classes.dex" />
+    </item>
+    <item
         is-multidex="false"
         jar="/home/diego/lfa/app/build/intermediates/exploded-aar/com.mikepenz/fastadapter/2.0.0/jars/classes.jar"
         jumboMode="false"
@@ -45,6 +108,15 @@
         revision="24.0.3"
         sha1="a622a544a93e4f9b00cc1045ad8cd33d143fce92">
         <dex dex="/home/diego/lfa/app/build/intermediates/pre-dexed/debug/com.mikepenz-fastadapter-2.0.0_84c51e0184ca4e8fccc1ccedf81e707827eaa19d.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/diego/lfa/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="4ccbcda5c72027c7f7c14be9ff8640d9cb0d8da0">
+        <dex dex="/home/diego/lfa/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.0.0_03d218dd41f7a5ead70fa426e061e959a1aeea6a/classes.dex" />
     </item>
     <item
         is-multidex="false"
@@ -74,6 +146,15 @@
         <dex dex="/home/diego/lfa/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_1e5ca87cc0bd44ef4ea2496e58c2844e17d94d33.jar" />
     </item>
     <item
+        is-multidex="true"
+        jar="/home/diego/lfa/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="26674000177e45447a0326a6ad84612761199a13">
+        <dex dex="/home/diego/lfa/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.0.0_9544e8bcedf7b5efe860da0f71d117e84c23c7f2/classes.dex" />
+    </item>
+    <item
         is-multidex="false"
         jar="/home/diego/lfa/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.0/jars/classes.jar"
         jumboMode="false"
@@ -81,6 +162,42 @@
         revision="24.0.3"
         sha1="53a420cd4f49274db6bd43475f8006ba67ef6bbd">
         <dex dex="/home/diego/lfa/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-25.0.0_9031eca6d29324a1d41bbf4dff2c3a1874de6148.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/diego/lfa/app/build/jsoup-1.10.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="6b471012876a440ae746860d80738be2dd104655">
+        <dex dex="/home/diego/lfa/app/build/intermediates/transforms/dex/debug/folders/1000/2/jsoup-1.10.1_cbd0f247bda34aca3b771cdfc7057f9c089263a2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/diego/lfa/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/home/diego/lfa/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.0.0_eeafb8a48de610065e98553a4413c0e54737cf3b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/diego/lfa/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="8bc45ce1f63d1a391fd38b32a201be5a42f9c95d">
+        <dex dex="/home/diego/lfa/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.0.0_7978aa1dbdf20e4b27bac36a520e14d23f38d659/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/diego/lfa/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="05401bd30da706ce1c7fbf4bc0e2ed52834d1845">
+        <dex dex="/home/diego/lfa/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_7ec8d63d7633ab2a37de0326d03ea7851c2cc767/classes.dex" />
     </item>
     <item
         is-multidex="false"
@@ -101,6 +218,33 @@
         <dex dex="/home/diego/lfa/app/build/intermediates/pre-dexed/debug/glide-3.7.0_f0cb15fa20947e07369d4ea2e872e73adf7941b7.jar" />
     </item>
     <item
+        is-multidex="true"
+        jar="/home/diego/lfa/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="fcce67b3aa80d2dc45d23868d7610b9116aafc15">
+        <dex dex="/home/diego/lfa/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_d23a0f58955461f0d6061b0f413697fed4f9ccfa/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/diego/lfa/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="75b1f366ff0bbc78f8b1f7cf0dc82e7c53afef6a">
+        <dex dex="/home/diego/lfa/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.0.0_eb3157eb080bd67d4446c837043ca6076b162803/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/diego/lfa/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="c5e6490573cd2cc8018417f60ddd251138b6ed61">
+        <dex dex="/home/diego/lfa/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-cardview-v7-24.2.1_85de89179a75e88d9c0721c018f0028b4afd2dc8/classes.dex" />
+    </item>
+    <item
         is-multidex="false"
         jar="/home/diego/lfa/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.0/jars/classes.jar"
         jumboMode="false"
@@ -117,6 +261,24 @@
         revision="24.0.3"
         sha1="f2e3b9bc1ec25f652e8007ce7774c991e38f6a00">
         <dex dex="/home/diego/lfa/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_d09bd6be1d0f48f6ab810cc6960f03dc74a11cb9.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/diego/lfa/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d29714cc76b38157e3cbd034c66e1ec808eb4c19">
+        <dex dex="/home/diego/lfa/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.0.0_65d06ce6b1cd880b31e6af0000e617e2527b685d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/diego/lfa/app/build/intermediates/exploded-aar/com.android.support/design/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="26384be22ddc74cfe197ebda9edbc7d1fd8bd537">
+        <dex dex="/home/diego/lfa/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-25.0.0_a53f82641a4b9c463fa66237041d11db564177d9/classes.dex" />
     </item>
     <item
         is-multidex="false"
@@ -155,6 +317,15 @@
         <dex dex="/home/diego/lfa/app/build/intermediates/pre-dexed/debug/com.github.chrisbanes-PhotoView-1.3.0_13b9ed53948226673499fa4f5262103ae427cb46.jar" />
     </item>
     <item
+        is-multidex="true"
+        jar="/home/diego/lfa/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="665d21a8a069c96b4d9e8b434f5096d865b4e261">
+        <dex dex="/home/diego/lfa/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_4a284b9331b813108dc4d0fa16b880b7a709aab4/classes.dex" />
+    </item>
+    <item
         is-multidex="false"
         jar="/home/diego/lfa/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/classes.jar"
         jumboMode="false"
@@ -162,6 +333,42 @@
         revision="24.0.3"
         sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
         <dex dex="/home/diego/lfa/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-25.0.0_b76c873f126336e0020191163dc51735054d2038.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/diego/lfa/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="3b61a70884adaf0be3fc06c70c801e3e6df13133">
+        <dex dex="/home/diego/lfa/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_39a35baba9d912f2ebb301154d327ad7ff147c94/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/diego/lfa/app/build/intermediates/exploded-aar/com.mikepenz/fastadapter/2.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="a622a544a93e4f9b00cc1045ad8cd33d143fce92">
+        <dex dex="/home/diego/lfa/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.mikepenz-fastadapter-2.0.0_84c51e0184ca4e8fccc1ccedf81e707827eaa19d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/diego/lfa/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="53a420cd4f49274db6bd43475f8006ba67ef6bbd">
+        <dex dex="/home/diego/lfa/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.0.0_9031eca6d29324a1d41bbf4dff2c3a1874de6148/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/diego/lfa/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="ee5faf4dee5b6a4364bf51587871047dde7c703a">
+        <dex dex="/home/diego/lfa/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_138adfd59536ec91985ba4d00f8f4a486a5e943d/classes.dex" />
     </item>
     <item
         is-multidex="false"
@@ -191,6 +398,15 @@
         <dex dex="/home/diego/lfa/app/build/intermediates/pre-dexed/debug/com.android.support-transition-25.0.0_335def27de0fae1227426a4ea6d4aa589ccf9ff1.jar" />
     </item>
     <item
+        is-multidex="true"
+        jar="/home/diego/lfa/app/build/intermediates/exploded-aar/com.mikepenz/materialize/1.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="84c98924eff3106f306c3e233cc2e6d84744f518">
+        <dex dex="/home/diego/lfa/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.mikepenz-materialize-1.0.0_83895332f1de436d54dfb52ecc48bade484fd153/classes.dex" />
+    </item>
+    <item
         is-multidex="false"
         jar="/home/diego/lfa/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/jars/classes.jar"
         jumboMode="false"
@@ -198,6 +414,15 @@
         revision="24.0.3"
         sha1="8bc45ce1f63d1a391fd38b32a201be5a42f9c95d">
         <dex dex="/home/diego/lfa/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-25.0.0_7978aa1dbdf20e4b27bac36a520e14d23f38d659.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/diego/lfa/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="/home/diego/lfa/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_1e5ca87cc0bd44ef4ea2496e58c2844e17d94d33/classes.dex" />
     </item>
     <item
         is-multidex="false"
@@ -218,6 +443,15 @@
         <dex dex="/home/diego/lfa/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-25.0.0_9544e8bcedf7b5efe860da0f71d117e84c23c7f2.jar" />
     </item>
     <item
+        is-multidex="true"
+        jar="/home/diego/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/3.7.0/9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4/glide-3.7.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="/home/diego/lfa/app/build/intermediates/transforms/dex/debug/folders/1000/10/glide-3.7.0_f0cb15fa20947e07369d4ea2e872e73adf7941b7/classes.dex" />
+    </item>
+    <item
         is-multidex="false"
         jar="/home/diego/lfa/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/24.2.1/jars/classes.jar"
         jumboMode="false"
@@ -225,6 +459,24 @@
         revision="24.0.3"
         sha1="c5e6490573cd2cc8018417f60ddd251138b6ed61">
         <dex dex="/home/diego/lfa/app/build/intermediates/pre-dexed/debug/com.android.support-cardview-v7-24.2.1_85de89179a75e88d9c0721c018f0028b4afd2dc8.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/diego/lfa/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/5.7.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="3b1993adb9e15cb5ac162d1df484fe5fdc31070a">
+        <dex dex="/home/diego/lfa/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.mikepenz-materialdrawer-5.7.0_ad84b2c17e70b1a369c83fdb34d69b3eada2238e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/diego/lfa/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="f2e3b9bc1ec25f652e8007ce7774c991e38f6a00">
+        <dex dex="/home/diego/lfa/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_d09bd6be1d0f48f6ab810cc6960f03dc74a11cb9/classes.dex" />
     </item>
 
 </items>
