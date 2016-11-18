@@ -2,12 +2,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
+    android:background="#FFFF"
     android:id="@+id/idScrollViewPergunta">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:weightSum="1">
 
         <TextView
             android:id="@+id/textViewPergunta"
@@ -77,50 +79,47 @@
 
         </RadioGroup>
 
-        <!--<Button-->
+        <include layout="@layout/layout_botoes_pergunta_quiz"/>
+        <!--<RelativeLayout-->
             <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:id="@+id/buttonProximo"-->
-            <!--android:layout_margin="15dp"-->
-            <!--android:paddingTop="15dp"-->
-            <!--android:layout_gravity="bottom"-->
-            <!--android:text="@string/proximo"-->
-            <!--/>-->
+            <!--android:layout_height="200dp"-->
 
-        <!--<Button-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:id="@+id/buttonCancelar"-->
-            <!--android:paddingTop="15dp"-->
-            <!--android:layout_margin="15dp"-->
-            <!--android:layout_gravity="bottom"-->
-            <!--android:text="@string/cancelar"-->
-            <!--/>-->
+            <!--&gt;-->
 
-        <ImageButton
-            android:id="@+id/imageButtonIdProximo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:contextClickable="true"
-            android:src="@drawable/botao_proximo"
-            android:background="#FFFF"
-            android:paddingTop="15dp"
-            android:layout_margin="15dp"
-            android:layout_gravity="center"
-            />
+            <!--<ImageButton-->
+                <!--android:id="@+id/imageButtonIdCancelar"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:contextClickable="true"-->
+                <!--android:src="@drawable/botao_cancelar"-->
+                <!--android:background="#FFFF"-->
+                <!--android:paddingTop="15dp"-->
 
-            <ImageButton
-            android:id="@+id/imageButtonIdCancelar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:contextClickable="true"
-            android:src="@drawable/botao_cancelar"
-            android:background="#FFFF"
-            android:paddingTop="15dp"
-            android:layout_margin="15dp"
-            android:layout_gravity="center"
-                />
+                <!--android:layout_marginLeft="50dp"-->
+                <!--android:layout_marginTop="15dp"-->
+                <!--android:layout_marginBottom="15dp"-->
+                <!--android:layout_alignRight="@+id/imageButtonIdProximo"-->
+                <!--android:layout_alignEnd="@+id/imageButtonIdProximo"-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--/>-->
+            <!--&lt;!&ndash;android:layout_gravity="center"&ndash;&gt;-->
+            <!--<ImageButton-->
+                <!--android:id="@+id/imageButtonIdProximo"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:contextClickable="true"-->
+                <!--android:src="@drawable/botao_proximo"-->
+                <!--android:background="#FFFF"-->
+                <!--android:paddingTop="15dp"-->
+                <!--android:layout_marginLeft="15dp"-->
+                <!--android:layout_marginTop="15dp"-->
+                <!--android:layout_marginBottom="15dp"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:layout_centerHorizontal="true"-->
 
+                <!--/>-->
+            <!--&lt;!&ndash;android:layout_gravity="center|right|center_horizontal"&ndash;&gt;-->
+        <!--</RelativeLayout>-->
 
 
     </LinearLayout>

@@ -233,7 +233,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('baaa' , 'false' , '28')  ");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('aabaa' , 'false' , '28') ");
 		//09
-		db.execSQL("insert into perguntas(_id, id_unidade, txt_pergunta) values (29, '2', 'Uma Gramática é um formalismo gerador de linguagem. Dada a gramática G = ({P,S}, {a,b}, R, P), onde R é dado por: \n A  aB | B \n B  bB | baB | ϵ \n Marque a alternativa que descreve a Linguagem Gerada pela gramática G (L(G)).')");
+		db.execSQL("insert into perguntas(_id, id_unidade, txt_pergunta) values (29, '2', 'Uma Gramática é um formalismo gerador de linguagem. Dada a gramática G = ({P, S}, {a, b}, R, P), onde R é dado por: \n A  aB | B \n B  bB | baB | ϵ \n Marque a alternativa que descreve a Linguagem Gerada pela gramática G (L(G)).')");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Conjunto de strings onde cada ocorrência de a é imediatamente seguido por um b.' , 'true' ,'29')");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Conjunto de strings com prefixo a.' , 'false', '29')                                            ");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Conjunto de strings com sufixo ba.' , 'false', '29')                                            ");
@@ -241,10 +241,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Nenhuma das Alternativas Anteriores.' , 'false', '29')                                          ");
 		//10
 		db.execSQL("insert into perguntas(_id, id_unidade, txt_pergunta) values (30, '2', 'Linguagens regulares podem ser definidas por autômatos finitos, expressões regulares e gramáticas regulares. Dada a expressão regular: a(a* | b*), marque a alternativa que indica as regras da gramática que gera a mesma linguagem:')");
-		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('S -> aC' , 'true'  , '30')");
-		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('C -> A | B \nA -> aA | ε \nB -> bB | ε \nS -> aC \nC -> A \n\nA -> aA | bA' , 'false' , '30')");
-		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('S -> a | b | C \nC -> a | b'  , 'false', '30')");
-		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('S -> C \nC -> AB \nA -> aA \nB -> bB | ε' , 'false' , '30')																															");
+		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('S →   aC' , 'true'  , '30')");
+		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('C → A | B \nA → aA | ε \nB → bB | ε \nS → aC \nC → A \n\nA → aA | bA' , 'false' , '30')");
+		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('S → a | b | C \nC → a | b'  , 'false', '30')");
+		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('S → C \nC → AB \nA → aA \nB → bB | ε' , 'false' , '30')																															");
 		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Nenhuma das Alternativas Anteriores.' , 'false' , '30')				");
 		//11
 		db.execSQL("insert into perguntas(_id, id_unidade, txt_pergunta) values (31, '2', 'No contexto de linguagens formais e autômatos, julgue os itens a seguir: \nI – Um autômato finito com transições vazias (AFNε) não pode ser convertido em um autômato finito determinístico (AFD). \nII – Um autômato não pode ser considerado uma máquina de estados finito, pois representa linguagens. \nIII – Um autômato é um mecanismo reconhecedor de linguagens e gramáticas são geradores.\nMarque a alternativa correta:')																															");
@@ -265,8 +265,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 //		--01
 		db.execSQL("insert into perguntas(_id, id_unidade, txt_pergunta) values (33, '2', 'Assinale a alternativa incorreta.'); 																									");
-		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A regra de produção A -> wB denota uma gramática linear à direita.' , 'false'  , '33');												");
-		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A regra de produção A -> Bw denota uma gramática linear à esquerda.' , 'false' , '33');                                               ");
+		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A regra de produção A → wB denota uma gramática linear à direita.' , 'false'  , '33');												");
+		db.execSQL("insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A regra de produção A → Bw denota uma gramática linear à esquerda.' , 'false' , '33');                                               ");
 		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A máquina de Mealy gera saída para cada transição da máquina e a de Moore gera saída para cada estado da máquina.'  , 'false', '33'); ");
 		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('O autômato com pilha é um exemplo de um autômato de saída.' , 'false' , '33');                                                        ");
 		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('As saídas de um autômato finito com saída podem ser lidas e serem utilizadas como memória auxiliar.' , 'true' , '33');");
@@ -292,7 +292,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Trata-se de um formalismo operacional.' , 'false' , '36');                                                           ");
 		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Se x e y são expressões regulares, então a expressão (x+y) denota a união entre as duas.' , 'true' , '36');          ");
 		//		--05
-		db.execSQL(" insert into perguntas(_id, id_unidade, txt_pergunta) values (37, '2', '05.	Julgue os itens a seguir e assinale a alternativa que possui apenas os itens verdadeiros.\nI.	Somente as regras de produção é que definem                uma gramática formal. \nII.	O conjunto vazio é diferente do conjunto formado pela palavra vazia. \nIII.	O conjunto de palíndromos sobre o alfabeto {a, b} é um exemplo de linguagem infinita. \nIV.	Duas gramáticas são ditas equivalentes se, e somente se, elas são iguais.'); ");
+		db.execSQL(" insert into perguntas(_id, id_unidade, txt_pergunta) values (37, '2', '05.	Julgue os itens a seguir e assinale a alternativa que possui apenas os itens verdadeiros.\nI. Somente as regras de produção é que definem uma gramática formal.\nII. O conjunto vazio é diferente do conjunto formado pela palavra vazia.\nIII. O conjunto de palíndromos sobre o alfabeto {a, b} é um exemplo de linguagem infinita.\nIV.	Duas gramáticas são ditas equivalentes se, e somente se, elas são iguais.'); ");
 		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('I, II, III e IV.' , 'false'  , '37'); ");
 		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('I e IV.' , 'false' , '37');           ");
 		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('I e III.'  , 'false', '37');          ");
@@ -376,10 +376,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('O autômato com pilha é um exemplo de um autômato de saída.' , 'false'  ,'48');");
 		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('As saídas de um autômato finito com saída podem ser lidas e serem utilizadas como memória auxiliar.' , 'true' , '48');");
 		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A máquina de Mealy gera saída para cada transição da máquina e a de Moore gera saída para cada estado da máquina.' , 'false' , '48');");
-		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A regra de produção A -> Bw denota uma gramática linear à esquerda.' , 'false' , '48');");
-		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A regra de produção A -> wB denota uma gramática linear à direita.' , 'false' , '48');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A regra de produção A → Bw denota uma gramática linear à esquerda.' , 'false' , '48');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A regra de produção A → wB denota uma gramática linear à direita.' , 'false' , '48');");
 		//07
-		db.execSQL(" insert into perguntas(_id, id_unidade, txt_pergunta) values (49, '2',     'Julgue os itens a seguir e assinale a alternativa que possui apenas os itens falsos. I.Somente as regras de produção é que definem uma gramática formal. II.O conjunto vazio é diferente do conjunto formado pela palavra vazia. III.O conjunto de palíndromos sobre o alfabeto {a, b}     é um exemplo de linguagem infinita. IV.Duas gramáticas são ditas equivalentes se, e somente se, elas são iguais.'); ");
+		db.execSQL(" insert into perguntas(_id, id_unidade, txt_pergunta) values (49, '2',     'Julgue os itens a seguir e assinale a alternativa que possui apenas os itens falsos.\nI. Somente as regras de produção é que definem uma gramática formal.\nII. O conjunto vazio é diferente do conjunto formado pela palavra vazia.\nIII. O conjunto de palíndromos sobre o alfabeto {a, b} é um exemplo de linguagem infinita.\nIV. Duas gramáticas são ditas equivalentes se, e somente se, elas são iguais.'); ");
 		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('I, II, III e IV.' , 'false'  ,'49');");
 		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('I e IV.' , 'true' , '49');");
 		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('I e III.' , 'false' , '49');");
@@ -412,8 +412,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 		//01
 		db.execSQL(" insert into perguntas(_id, id_unidade, txt_pergunta) values (53, '2',     'Assinale a alternativa incorreta.'); ");
-		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A regra de produção A -> wB denota uma gramática linear à direita.' , 'false'  ,'53');");
-		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A regra de produção A -> Bw denota uma gramática linear à esquerda.' , 'false' , '53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A regra de produção A → wB denota uma gramática linear à direita.' , 'false'  ,'53');");
+		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A regra de produção A → Bw denota uma gramática linear à esquerda.' , 'false' , '53');");
 		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('A máquina de Mealy gera saída para cada transição da máquina e a de Moore gera saída para cada estado da máquina.' , 'false' , '53');");
 		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('O autômato com pilha é um exemplo de um autômato de saída.' , 'false' , '53');");
 		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('As saídas de um autômato finito com saída podem ser lidas e serem utilizadas como memória auxiliar. ' , 'true' , '53');");
@@ -439,7 +439,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Trata-se de um formalismo operacional.' , 'false' , '53');");
 		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('Se x e y são expressões regulares, então a expressão (x+y) denota a união entre as duas.' , 'true' , '53');");
 		////05
-		db.execSQL(" insert into perguntas(_id, id_unidade, txt_pergunta) values (53, '2',     'Julgue os itens a seguir e assinale a alternativa que possui apenas os itens verdadeiros. \nI.Somente as regras de produção é que definem uma gramática formal. \nII.O conjunto vazio é diferente do conjunto formado pela palavra vazia. \nIII.O conjunto de palíndromos sobre o alfabeto {a, b} é um exemplo de linguagem infinita. \nIV.Duas gramáticas são ditas equivalentes se, e somente se, elas são iguais.'); ");
+		db.execSQL(" insert into perguntas(_id, id_unidade, txt_pergunta) values (53, '2',     'Julgue os itens a seguir e assinale a alternativa que possui apenas os itens verdadeiros.\nI. Somente as regras de produção é que definem uma gramática formal.\nII. O conjunto vazio é diferente do conjunto formado pela palavra vazia.\nIII. O conjunto de palíndromos sobre o alfabeto {a, b} é um exemplo de linguagem infinita.\nIV. Duas gramáticas são ditas equivalentes se, e somente se, elas são iguais.'); ");
 		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('I, II, III e IV.' , 'false'  ,'53');");
 		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('I e IV.' , 'false' , '53');");
 		db.execSQL(" insert into respostas(txt_resposta, flag_verdadeiro, id_pergunta) values ('I e III.' , 'false' , '53');");

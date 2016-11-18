@@ -131,8 +131,12 @@ public class Fragmento_Resultado_Quiz extends Fragment {
         imageButtonInicio.setOnClickListener(new View.OnClickListener() {
             @Override// este método direciona o usuário para o início da aplicação
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), MainActivity.class);
-                startActivity(intent);
+                Tela_Apresentacao tela = new Tela_Apresentacao();
+                args.putBoolean("atividadePrincipal", true);
+                tela.setArguments(args);
+                fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.frame_container2, tela).commit();
+
             }
         });
         //
@@ -148,7 +152,12 @@ public class Fragmento_Resultado_Quiz extends Fragment {
         });
         return view;
     }
-
+//    public void iniciar() {
+//       // atividadePrincipal = true;
+//       Tela_Apresentacao tela = new Tela_Apresentacao();
+//        fragmentTransaction = fragmentManager.beginTransaction();
+//        fragmentTransaction.replace(R.id.frame_container2, tela).commit();
+//    }
     public Fragmento_Resultado_Quiz() {
         // Required empty public constructor
     }

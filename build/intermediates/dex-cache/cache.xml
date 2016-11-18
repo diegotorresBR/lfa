@@ -2,247 +2,229 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
-        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.0.0_533f2f48468edec917b876b115b2ef89b0db93a7\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.0.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.0.0_93e040b055179ae60228bd0529c4c535e983181c\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="c5e6490573cd2cc8018417f60ddd251138b6ed61">
-        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-cardview-v7-24.2.1_9969e19ec13c62e12e801c5c1391737ca18980cf\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\exploded-aar\com.android.support\design\25.0.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="26384be22ddc74cfe197ebda9edbc7d1fd8bd537">
-        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-25.0.0_5a186a347a839162169ebcd8dd4062f599a31afe\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\exploded-aar\com.github.chrisbanes\PhotoView\1.3.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="81d41e53c215976ce172b9f61ef1e8fc2d67cf79">
-        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.github.chrisbanes-PhotoView-1.3.0_3b2cb810b7b1111dafe9f0ea099bebdc3fbc6230\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.0\jars\libs\internal_impl-25.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
-        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.0_b2dfa8307f4339ab64c55fb160dc0cc1602af96c\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.0.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="d29714cc76b38157e3cbd034c66e1ec808eb4c19">
-        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.0.0_3a8db685a14d4cfcec1c00a87d493fbc463fc7dd\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.0\jars\libs\internal_impl-25.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="665d21a8a069c96b4d9e8b434f5096d865b4e261">
-        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.0_11bdaa3b4acc66040087094d14db66cba8da0b01\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.0.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="8bc45ce1f63d1a391fd38b32a201be5a42f9c95d">
-        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.0.0_6b7306d0f1dfbc662811c8c600dbf828c8464fe8\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Android\sdk1\extras\android\m2repository\com\android\support\support-annotations\25.0.0\support-annotations-25.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="a22d2cc94da87b254451fa8ed28afc30b4653773">
-        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.0.0_700bc13fdb0495d3bf2b160de8bcdb13244f062b\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\dijon\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.7.0\9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4\glide-3.7.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
-        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\glide-3.7.0_4144fb063f0e12be38692ee25b9f82ff54e0598a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="26674000177e45447a0326a6ad84612761199a13">
-        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.0.0_23131cdab2080788ed4d58fe327ee9ac2a600488\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.0.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="5e497d60f0cb6ce87c458ac5420a46d0fed49bd0">
-        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-25.0.0_014b39565365268b4397b8d7a29ea90cde07ffed\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="5e11a946bc27a28e065b0888d3207dbfb06def59">
-        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_25c9f116856a90f97e106d1f6211ab6675cc43e0\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
+        is-multidex="false"
         jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.0\jars\libs\internal_impl-25.0.0.jar"
-        jumboMode="true"
+        jumboMode="false"
         optimize="true"
         revision="24.0.3"
         sha1="ee5faf4dee5b6a4364bf51587871047dde7c703a">
-        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.0_edf92404db414e847295f83bda406d71a3505a86\classes.dex" />
+        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.0_edf92404db414e847295f83bda406d71a3505a86.jar" />
     </item>
     <item
-        is-multidex="true"
+        is-multidex="false"
+        jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="5e497d60f0cb6ce87c458ac5420a46d0fed49bd0">
+        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-25.0.0_014b39565365268b4397b8d7a29ea90cde07ffed.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="26674000177e45447a0326a6ad84612761199a13">
+        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-25.0.0_23131cdab2080788ed4d58fe327ee9ac2a600488.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\exploded-aar\com.mikepenz\materialize\1.0.0\jars\classes.jar"
-        jumboMode="true"
+        jumboMode="false"
         optimize="true"
         revision="24.0.3"
         sha1="84c98924eff3106f306c3e233cc2e6d84744f518">
-        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.mikepenz-materialize-1.0.0_53a4810a2901db5a849df87119e56d27d4c2bfce\classes.dex" />
+        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\pre-dexed\debug\com.mikepenz-materialize-1.0.0_53a4810a2901db5a849df87119e56d27d4c2bfce.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="422c8821ec8b70941487ac7ab59a9406bc409498">
-        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_3dbaec51dfd7a1d32658bc79ebd6f93dfef017ba\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
+        is-multidex="false"
         jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.0\jars\libs\internal_impl-25.0.0.jar"
-        jumboMode="true"
+        jumboMode="false"
         optimize="true"
         revision="24.0.3"
         sha1="f2e3b9bc1ec25f652e8007ce7774c991e38f6a00">
-        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.0_d7c850b5056cf06046e44d252120c87b3123bf21\classes.dex" />
+        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.0_d7c850b5056cf06046e44d252120c87b3123bf21.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\exploded-aar\com.mikepenz\materialdrawer\5.7.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="3b1993adb9e15cb5ac162d1df484fe5fdc31070a">
-        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.mikepenz-materialdrawer-5.7.0_944d4dfe6891fa9f161f32b8360051602a54ad00\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\exploded-aar\com.mikepenz\iconics-core\2.8.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="dcac7435781db56e25ab17c3f662227c517fc327">
-        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.mikepenz-iconics-core-2.8.0_d0d7b2ec6a814d1dc52102af0f8dd5fb22c1b9ad\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
+        is-multidex="false"
         jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.0\jars\classes.jar"
-        jumboMode="true"
+        jumboMode="false"
         optimize="true"
         revision="24.0.3"
         sha1="76fb65a4b41ea42dab8a1310ed772a2420c96b52">
-        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.0.0_ab0cca5ea5c252a8ad1d2f82a6063775be9e8243\classes.dex" />
+        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-25.0.0_ab0cca5ea5c252a8ad1d2f82a6063775be9e8243.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.0\jars\classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\exploded-aar\com.mikepenz\iconics-core\2.8.0\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="24.0.3"
-        sha1="75b1f366ff0bbc78f8b1f7cf0dc82e7c53afef6a">
-        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.0.0_0742585a3536adbfb5ccc60d18b6982cf52f4909\classes.dex" />
+        sha1="dcac7435781db56e25ab17c3f662227c517fc327">
+        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\pre-dexed\debug\com.mikepenz-iconics-core-2.8.0_d0d7b2ec6a814d1dc52102af0f8dd5fb22c1b9ad.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.0.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="53a420cd4f49274db6bd43475f8006ba67ef6bbd">
-        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.0.0_577ed7d198bbbea9df8d091310a71e77e721c6e5\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.0\jars\libs\internal_impl-25.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="3b61a70884adaf0be3fc06c70c801e3e6df13133">
-        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.0_cddf14c728094ee50ce3e19b564615437c37d6ec\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
+        is-multidex="false"
         jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.0\jars\classes.jar"
-        jumboMode="true"
+        jumboMode="false"
         optimize="true"
         revision="24.0.3"
         sha1="4ccbcda5c72027c7f7c14be9ff8640d9cb0d8da0">
-        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.0.0_f2b3c6bd3a1009748b28829139deed7dadc306c7\classes.dex" />
+        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-25.0.0_f2b3c6bd3a1009748b28829139deed7dadc306c7.jar" />
     </item>
     <item
-        is-multidex="true"
+        is-multidex="false"
+        jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="53a420cd4f49274db6bd43475f8006ba67ef6bbd">
+        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-25.0.0_577ed7d198bbbea9df8d091310a71e77e721c6e5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.0\jars\libs\internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="3b61a70884adaf0be3fc06c70c801e3e6df13133">
+        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.0_cddf14c728094ee50ce3e19b564615437c37d6ec.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\exploded-aar\com.mikepenz\fastadapter\2.0.0\jars\classes.jar"
-        jumboMode="true"
+        jumboMode="false"
         optimize="true"
         revision="24.0.3"
         sha1="a622a544a93e4f9b00cc1045ad8cd33d143fce92">
-        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.mikepenz-fastadapter-2.0.0_5f3a6fbbf0c8edfae4e781a980c40f689feb18a1\classes.dex" />
+        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\pre-dexed\debug\com.mikepenz-fastadapter-2.0.0_5f3a6fbbf0c8edfae4e781a980c40f689feb18a1.jar" />
     </item>
     <item
-        is-multidex="true"
+        is-multidex="false"
+        jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-25.0.0_93e040b055179ae60228bd0529c4c535e983181c.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\exploded-aar\com.android.support\transition\25.0.0\jars\classes.jar"
-        jumboMode="true"
+        jumboMode="false"
         optimize="true"
         revision="24.0.3"
         sha1="0c6d948e6cb9ea6f535d175fb61ba2930719c0e9">
-        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-transition-25.0.0_18d1d08ec857a2ff531200ff7f35959ffb56691a\classes.dex" />
+        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\pre-dexed\debug\com.android.support-transition-25.0.0_18d1d08ec857a2ff531200ff7f35959ffb56691a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="c5e6490573cd2cc8018417f60ddd251138b6ed61">
+        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\pre-dexed\debug\com.android.support-cardview-v7-24.2.1_9969e19ec13c62e12e801c5c1391737ca18980cf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\exploded-aar\com.android.support\design\25.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="26384be22ddc74cfe197ebda9edbc7d1fd8bd537">
+        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\pre-dexed\debug\com.android.support-design-25.0.0_5a186a347a839162169ebcd8dd4062f599a31afe.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="75b1f366ff0bbc78f8b1f7cf0dc82e7c53afef6a">
+        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-25.0.0_0742585a3536adbfb5ccc60d18b6982cf52f4909.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
+        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-25.0.0_533f2f48468edec917b876b115b2ef89b0db93a7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\exploded-aar\com.github.chrisbanes\PhotoView\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="81d41e53c215976ce172b9f61ef1e8fc2d67cf79">
+        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\pre-dexed\debug\com.github.chrisbanes-PhotoView-1.3.0_3b2cb810b7b1111dafe9f0ea099bebdc3fbc6230.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.0\jars\libs\internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="665d21a8a069c96b4d9e8b434f5096d865b4e261">
+        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.0_11bdaa3b4acc66040087094d14db66cba8da0b01.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\exploded-aar\com.mikepenz\materialdrawer\5.7.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="3b1993adb9e15cb5ac162d1df484fe5fdc31070a">
+        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\pre-dexed\debug\com.mikepenz-materialdrawer-5.7.0_944d4dfe6891fa9f161f32b8360051602a54ad00.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.0\jars\libs\internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.0_b2dfa8307f4339ab64c55fb160dc0cc1602af96c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d29714cc76b38157e3cbd034c66e1ec808eb4c19">
+        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-25.0.0_3a8db685a14d4cfcec1c00a87d493fbc463fc7dd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="8bc45ce1f63d1a391fd38b32a201be5a42f9c95d">
+        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-25.0.0_6b7306d0f1dfbc662811c8c600dbf828c8464fe8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Android\sdk1\extras\android\m2repository\com\android\support\support-annotations\25.0.0\support-annotations-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="a22d2cc94da87b254451fa8ed28afc30b4653773">
+        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\pre-dexed\debug\support-annotations-25.0.0_700bc13fdb0495d3bf2b160de8bcdb13244f062b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\dijon\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.7.0\9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4\glide-3.7.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="C:\Users\dijon\Desktop\megazord\lfa\app\build\intermediates\pre-dexed\debug\glide-3.7.0_4144fb063f0e12be38692ee25b9f82ff54e0598a.jar" />
     </item>
 
 </items>

@@ -567,7 +567,11 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, quiz).commit();
                     }
+                if(drawerItem.getIdentifier() == 1){
 
+                    iniciar();
+
+                }
 
                 return false;
             }
@@ -680,7 +684,6 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
 
         @Override
         public void onBackPressed() {
-
             if (!atividadePrincipal) {
                 iniciar();
             }

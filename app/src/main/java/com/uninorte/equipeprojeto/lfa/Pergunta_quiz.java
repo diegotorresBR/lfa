@@ -128,8 +128,11 @@ public class Pergunta_quiz extends Fragment {
 
     public void irParaInicio()
     {
-        Intent intent = new Intent(getActivity(), MainActivity.class);
-        startActivity(intent);
+        Tela_Apresentacao tela = new Tela_Apresentacao();
+        args.putBoolean("atividadePrincipal", true);
+        tela.setArguments(args);
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frame_container2, tela).commit();
     }
 
     public void contarQuestoesCertas()
