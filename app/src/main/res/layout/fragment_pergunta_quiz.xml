@@ -74,53 +74,11 @@
                 android:padding="15dp"
                 android:text="@string/letraE"
                 android:textColor="@color/md_black_1000"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="1dp"/>
 
 
         </RadioGroup>
 
         <include layout="@layout/layout_botoes_pergunta_quiz"/>
-        <!--<RelativeLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="200dp"-->
-
-            <!--&gt;-->
-
-            <!--<ImageButton-->
-                <!--android:id="@+id/imageButtonIdCancelar"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:contextClickable="true"-->
-                <!--android:src="@drawable/botao_cancelar"-->
-                <!--android:background="#FFFF"-->
-                <!--android:paddingTop="15dp"-->
-
-                <!--android:layout_marginLeft="50dp"-->
-                <!--android:layout_marginTop="15dp"-->
-                <!--android:layout_marginBottom="15dp"-->
-                <!--android:layout_alignRight="@+id/imageButtonIdProximo"-->
-                <!--android:layout_alignEnd="@+id/imageButtonIdProximo"-->
-                <!--android:layout_alignParentTop="true"-->
-                <!--/>-->
-            <!--&lt;!&ndash;android:layout_gravity="center"&ndash;&gt;-->
-            <!--<ImageButton-->
-                <!--android:id="@+id/imageButtonIdProximo"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:contextClickable="true"-->
-                <!--android:src="@drawable/botao_proximo"-->
-                <!--android:background="#FFFF"-->
-                <!--android:paddingTop="15dp"-->
-                <!--android:layout_marginLeft="15dp"-->
-                <!--android:layout_marginTop="15dp"-->
-                <!--android:layout_marginBottom="15dp"-->
-                <!--android:layout_centerVertical="true"-->
-                <!--android:layout_centerHorizontal="true"-->
-
-                <!--/>-->
-            <!--&lt;!&ndash;android:layout_gravity="center|right|center_horizontal"&ndash;&gt;-->
-        <!--</RelativeLayout>-->
-
-
     </LinearLayout>
 </ScrollView>
