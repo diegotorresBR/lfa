@@ -65,45 +65,51 @@ public class Tela_Apresentacao extends Fragment {
         String textodoTitulo = null;
         String textodoTituloTratado = null;
 
-            for(int i = 5;i>=1;i--){
+        for(int i = 5;i>=1;i--){
 
-                Log.d("Laço", "Entrou no laço "+i);
-                String local = assuntos_recentes.get(assuntos_recentes.size()-i);
+            Log.d("Laço", "Entrou no laço "+i);
+            String local = assuntos_recentes.get(assuntos_recentes.size()-i);
 
-                try {
+            try {
 
-                    is = getActivity().getAssets().open(local);
-                    Document texto = Jsoup.parse(is, "UTF-8", "");
-                    Elements elemento_corpo = texto.getElementsByTag("h5").tagName("p");
-                    Elements elemento_titulo = texto.getElementsByTag("h2");
-                    textodocorpo = elemento_corpo.text();
-                    textodoTitulo = elemento_titulo.text();
-                    textodoTituloTratado = textodoTitulo.substring(0, textodoTitulo.length()-7);
+                is = getActivity().getAssets().open(local);
+                Document texto = Jsoup.parse(is, "UTF-8", "");
+                Elements elemento_corpo = texto.getElementsByTag("h5").tagName("p");
+                Elements elemento_titulo = texto.getElementsByTag("h2");
+                textodocorpo = elemento_corpo.text();
+                textodoTitulo = elemento_titulo.text();
+                textodoTituloTratado = textodoTitulo;
+                //textodoTituloTratado = textodoTitulo.substring(0, textodoTitulo.length()-7);
 
-                }catch (Exception e){
-                    Log.e("Erro na obtencao", e.getMessage());
-                }
-
-
-
-
-                if(i == 0){
-                    t1_c1.setText(textodoTituloTratado);
-                    t2_c1.setText(textodocorpo);
-                }else if(i == 1){
-                    t1_c2.setText(textodoTituloTratado);
-                    t2_c2.setText(textodocorpo);
-                }else if(i == 2){
-                    t1_c3.setText(textodoTituloTratado);
-                    t2_c3.setText(textodocorpo);
-                }else if(i == 3){
-                    t1_c4.setText(textodoTituloTratado);
-                    t2_c4.setText(textodocorpo);
-                }else if(i == 4){
-                    t1_c5.setText(textodoTituloTratado);
-                    t2_c5.setText(textodocorpo);
-                }
+            }catch (Exception e){
+                Log.e("Erro na obtencao", e.getMessage());
             }
+
+
+
+
+            if(i == 1){
+                t1_c1.setText(textodoTituloTratado);
+                t2_c1.setText(textodocorpo.substring(0,220)+"...");
+                Log.d("setou_texto", "setou no 1");
+            }else if(i == 2){
+                t1_c2.setText(textodoTituloTratado);
+                t2_c2.setText(textodocorpo.substring(0,220)+"...");
+                Log.d("setou_texto", "setou no 2");
+            }else if(i == 3){
+                t1_c3.setText(textodoTituloTratado);
+                t2_c3.setText(textodocorpo.substring(0,220)+"...");
+                Log.d("setou_texto", "setou no 3");
+            }else if(i == 4){
+                t1_c4.setText(textodoTituloTratado);
+                t2_c4.setText(textodocorpo.substring(0,220)+"...");
+                Log.d("setou_texto", "setou no 4");
+            }else if(i == 5){
+                t1_c5.setText(textodoTituloTratado);
+                t2_c5.setText(textodocorpo.substring(0,220)+"...");
+                Log.d("setou_texto", "setou no 5");
+            }
+        }
 
     }
 

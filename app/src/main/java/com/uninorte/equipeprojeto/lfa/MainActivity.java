@@ -6,14 +6,11 @@ import android.app.FragmentTransaction;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.DialogInterface;
-<<<<<<< HEAD
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.support.design.widget.NavigationView;
-=======
 import android.content.SharedPreferences;
->>>>>>> origin/cardview
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.os.Bundle;
@@ -589,6 +586,12 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
                     iniciar();
 
                 }
+                if(drawerItem.getIdentifier() == 700) {
+
+
+
+                }
+
 
                 return false;
             }
@@ -731,11 +734,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frame_container2, tela).commit();
     }
-<<<<<<< HEAD
-}
-
-=======
-
 
 }
->>>>>>> origin/cardview
+
+
