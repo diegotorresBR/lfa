@@ -87,21 +87,26 @@ public class Tela_Apresentacao extends Fragment {
 
 
 
-                if(i == 0){
+                if(i == 1){
                     t1_c1.setText(textodoTituloTratado);
                     t2_c1.setText(textodocorpo);
-                }else if(i == 1){
+                    Log.d("setou_texto", "setou no 1");
+                }else if(i == 2){
                     t1_c2.setText(textodoTituloTratado);
                     t2_c2.setText(textodocorpo);
-                }else if(i == 2){
+                    Log.d("setou_texto", "setou no 2");
+                }else if(i == 3){
                     t1_c3.setText(textodoTituloTratado);
                     t2_c3.setText(textodocorpo);
-                }else if(i == 3){
+                    Log.d("setou_texto", "setou no 3");
+                }else if(i == 4){
                     t1_c4.setText(textodoTituloTratado);
                     t2_c4.setText(textodocorpo);
-                }else if(i == 4){
+                    Log.d("setou_texto", "setou no 4");
+                }else if(i == 5){
                     t1_c5.setText(textodoTituloTratado);
                     t2_c5.setText(textodocorpo);
+                    Log.d("setou_texto", "setou no 5");
                 }
             }
 
