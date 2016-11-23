@@ -216,7 +216,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
                         new SectionDrawerItem().withName("Aprender"),
                         unidade1, unidade2, unidade3, unidade4, unidade5,
                         new PrimaryDrawerItem().withName("Quiz").withIdentifier(2).withSelectable(true),
-                        new SectionDrawerItem().withName("Sobre")
+                        new PrimaryDrawerItem().withName("Sobre").withIdentifier(3).withSelectable(true)
                 ).withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
 
 
@@ -565,6 +565,12 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
                         atividadePrincipal = false;
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, quiz).commit();
+                    }
+					if (drawerItem.getIdentifier() == 3) {
+                        Sobre sobre = new Sobre();
+                        atividadePrincipal = false;
+                        fragmentTransaction = fragmentManager.beginTransaction();
+                        fragmentTransaction.replace(R.id.frame_container2, sobre).commit();
                     }
                 if(drawerItem.getIdentifier() == 1){
 
