@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         args = new Bundle();
         fragmentManager = getFragmentManager();
         toolbar = (Toolbar) findViewById(R.id.toolbar2);
-        header = new AccountHeaderBuilder().withActivity(this).withTranslucentStatusBar(true).withHeaderBackground(R.drawable.side_nav_bar).build();
+        header = new AccountHeaderBuilder().withActivity(this).withTranslucentStatusBar(true).withHeaderBackground(R.drawable.unsplash).build();
         carregarDados();
         criar_drawer();
         setSupportActionBar(toolbar);

@@ -28,6 +28,9 @@ public class Assunto extends Fragment {
         webView.loadUrl("file:///android_asset/"+res);
         recentes(res);
 
+        webView.getSettings().setBuiltInZoomControls(true);//FUNCAO ZOOM ATIVADO
+        webView.getSettings().setDisplayZoomControls(false);
+
         return rootView;
 //        dijon
     }
