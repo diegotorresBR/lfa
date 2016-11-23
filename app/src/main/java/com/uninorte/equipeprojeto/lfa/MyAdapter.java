@@ -177,6 +177,7 @@ public class MyAdapter extends BaseExpandableListAdapter{
         conteudos_aux.clear();
 
         Conteudo conteudo1 = null;
+        Integer count = 0;
 
         if(query.isEmpty()){
             Log.i("msg", "ta vazio");
@@ -189,19 +190,15 @@ public class MyAdapter extends BaseExpandableListAdapter{
                         conteudo1.setConteudo(c.get(x).getConteudo());
                         conteudo1.setPagina(c.get(x).getPagina());
                         conteudos_aux.add(conteudo1);
-
                         Log.i("Busca", "encontrou "+ c.get(x).getConteudo());
-
-                    }
-
+                        count++;
+                        Log.i("count", count.toString());
+                    }if(count ==0){
+                    Log.d("retorno", "nada");
+                }
             }
-
-
-
         }
-
         return conteudos_aux;
-
     }
 
 }

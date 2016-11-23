@@ -4,11 +4,16 @@ import android.app.AlertDialog;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.app.SearchManager;
+import android.content.Context;
 import android.content.DialogInterface;
+<<<<<<< HEAD
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.support.design.widget.NavigationView;
+=======
+import android.content.SharedPreferences;
+>>>>>>> origin/cardview
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.os.Bundle;
@@ -79,6 +84,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
 
     //responsavel por controlar qual é a activity atual
     boolean atividadePrincipal=true;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -207,6 +213,8 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         unidade5 = new ExpandableDrawerItem().withName("Máquina de Turing");
 
         popular_menu_assuntos();
+
+
 
         drawer = new DrawerBuilder().withActivity(this).withToolbar(toolbar).
                 withAccountHeader(header).
@@ -546,6 +554,10 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
                         atividadePrincipal = false;
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
 
+                    }if(drawerItem.getIdentifier() == 1){
+
+                        iniciar();
+
                     }
                     if (drawerItem.getIdentifier() == 506) {
 //                        args.putInt("unidade", quiz_unidade_5);
@@ -719,5 +731,11 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frame_container2, tela).commit();
     }
+<<<<<<< HEAD
 }
 
+=======
+
+
+}
+>>>>>>> origin/cardview

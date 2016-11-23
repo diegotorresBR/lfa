@@ -61,17 +61,13 @@ public class SerachAdapter extends BaseAdapter {
         TextView textView = (TextView)  view.findViewById(R.id.titulo);
         textView.setTag(new Integer(position));
         textView.setText(cont.getConteudo());
-
-
         //Log.i("lista", conteudo.get(position).getConteudo());
-
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String unidade = conteudo.get((Integer) v.getTag()).getPagina();
                 Log.i("lista", unidade);
                 args = new Bundle();
-
                 args.putString("id", unidade);//passa para o fragment o id do assunto
                 assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                 assunto_frag.setArguments(args);
@@ -79,9 +75,6 @@ public class SerachAdapter extends BaseAdapter {
                 fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
             }
         });
-
-
-
 
         return view;
     }

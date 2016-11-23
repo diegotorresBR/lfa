@@ -135,6 +135,7 @@ public class Pergunta_quiz extends Fragment {
         fragmentTransaction.replace(R.id.frame_container2, tela).commit();
     }
 
+<<<<<<< HEAD
     public void contarQuestoesCertas()
     {
         //neste bloco é validado qual opção foi selecionada pelo usuário
@@ -143,6 +144,74 @@ public class Pergunta_quiz extends Fragment {
             case R.id.letraA:
                 if (respostaCertaA) {
                     contadorDeQuestoesCertas++;
+=======
+    private void carregarPergunta(List<Pergunta> listaPergunta) {
+
+        int contadorPosicaoAtual  = 0;//posicao atual da pergunta
+        int contadorResposta      = 0;//posicao da resposta
+
+        for (Pergunta perg : listaPergunta)
+        {
+            contadorPosicaoAtual++;//incrementa a posicao atual da pergunta.
+            /*
+            12 está definindo diretamente o numero de questões que irão aparecer no quiz
+             */
+
+            if (contadorPosicaoAtual > total_de_questoes_padrao)
+            {//TODO: Ao entrar nesta condição, o usuário é redirecionado para a tela de Resultado do Quiz.
+                //args.putInt("id", R.drawable.u2_1);//passa para o fragment o id do assunto
+                args.putInt("quantidade_questoes_certas", contadorDeQuestoesCertas);
+                args.putInt("total_de_questoes_padrao", total_de_questoes_padrao);
+                fragmento_resultado_quiz = new Fragmento_Resultado_Quiz();//é necesário instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
+                fragmento_resultado_quiz.setArguments(args);
+                fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.frame_container2, fragmento_resultado_quiz).commit();
+                mDrawerTitle = getString(R.string.quiz);
+               // mTitle = getString(R.string.resultado_quiz);
+                return;
+            }
+            //
+            if (contadorPosicaoAtual > contadorPergunta)
+            {
+                radioButtonletraA.setChecked(true);// setar sempre a letra A
+                textViewPergunta.setText(perg.getTxt_pergunta());
+                respostaDAO  = new RespostaDAO(getActivity());
+                respostaList = respostaDAO.ListarRespostaPorId(perg.get_id());
+                for (Resposta resp : respostaList)
+                {
+                    switch (contadorResposta)
+                    {
+                        case 0:
+                            radioButtonletraA.setText(resp.getTxt_resposta());
+                            contadorResposta++;
+                            contadorPergunta++;
+                            if (resp.getFlag_verdadeiro().toString().equals("true")) {
+                                marcarRespostaCerta(true, false, false, false);
+                            }
+                            continue;
+                        case 1:
+                            radioButtonletraB.setText(resp.getTxt_resposta());
+                            contadorResposta++;
+                            if (resp.getFlag_verdadeiro().toString().equals("true")) {
+                                marcarRespostaCerta(false, true, false, false);
+                            }
+                            continue;
+                        case 2:
+                            radioButtonletraC.setText(resp.getTxt_resposta());
+                            contadorResposta++;
+                            if (resp.getFlag_verdadeiro().toString().equals("true")) {
+                                marcarRespostaCerta(false, false, true, false);
+                            }
+                            continue;
+                        case 3:
+                            radioButtonletraD.setText(resp.getTxt_resposta());
+                            contadorResposta++;
+                            if (resp.getFlag_verdadeiro().toString().equals("true")) {
+                                marcarRespostaCerta(false, false, false, true);
+                            }
+                            return;
+                    }
+>>>>>>> origin/cardview
                 }
                 break;
             case R.id.letraB:
