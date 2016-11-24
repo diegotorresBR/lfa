@@ -28,4 +28,11 @@
     <string name="cancelar">Cancelar</string>
     <string name="compartilhar">Compartilhar</string>
     <string name="letraE">E</string>
+    <string name="objetivo_do_aplicativo">Objetivo do Aplicativo</string>
+    <string name="ObjetivoDescricao">O principal objetivo do aplicativo é apoiar o âmbito pedagógico da disciplina Linguagem Formais e Autômatos através dos conteúdos de maneira simples e interativa, despertando a curiosidade de seus leitores em cada tópico.</string>
+    <string name="textviewTimeDescricao">Diego Paiva Torres \ndiegopaivatorres@gmail.com\n\nDijon Cavalcante Braga\ndijoncavalcante@gmail.com\n\nLeandro Batista Machado\nleandro.b.machado@live.com\n\nMarcos Antônio de Araújo Dias\nmarcosaraujodias@gmail.com\n\nPaulo Henrique Carvalho Ribeiro\npauloribeiro133@gmail.com\n\nRafaela Ferreira dos Santos\nrafaelaferreira_103@hotmail.com</string>
+    <string name="orientador">Orientador:</string>
+    <string name="textviewOrientadorDescricao">Camilo Batista de Souza</string>
+    <string name="Descricao">Descrição</string>
+    <string name="DescricaoDesc">O aplicativo baseado na ementa da disciplina Linguagem Formais e Autômatos (LFA) 2016/2 do curso de Ciência da Computação da Centro Universitário do Norte – UNINORTE, cujo o conteúdo será exibido a nível acadêmico.</string>
 </resources>
