@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
+    <!---========== Coloca a imagem do app como Toobox para fazer o efeito file INICIO==========-->
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
@@ -38,6 +39,8 @@
         <!-- As our statusBar is transparent below and content is moved behind our toolbar has to include the padding on top so we use this area -->
     </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
+    <!---========== Coloca a imagem do app como Toobox para fazer o efeito file FIM==========-->
+
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -50,56 +53,102 @@
             android:paddingTop="24dp">
 
             <TextView
-                android:text="O Aplicativo LFAeduca tem como âmbito, auxiliar o aluno de uma maneira simples e interativa , despertando a curiosidade na disciplina.  "
+                android:id="@+id/TextViewObjetivo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/conteudo"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginLeft="12dp"
-                android:layout_marginStart="12dp"
+                android:paddingLeft="15dp"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="20dp"/>
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="@string/objetivo_do_aplicativo"/>
+            <TextView
+                android:id="@+id/TextViewObjetivoDescricao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="30dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="15dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20dp"
+                android:text="@string/ObjetivoDescricao"/>
+            <!--android:paddingBottom="30dp"-->
+            <TextView
+                android:id="@+id/TextViewDescricao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="@string/Descricao"/>
+            <TextView
+                android:id="@+id/TextViewDescricaoDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="30dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="15dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20dp"
+                android:text="@string/DescricaoDesc"/>
+
+
+
+            <!---========== Bloco em que Apresenta o time INICIO==========-->
+            <TextView
+                android:id="@+id/textviewTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="TIME DE DESENVOLVIMENTO:"
+                />
+            <TextView
+                android:id="@+id/textviewTimeDescricao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="30dp"
+                android:paddingBottom="15dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20dp"
+                android:text="@string/textviewTimeDescricao"    />
+            <TextView
+                android:id="@+id/textviewOrientador"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="@string/orientador"/>
 
             <TextView
-                android:text="Email:lfaeduca@gmail.com"
+                android:id="@+id/textviewOrientadorDescricao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="31dp"
-                android:id="@+id/textView3"
+                android:paddingLeft="30dp"
+                android:paddingBottom="15dp"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="20dp"/>
-<TextView
-    android:id="@+id/textviewtime"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:textColor="@color/colorPrimaryDark"
-    android:textSize="20dp"
-    android:layout_marginTop="31dp"
-    android:text="TIME:      Diego Paiva Torres
-                Dijon Cavalcante Braga
-                Leandro Batista Machado
-                Marcos Antônio de Araújo Dias
-                Paulo Henrique Carvalho Ribeiro
-                Rafaela Ferreira dos Santos
-
-                Orientador:Camilo Batista de Souza
-"
-    />
-
+                android:textSize="20dp"
+                android:text="@string/textviewOrientadorDescricao"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/uninorte"
                 android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="102dp"
+                android:src="@drawable/uninorte"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="29dp" />
+                android:layout_gravity="bottom"
+                android:fitsSystemWindows="true"
+                android:scaleType="centerCrop"
 
+                />
+            <!---========== Bloco em que Apresenta o time FIM==========-->
 
         </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
-
 
 </android.support.design.widget.CoordinatorLayout>
