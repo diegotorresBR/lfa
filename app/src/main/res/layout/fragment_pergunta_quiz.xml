@@ -1,0 +1,84 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="#FFFF"
+    android:id="@+id/idScrollViewPergunta">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/textViewPergunta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="15dp"
+            android:textColor="@color/md_black_1000"
+            android:text="@string/pergunta_do_quiz"
+            android:textStyle="bold"
+            android:layout_gravity="center_vertical|right"/>
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:checkedButton="@+id/letraA">
+
+            <RadioButton
+                android:id="@+id/letraA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="@string/letraA"
+                android:textColor="@color/md_black_1000"
+                android:layout_marginBottom="10dp"/>
+
+            <RadioButton
+                android:id="@+id/letraB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="@string/letraB"
+                android:textColor="@color/md_black_1000"
+                android:layout_marginBottom="10dp"/>
+
+
+            <RadioButton
+                android:id="@+id/letraC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="@string/letraC"
+                android:textColor="@color/md_black_1000"
+                android:layout_marginBottom="10dp"/>
+
+
+            <RadioButton
+                android:id="@+id/letraD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="@string/letraD"
+                android:textColor="@color/md_black_1000"
+                android:layout_marginBottom="10dp"/>
+
+            <RadioButton
+                android:id="@+id/letraE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="@string/letraE"
+                android:textColor="@color/md_black_1000"
+                android:layout_marginBottom="1dp"/>
+
+
+        </RadioGroup>
+
+        <include layout="@layout/layout_botoes_pergunta_quiz"/>
+    </LinearLayout>
+</ScrollView>

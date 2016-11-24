@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width; user-scalable=0;"/>
+    <h2><p>Processamento</p></h2>
+  <link rel="stylesheet" href="css\estilos.css">
+</head>
+<body>
+<h5>
+    <p class="main">O processamento de uma MT começa sempre em um estado especial, chamado estado inicial;</p>
+    <p class="main">Inicialmente a primeira célula da fita é preenchida com “〈 ”, que indica o início da mesma;</p>
+    <p class="main">A cabeça de leitura é posicionada inicialmente na segunda célula da fita, a célula seguinte a “〈”;</p>
+    <p class="main">As células em branco, que não fazem parte da palavra a ser processada, são preenchidas com o símbolo “b”;</p>
+    <p align="center"><h5>Funcionamento da Máquina de Turing</h5></p>
+    <p class="main">O processamento em uma MT consiste em uma sequência de passos que consistem em:</p>
+    <ul>
+        <li>Observar o símbolo corrente da fita (aquele em que o cabeçote está posicionado);</li>
+        <li>Escrever um símbolo nesta célula da fita;</li>
+        <li>Mover o cabeçote para a esquerda ou direita;</li>
+        <li>Mudar o estado corrente;</li>
+    </ul>
+    <p class="main">A ação exata a ser executada é determinada por um programa (função de transição) que comunica à unidade de controle o que deve ser feito com base na configuração (estado + símbolo corrente da fita) em que a MT se encontra.</p>
+    <p align="center"><h5>Funcionamento da Máquina de Turing</h5></p>
+    <p class="main">O processamento cessa quando a máquina atinge uma configuração para a qual não existe função prevista, neste caso:</p>
+    <ul>
+        <li>Se a máquina estiver com um estado final ativo, a palavra de entrada é aceita;</li>
+        <li>Se o estado ativo não for final, a palavra de entrada não é aceita;</li>
+        <li>Se a máquina não parar (looping), a entrada de entrada não é aceita</li>
+    </ul>
+    <p align="center"><h5>Definição da MT, uma octupla:</h5></p>
+    <ul>
+        <li> :alfabeto de símbolos de entrada;</li>
+        <li>Q : conjunto de estados possíveis, o qual é finito;</li>
+        <li> : programa ou função de transição</li>
+        <li>•	 Q ´ (  V  {, 〈}) → Q ´ (  V  {, 〈}) ´ {E, D}</li>
+    </ul>
+    <p class="main">A qual é uma função parcial;</p>
+    <li>q0 : estado inicial da máquina, q0 Î Q;</li>
+    <li>F : conjunto de estados finais, F Ì Q;</li>
+    <li>V : alfabeto auxiliar (pode ser vazio);</li>
+    <li> : símbolo especial para células em branco;</li>
+    <li>〈 : símbolo especial marcador de início da fita.</li>
+</h5>
+<h3><a href="unit55.html"><img border="0" align="right" src="dir.png" style="width:42px;height:42px;border:0"></a></h3>
+<h3><a href="unit53.html"><img border="0" align="left" src="esq.png" style="width:42px;height:42px;border:0"></a></h3>
+</body>
+</html>
