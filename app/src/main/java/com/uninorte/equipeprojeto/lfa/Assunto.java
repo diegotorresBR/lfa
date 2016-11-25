@@ -64,6 +64,7 @@ public class Assunto extends Fragment {
             //editor.putString("card4", html);
             editor.putInt("valor", 1);
             editor.commit();
+            recentes(html);
         }
 
     }

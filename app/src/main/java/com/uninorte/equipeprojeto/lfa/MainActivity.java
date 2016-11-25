@@ -234,6 +234,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
                         assunto_frag = new Assunto();//eh necesario instanciar um novo objeto pois ao usar o set abaixo, so eh possivel em um novo frag
                         assunto_frag.setArguments(args);
                         fragmentTransaction = fragmentManager.beginTransaction();
+                        atividadePrincipal = false;
                         fragmentTransaction.replace(R.id.frame_container2, assunto_frag).commit();
                     }
                     if (drawerItem.getIdentifier() == 102) {
