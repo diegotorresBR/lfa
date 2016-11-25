@@ -581,6 +581,13 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
                         fragmentTransaction = fragmentManager.beginTransaction();
                         fragmentTransaction.replace(R.id.frame_container2, sobre).commit();
                     }
+
+                        if (drawerItem.getIdentifier() == 3) {
+                        Sobre sobre = new Sobre();
+                        atividadePrincipal = false;
+                        fragmentTransaction = fragmentManager.beginTransaction();
+                        fragmentTransaction.replace(R.id.frame_container2, sobre).commit();
+                    }
                 if(drawerItem.getIdentifier() == 1){
 
                     iniciar();
