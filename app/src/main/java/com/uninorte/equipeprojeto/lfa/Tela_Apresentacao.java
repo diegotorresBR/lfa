@@ -90,24 +90,34 @@ public class Tela_Apresentacao extends Fragment {
 
             if(i == 1){
                 t1_c1.setText(textodoTituloTratado);
-                t2_c1.setText(textodocorpo.substring(0,220)+"...");
-                Log.d("setou_texto", "setou no 1");
+                if(textodocorpo != null) {
+                    t2_c1.setText(textodocorpo.substring(0, 220) + "...");
+                    Log.d("setou_texto", "setou no 1");
+                }
             }else if(i == 2){
                 t1_c2.setText(textodoTituloTratado);
-                t2_c2.setText(textodocorpo.substring(0,220)+"...");
-                Log.d("setou_texto", "setou no 2");
+                if(textodocorpo != null) {
+                    t2_c2.setText(textodocorpo.substring(0, 220) + "...");
+                    Log.d("setou_texto", "setou no 2");
+                }
             }else if(i == 3){
                 t1_c3.setText(textodoTituloTratado);
-                t2_c3.setText(textodocorpo.substring(0,220)+"...");
-                Log.d("setou_texto", "setou no 3");
+                if(textodocorpo != null) {
+                    t2_c3.setText(textodocorpo.substring(0, 220) + "...");
+                    Log.d("setou_texto", "setou no 3");
+                }
             }else if(i == 4){
                 t1_c4.setText(textodoTituloTratado);
-                t2_c4.setText(textodocorpo.substring(0,220)+"...");
-                Log.d("setou_texto", "setou no 4");
+                if(textodocorpo != null) {
+                    t2_c4.setText(textodocorpo.substring(0, 220) + "...");
+                    Log.d("setou_texto", "setou no 4");
+                }
             }else if(i == 5){
                 t1_c5.setText(textodoTituloTratado);
-                t2_c5.setText(textodocorpo.substring(0,220)+"...");
-                Log.d("setou_texto", "setou no 5");
+                if(textodocorpo != null) {
+                    t2_c5.setText(textodocorpo.substring(0, 220) + "...");
+                    Log.d("setou_texto", "setou no 5");
+                }
             }
         }
 
