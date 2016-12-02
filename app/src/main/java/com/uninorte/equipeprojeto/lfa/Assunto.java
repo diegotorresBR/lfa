@@ -32,7 +32,7 @@ public class Assunto extends Fragment {
         webView.getSettings().setDisplayZoomControls(false);
 
         return rootView;
-//        dijon
+
     }
 
     public void recentes(String html){

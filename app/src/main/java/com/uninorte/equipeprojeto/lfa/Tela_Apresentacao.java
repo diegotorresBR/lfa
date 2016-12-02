@@ -5,10 +5,13 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -29,6 +32,7 @@ import java.util.List;
 
 public class Tela_Apresentacao extends Fragment {
 
+    CardView cardView_1, cardView_2, cardView_3, cardView_4, cardView_5;
     TextView t1_c1, t2_c1, t1_c2, t2_c2, t1_c3, t2_c3, t1_c4, t2_c4, t1_c5, t2_c5;
     List<String> assuntos_recentes = new ArrayList<String>();
 
@@ -48,7 +52,13 @@ public class Tela_Apresentacao extends Fragment {
         t2_c4 = (TextView) root.findViewById(R.id.texto2_card4);
         t1_c5 = (TextView) root.findViewById(R.id.texto1_card5);
         t2_c5 = (TextView) root.findViewById(R.id.texto2_card5);
-
+        //
+        cardView_1 = (CardView) root.findViewById(R.id.cardView1);
+        cardView_2 = (CardView) root.findViewById(R.id.cardView2);
+        cardView_3 = (CardView) root.findViewById(R.id.cardView3);
+        cardView_4 = (CardView) root.findViewById(R.id.cardView4);
+        cardView_5 = (CardView) root.findViewById(R.id.cardView5);
+        //
         CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) root.findViewById(R.id.collapsing_toolbar);
         ultimo_card();
 
@@ -65,13 +75,12 @@ public class Tela_Apresentacao extends Fragment {
         String textodoTitulo = null;
         String textodoTituloTratado = null;
 
-        for(int i = 5;i>=1;i--){
+        for(int i = 5;i>=1;i--) {
 
-            Log.d("Laço", "Entrou no laço "+i);
-            String local = assuntos_recentes.get(assuntos_recentes.size()-i);
+            Log.d("Laço", "Entrou no laço " + i);
+            String local = assuntos_recentes.get(assuntos_recentes.size() - i);
 
             try {
-
                 is = getActivity().getAssets().open(local);
                 Document texto = Jsoup.parse(is, "UTF-8", "");
                 Elements elemento_corpo = texto.getElementsByTag("h5").tagName("p");
@@ -80,45 +89,69 @@ public class Tela_Apresentacao extends Fragment {
                 textodoTitulo = elemento_titulo.text();
                 textodoTituloTratado = textodoTitulo;
                 //textodoTituloTratado = textodoTitulo.substring(0, textodoTitulo.length()-7);
-
-            }catch (Exception e){
+            } catch (Exception e) {
                 Log.e("Erro na obtencao", e.getMessage());
             }
 
-
-
-
-            if(i == 1){
+            if (i == 1) {
                 t1_c1.setText(textodoTituloTratado);
-                if(textodocorpo != null) {
+                if (textodocorpo != null) {
+                    cardView_1.setVisibility(View.VISIBLE);
                     t2_c1.setText(textodocorpo.substring(0, 220) + "...");
                     Log.d("setou_texto", "setou no 1");
                 }
-            }else if(i == 2){
+                else
+                {
+                    cardView_1.setVisibility(View.GONE);
+                }
+            } else if (i == 2) {
                 t1_c2.setText(textodoTituloTratado);
-                if(textodocorpo != null) {
+                if (textodocorpo != null) {
+                    cardView_2.setVisibility(View.VISIBLE);
                     t2_c2.setText(textodocorpo.substring(0, 220) + "...");
                     Log.d("setou_texto", "setou no 2");
                 }
-            }else if(i == 3){
+                else
+                {
+                    cardView_2.setVisibility(View.GONE);
+                }
+            } else if (i == 3) {
                 t1_c3.setText(textodoTituloTratado);
-                if(textodocorpo != null) {
+                if (textodocorpo != null) {
+                    cardView_3.setVisibility(View.VISIBLE);
                     t2_c3.setText(textodocorpo.substring(0, 220) + "...");
                     Log.d("setou_texto", "setou no 3");
                 }
-            }else if(i == 4){
+                else
+                {
+                    cardView_3.setVisibility(View.GONE);
+                }
+            } else if (i == 4) {
                 t1_c4.setText(textodoTituloTratado);
-                if(textodocorpo != null) {
+                if (textodocorpo != null) {
+//                    Animation animation = new TranslateAnimation(0,0,0,1000);
+//                    animation.setDuration(1000);
+//                    cardView_4.startAnimation(animation);
+                    cardView_4.setVisibility(View.VISIBLE);
                     t2_c4.setText(textodocorpo.substring(0, 220) + "...");
                     Log.d("setou_texto", "setou no 4");
                 }
-            }else if(i == 5){
+                else
+                {
+                    cardView_4.setVisibility(View.GONE);
+                }
+            } else if (i == 5) {
                 t1_c5.setText(textodoTituloTratado);
-                if(textodocorpo != null) {
+                if (textodocorpo != null) {
                     t2_c5.setText(textodocorpo.substring(0, 220) + "...");
+                    Log.d("setou_texto", "setou no 5");
+                } else {
+                    t1_c5.setText(getString(R.string.objetivo_do_aplicativo));
+                    t2_c5.setText(getString(R.string.ObjetivoDescricao).substring(0, 220) + "...");
                     Log.d("setou_texto", "setou no 5");
                 }
             }
+
         }
 
     }
