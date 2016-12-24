@@ -17,13 +17,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	public void onCreate(SQLiteDatabase db) {
 		//tabelas unidade
 		db.execSQL("create table unidade (" +
-				"    _id integer integer not null" +
+				"    _id integer primary key not null" +
 				"    , txt_titulo text not null" +
 				"    , txt_descricao text not null" +
 				")");
 		//tabela perguntas
 		db.execSQL("create table perguntas (" +
-				"    _id integer not null " +
+				"    _id integer primary key not null " +
 				"    , txt_pergunta text not null" +
 				"    , id_unidade text not null" +
 				")");
